@@ -4,19 +4,15 @@
     "type": "split",
     "children": [
       {
-        "id": "9beace296a5d9888",
+        "id": "1cdb5b7e7c9d2dc2",
         "type": "tabs",
         "children": [
           {
-            "id": "70dd1fffc0b3f10b",
+            "id": "8f3fa4b2cab98ec0",
             "type": "leaf",
             "state": {
-              "type": "markdown",
-              "state": {
-                "file": "Fac/Maths/Analyse élémentaire - Les ensembles.md",
-                "mode": "source",
-                "source": false
-              }
+              "type": "empty",
+              "state": {}
             }
           }
         ]
@@ -85,7 +81,6 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Fac/Maths/Analyse élémentaire - Les ensembles.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -102,7 +97,6 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Fac/Maths/Analyse élémentaire - Les ensembles.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -124,9 +118,7 @@
             "type": "leaf",
             "state": {
               "type": "outline",
-              "state": {
-                "file": "Fac/Maths/Analyse élémentaire - Les ensembles.md"
-              }
+              "state": {}
             }
           }
         ]
@@ -146,10 +138,10 @@
       "command-palette:Ouvrir la palette de commandes": false
     }
   },
-  "active": "70dd1fffc0b3f10b",
+  "active": "8f3fa4b2cab98ec0",
   "lastOpenFiles": [
-    "Fac/Maths/Algèbre élémentaire - Trigonométrie.md",
     "Fac/Maths/Analyse élémentaire - Les ensembles.md",
+    "Fac/Maths/Algèbre élémentaire - Trigonométrie.md",
     "Sans titre.canvas",
     "Fac/Maths",
     "perso/Thèse ou essaie - Défense personnel en France.md",
