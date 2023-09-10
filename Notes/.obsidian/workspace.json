@@ -4,16 +4,16 @@
     "type": "split",
     "children": [
       {
-        "id": "97bf9abed5860d05",
+        "id": "9beace296a5d9888",
         "type": "tabs",
         "children": [
           {
-            "id": "92c858da94aa5867",
+            "id": "70dd1fffc0b3f10b",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "perso/Thèse ou essaie - Défense personnel en France.md",
+                "file": "Fac/Maths/Analyse élémentaire - Les ensembles.md",
                 "mode": "source",
                 "source": false
               }
@@ -85,7 +85,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "perso/Thèse ou essaie - Défense personnel en France.md",
+                "file": "Fac/Maths/Analyse élémentaire - Les ensembles.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -102,7 +102,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "perso/Thèse ou essaie - Défense personnel en France.md",
+                "file": "Fac/Maths/Analyse élémentaire - Les ensembles.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -125,7 +125,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "perso/Thèse ou essaie - Défense personnel en France.md"
+                "file": "Fac/Maths/Analyse élémentaire - Les ensembles.md"
               }
             }
           }
@@ -146,8 +146,12 @@
       "command-palette:Ouvrir la palette de commandes": false
     }
   },
-  "active": "92c858da94aa5867",
+  "active": "70dd1fffc0b3f10b",
   "lastOpenFiles": [
+    "Fac/Maths/Algèbre élémentaire - Trigonométrie.md",
+    "Fac/Maths/Analyse élémentaire - Les ensembles.md",
+    "Sans titre.canvas",
+    "Fac/Maths",
     "perso/Thèse ou essaie - Défense personnel en France.md",
     "Fac",
     "perso"
