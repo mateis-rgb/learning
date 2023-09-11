@@ -1,4 +1,5 @@
 #include <iostream>
+#include <math.h>
 
 using namespace std;
 
@@ -47,8 +48,43 @@ int exo1_5 () {
     return 0;
 }
 
+int exo2_1 () {
+    int x;
+
+    cout << "Entrez un entier x : ";
+    cin >> x;
+
+    if (x < 0) {
+        x = -x;
+    }
+
+    if (x % 2 == 0) {
+        cout << "La valeur absolue de x = " << x << " et il est pair" << endl;
+    }
+    else {
+        cout << "La valeur absolue de x = " << x << " et il est impair" << endl;
+    }
+
+    return 0;
+}
+
+int exo2_2 () {
+    float note;
+
+    cout << "Entrez un nombre : ";
+    cin >> note;
+
+    if (note < 0 || note > 20) {
+        cout << "Note incorrecte : " << note << endl;
+        return 0;
+    }
+
+    cout << "Note correcte : " << note << endl;
+    return 0;
+}
+
 int main () {
-    exo1_5();
+    exo2_2();
 
     return 0;
 }
