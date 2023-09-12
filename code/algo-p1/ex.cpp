@@ -68,7 +68,7 @@ int exo2_1 () {
     return 0;
 }
 
-int exo2_2 () {
+int exo2_21 () {
     float note;
 
     cout << "Entrez un nombre : ";
@@ -76,15 +76,69 @@ int exo2_2 () {
 
     if (note < 0 || note > 20) {
         cout << "Note incorrecte : " << note << endl;
-        return 0;
+    }
+    else {
+        cout << "Note correcte : " << note << endl;
     }
 
-    cout << "Note correcte : " << note << endl;
+    return 0;
+}
+
+int exo2_22 () {
+    float note;
+
+    cout << "Entrez un nombre : ";
+    cin >> note;
+
+    if (note < 0) {
+        if (note > 20) {
+            cout << "Note incorrecte : " << note << endl;
+        }
+    }
+    else {
+        cout << "Note correcte : " << note << endl;
+    }
+
+    return 0;
+}
+
+int exo2_4 () {
+    int a, b, c, delta;
+
+    cout << "Définissez les coéfissiants de la fonction ax^2 + bx + c = 0 : " << endl;
+    
+    cout << "a : ";
+    cin >> a;
+
+    cout << "b : ";
+    cin >> b;
+
+    cout << "c : ";
+    cin >> c;
+
+    delta = b*b - 4*a*c;
+
+    if (delta < 0) {
+        cout << "Le discriminant est négatif, il est donc impossible de calculer les racines dans IR";
+    }
+    else if (delta == 0) {
+        float x = -b / 2*a;
+
+        cout << "Le discriminant est égal à 0, ainsi la racine dans IR x = " << x;
+    }
+    else {
+        float x1 = (-b-sqrt(delta)) / 2*a;
+        float x2 = (-b+sqrt(delta)) / 2*a;
+
+        cout << "Le discriminant est supérieur à 0, ainsi les deux racines dans IR x1 = " << x1 << " et x2 = " << x2;
+    }
+
+
     return 0;
 }
 
 int main () {
-    exo2_2();
+    exo2_4();
 
     return 0;
 }
