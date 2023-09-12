@@ -30,11 +30,6 @@ int exo1_3 () {
     return 0;
 }
 
-int exo1_4 () {
-
-    return 0;
-}
-
 int exo1_5 () {
     int v1, v2, v3;
 
