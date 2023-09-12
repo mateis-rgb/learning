@@ -119,26 +119,83 @@ int exo2_4 () {
     delta = b*b - 4*a*c;
 
     if (delta < 0) {
-        cout << "Le discriminant est négatif, il est donc impossible de calculer les racines dans IR";
+        cout << "Le discriminant est négatif, il est donc impossible de calculer les racines dans IR" << endl;
     }
     else if (delta == 0) {
         float x = -b / 2*a;
 
-        cout << "Le discriminant est égal à 0, ainsi la racine dans IR x = " << x;
+        cout << "Le discriminant est égal à 0, ainsi la racine dans IR x = " << x << endl;
     }
     else {
         float x1 = (-b-sqrt(delta)) / 2*a;
         float x2 = (-b+sqrt(delta)) / 2*a;
 
-        cout << "Le discriminant est supérieur à 0, ainsi les deux racines dans IR x1 = " << x1 << " et x2 = " << x2;
+        cout << "Le discriminant est supérieur à 0, ainsi les deux racines dans IR x1 = " << x1 << " et x2 = " << x2 << endl;
     }
 
+    return 0;
+}
+
+int exo2_6 () {
+    int v1, v2, v3, v4, v5;
+
+    cout << "Définissez trois variables v1, v2 et v3 : " << endl;
+    cin >> v1 >> v2 >> v3;
+
+    if (v1 < v2) {
+        if (v1 < v3) {
+            if (v2 > v3) {
+                // v1 < v3 < v2
+                v4 = v2;
+                v2 = v3;
+                v3 = v4;
+            }
+            // v1 < v2 < v3
+        }
+        else {
+            // v3 < v1 < v2
+            v4 = v1;
+            v5 = v2;
+            
+            v1 = v3;
+            v2 = v4;
+            v3 = v5;
+        }
+    }
+    else if (v3 < v2) {
+        if (v2 < v1) {
+            // v3 < v2 < v1
+            v4 = v3;
+            
+            v3 = v1;
+            v1 = v4;
+        }
+    }
+    else {
+        if (v1 < v3) {
+            // v2 < v1 < v3
+            v4 = v1;
+            v1 = v2;
+            v2 = v1;
+        }
+        else {
+            // v2 < v3 < v1
+            v4 = v2;
+            v5 = v3;
+            
+            v3 = v1;
+            v1 = v4;
+            v2 = v5;
+        }
+    }
+
+    cout << "Dans l'ordre croissant, v1 = " << v1 << ", v2 = " << v2 << ", v3 = " << v3 << endl;
 
     return 0;
 }
 
 int main () {
-    exo2_4();
+    exo2_6();
 
     return 0;
 }
