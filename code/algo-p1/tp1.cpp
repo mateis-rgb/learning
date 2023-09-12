@@ -25,5 +25,7 @@ int tp1_4 () {
 }  
 
 int main () {
+	tp1_4();
+
 	return 0;
 }
