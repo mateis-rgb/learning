@@ -83,8 +83,6 @@ int tp2_5() {
     delta = b*b - 4*a*c;
 
     if (delta < 0) {
-		delta = abs(delta);
-
         complex<double> x1((-b / (2*a)), (sqrt(-delta) / (2 * a)));
 		complex<double> x2((-b / (2*a)), (-sqrt(-delta) / (2 * a)));
 
@@ -105,8 +103,16 @@ int tp2_5() {
     return 0;
 }
 
+int tp2_7 () {
+	int a, b, rep, op;
+
+	cout << "(Côté enseignant / parent) - ";
+
+	return 0;
+}
+
 int main () {
-	tp2_3();
+	tp2_7();
 
 	return 0;
 }
