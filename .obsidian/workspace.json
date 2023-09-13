@@ -128,6 +128,16 @@
                 "file": "Fac/Base-Info/Base de l'informatique.md"
               }
             }
+          },
+          {
+            "id": "8d60f85a2d30b317",
+            "type": "leaf",
+            "state": {
+              "type": "all-properties",
+              "state": {
+                "sortOrder": "frequency"
+              }
+            }
           }
         ]
       }
@@ -148,8 +158,11 @@
   },
   "active": "efdfb0bb40673fb2",
   "lastOpenFiles": [
+    "Fac/Les bases en C++.md",
+    "Fac/Base-Info/Base de l'informatique.md",
+    "\".md",
+    "Sans titre.md",
     "code/algo-p1/tp1.cpp",
-    "code/algo-p1/ex1.cpp",
-    "Fac/Base-Info/Base de l'informatique.md"
+    "code/algo-p1/ex1.cpp"
   ]
 }
