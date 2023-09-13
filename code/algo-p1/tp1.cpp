@@ -4,7 +4,10 @@
 using namespace std;
 
 int tp1_4 () {
-	const int coeffs[3] = {2, 5, 3};
+	const int c_anglais = 2;
+	const int c_maths = 5;
+	const int c_info = 3;
+	
 	float anglais, maths, info;
 	float moyenne;
 
@@ -17,7 +20,7 @@ int tp1_4 () {
 	cout << "Note en informatiques (coeff. 3) : ";
 	cin >> info;
 
-	moyenne = (anglais * coeffs[0] + maths * coeffs[1] + info * coeffs[2]) / 3;
+	moyenne = (anglais * c_anglais + maths * c_maths + info * c_info) / (c_anglais + c_maths + c_info);
 
 	cout << "Moyenne obtenue : " << moyenne << endl;
 
