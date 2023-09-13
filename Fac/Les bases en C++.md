@@ -289,8 +289,122 @@ Tout d'abord commençons par les opérateurs, ceux ci servent à faire des compa
 != // n'est pas égal
 ```
 
+Et dans des exemples concrets :
+
+```cpp
+cout << 2 < 3 << endl;
+cout << 4 == 3 << endl;
+
+// Sortie : vrai \n faux
+```
+*Ici le `\n` signifie un saut de ligne*.
+
+Il est important de noter que une comparaison entre deux valeurs ou variables retourne un booléen, ce qui signifie que l'on peut affecter une variable avec une condition :
+
+``` cpp
+bool condition = 5 == 3;
+```
+*Ici implicitement, on définit la variable `condition` de type booléenne `true` (vrai) si 5 est égale à 3, sinon définit la variable `condition` comme `false` (fausse)*.
+
+Et maintenant, les opérateurs logique, quand a eux, ils servent à faire des opérations logiques comme l'addition de deux comparaisons, ou même faire la négation d'un élément, on peut de référer aux tables logique de chaque opérateur pour savoir lequel utiliser.
+
+Il a plusieurs façons d'écrire les opérateurs logique, dans ce cours nous allons en voir une, non pas la plus simple, mais celle qui est la plus rigoureuse et celle qui sera appliquer dans beaucoup d'autres langages de programmation : 
+
+``` cpp
+&& // le ET logique
+|| // le OU logique
+! // la négation
+```
+
+Concrètement, la syntaxe est assez simple, les deux opérateurs `&&` et `||` se mettent entre deux conditions. L'opérateur `!` quand a lui se met devant une valeur ou une variable pour dire son contraire.
+
+``` cpp
+// ici, si 4 est inférieur à 3 (faux) ou si 5 est égale à 5 (vrai)
+cout << 4 < 3 || 5 == 5 << endl;
+
+// Sortie : true
+
+// ici, on demande la négation de true (vrai), et donc sa négation est false (faux)
+cout << !true << endl;
+
+// Sortie : false
+```
+
+
 ## Les instructions conditionnels
 
+Les instructions conditionnels sont des conditions et si la condition est vrai alors on effectue des instructions sinon on en effectuera d'autres.
+
+Voici la syntaxe :
+
+```cpp
+// si la condition est vraie
+if (condition) {
+	// code
+}
+// sinon si la confition est vrai
+else if (condition) {
+	// code
+}
+// sinon
+else {
+	// code
+}
+```
+
+Et voici un exemple :
+
+```cpp
+
+if (3 < 2) {
+	cout << "3 est inférieur à 2" << endl;
+}
+else if (5 != 5) {
+	cout << "5 n'est pas égal à 5" << endl;
+}
+else {
+	cout << "Le reste" << endl;
+}
+
+// Sortie : Le reste
+```
+
+Il faut savoir que le `if-else` n'est pas la seule instruction conditionnelle, il existe aussi le `switch-case` qui lui est utile pour séparer le code en section et qui en fonction d'une variable va changer, par exemple, si on demande à un utilisateur de donner un chiffre entre 1 et 5 et que pour chaque chiffre on affiche quelque chose de différent on peut faire ainsi :
+
+```cpp
+int x;
+
+cout << "Entrez un chiffre entre 1 et 5 : ";
+cin >> x;
+
+switch (x) {
+	case 1:
+		cout << "Bravo tu as choisis 1, tu n'as rien gagné" << endl;
+		break;
+
+	case 2:
+		cout << "Pas de chance tu as choisi 2 maintenant tu peux retenter ta chance." << endl;
+		break;
+		
+	case 3:
+		cout << "Pas de chance tu as choisi 3 maintenant tu peux retenter ta chance." << endl;
+		break;
+
+	case 4:
+		cout << "Toujours rien" << endl;
+		break;
+
+	case 5:
+		cout << "Flemme de trouver d'autres expressions" << endl;
+		break;
+
+	default:
+		cout << "le chiffre doit être compris entre 1 et 5." << endl;
+		break;
+}
+
+```
+*Un bloc de case se compose par la condition a côté du mot clé case, a savoir que ce que l'on va mettre a coté est une égalité stricte. Et à la fin de nos case il faut mettre break, sinon le programme va continuer de passer dans les cases. De plus on peut mettre un default, qui veut dire que si aucune valeur n'est entré dans les cases alors on passe dans le default*.
 ## Les fonctions
 
 ## Les boucles
