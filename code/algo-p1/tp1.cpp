@@ -1,5 +1,6 @@
 #include <iostream>
 #include <math.h>
+#include <complex>
 
 using namespace std;
 
@@ -62,6 +63,48 @@ int tp2_3() {
 	cout << "La fonction f(x) par x = " << x << " est égal à : " << fx << endl;
 
 	return 0;
+}
+
+int tp2_5() {
+	int a, b, c;
+	float delta;
+
+    cout << "Définissez les coéfissiants de la fonction ax^2 + bx + c = 0 : " << endl;
+    
+    cout << "a : ";
+    cin >> a;
+
+    cout << "b : ";
+    cin >> b;
+
+    cout << "c : ";
+    cin >> c;
+
+    delta = b*b - 4*a*c;
+
+    if (delta < 0) {
+		complex<double> i(0.0, 1.0);
+
+		delta = abs(delta);
+
+        complex<double> x1((-b / (2*a)), (sqrt(-delta) / (2 * a)));
+		complex<double> x2((-b / (2*a)), (-sqrt(-delta) / (2 * a)));
+
+        cout << "Le discriminant est inférieur à 0, ainsi les deux racines dans IC x1 = " << x1 << " et x2 = " << x2 << endl;
+    }
+    else if (delta == 0) {
+        float x = -b / 2*a;
+
+        cout << "Le discriminant est égal à 0, ainsi la racine dans IR x = " << x << endl;
+    }
+    else {
+        float x1 = (-b-sqrt(delta)) / 2*a;
+        float x2 = (-b+sqrt(delta)) / 2*a;
+
+        cout << "Le discriminant est supérieur à 0, ainsi les deux racines dans IR x1 = " << x1 << " et x2 = " << x2 << endl;
+    }
+
+    return 0;
 }
 
 int main () {
