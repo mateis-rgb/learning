@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Fac/Base-Info/Base de l'informatique.md",
+                "file": "Fac/Les bases en C++.md",
                 "mode": "source",
                 "source": false
               }
@@ -69,7 +69,8 @@
       }
     ],
     "direction": "horizontal",
-    "width": 300
+    "width": 300,
+    "collapsed": true
   },
   "right": {
     "id": "840cad1b8c897f85",
@@ -85,7 +86,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Fac/Base-Info/Base de l'informatique.md",
+                "file": "Fac/Les bases en C++.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -102,7 +103,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Fac/Base-Info/Base de l'informatique.md",
+                "file": "Fac/Les bases en C++.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -125,7 +126,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Fac/Base-Info/Base de l'informatique.md"
+                "file": "Fac/Les bases en C++.md"
               }
             }
           },
@@ -159,9 +160,9 @@
   "active": "efdfb0bb40673fb2",
   "lastOpenFiles": [
     "Fac/Les bases en C++.md",
+    "Fac/Les bases du terminal sous macOs, Linux et Windows.md",
     "Fac/Base-Info/Base de l'informatique.md",
     "\".md",
-    "Sans titre.md",
     "code/algo-p1/tp1.cpp",
     "code/algo-p1/ex1.cpp"
   ]
