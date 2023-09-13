@@ -4,9 +4,7 @@
 using namespace std;
 
 int tp1_4 () {
-	const int c_anglais = 2;
-	const int c_maths = 5;
-	const int c_info = 3;
+	const int c_anglais = 2, c_maths = 5, c_info = 3;
 	
 	float anglais, maths, info;
 	float moyenne;
@@ -27,8 +25,14 @@ int tp1_4 () {
 	return 0;
 }  
 
+int tp1_6 () {
+
+
+	return 0;
+}
+
 int main () {
-	tp1_4();
+	tp1_6();
 
 	return 0;
 }
