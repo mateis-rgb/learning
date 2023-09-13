@@ -43,8 +43,29 @@ int tp1_6 () {
 	return 0;
 }
 
+int tp2_3() {
+	float x, fx;
+
+	cout << "Donnez 1 valeur pour la fonction f(x) = (|x|+3x²)/((2/3)*x²-6) : ";
+	cin >> x;
+
+	// verifier que f est défini en x
+
+	if (((2/3)*(x*x)-6) == 0) {
+		cout << "f(x) n'est pas défini en x = " << x << endl;
+		
+		return 0;
+	}
+
+	fx = (abs(x) + 3 * (x*x)) / ((2/3)*(x*x)-6);
+
+	cout << "La fonction f(x) par x = " << x << " est égal à : " << fx << endl;
+
+	return 0;
+}
+
 int main () {
-	tp1_6();
+	tp2_3();
 
 	return 0;
 }
