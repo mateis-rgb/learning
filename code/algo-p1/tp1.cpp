@@ -25,7 +25,7 @@ int tp1_4 () {
 	return 0;
 }  
 
-int tp1_61 () {
+int tp1_6 () {
 	int v1, v2, v3, v4, temp;
 
 	cout << "Donnez 4 valeurs entières : ";
@@ -44,7 +44,7 @@ int tp1_61 () {
 }
 
 int main () {
-	tp1_61();
+	tp1_6();
 
 	return 0;
 }
