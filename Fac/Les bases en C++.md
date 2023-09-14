@@ -111,7 +111,7 @@ struct eleve {
 }
 ```
 
-Il est aussi possible d'utilisé des raccourcis pour incrémentation et la décrémentation de variables : 
+Il est aussi possible d'utilisé des raccourcis pour l'incrémentation et la décrémentation de variables : 
 
 ```cpp
 int x = O;
