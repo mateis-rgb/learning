@@ -83,6 +83,7 @@ int tp2_5() {
     delta = b*b - 4*a*c;
 
     if (delta < 0) {
+		// complexe<double> <var>(<partie réel>, <partie entière>)
         complex<double> x1((-b / (2*a)), (sqrt(-delta) / (2 * a)));
 		complex<double> x2((-b / (2*a)), (-sqrt(-delta) / (2 * a)));
 
@@ -104,9 +105,35 @@ int tp2_5() {
 }
 
 int tp2_7 () {
-	int a, b, rep, op;
+	int a, b, rep;
+	char* op;
 
-	cout << "(Côté enseignant / parent) - ";
+	cout << "(Côté enseignant / parent) - Donnez deux nombres entiers : " << endl;
+	cin >> a >> b;
+	cout << "Donnez un signe d'opération (+, -, *, /) : ";
+	cin >> op;
+
+	cout << "(Côté élève) - Donnez la réponse du calcul suivant : " << a << " " << op << " " << b << endl;
+	cin >> rep;
+
+	if (op == "+" && rep == (a + b)) {
+		cout << "Bravo" << endl; 
+		return 0;
+	}
+	else if (op == "-" && rep == (a - b)) {
+		cout << "Bravo" << endl;
+		return 0;
+	}
+	else if (op == "/" && rep == (a / b)) {
+		cout << "Bravo" << endl;
+		return 0;
+	}
+	else if (op == "*" && rep == (a * b)) {
+		cout << "Bravo" << endl;
+		return 0;
+	}
+
+	cout << "Perdu" << endl;
 
 	return 0;
 }

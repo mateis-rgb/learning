@@ -41,6 +41,8 @@ int main ()
 
 Il est important de mettre l'instruction `return 0;` car sinon le programme ne s’arrête pas. De plus, le 0 est important car il signifie au compilateur que le programme à terminer sans problème.
 
+ATTENTION ⚠️ : Il est important de mettre le point virgule `;` a la fin de chaque instruction pour signifier la fin de la ligne.
+
 
 ## Les variables
 
@@ -161,7 +163,7 @@ using namspace std;
 int main ()
 {
 	// code
-
+	
 	return 0;
 }
 ```
@@ -406,6 +408,33 @@ switch (x) {
 ```
 *Un bloc de case se compose par la condition a côté du mot clé case, a savoir que ce que l'on va mettre a coté est une égalité stricte. Et à la fin de nos case il faut mettre break, sinon le programme va continuer de passer dans les cases. De plus on peut mettre un default, qui veut dire que si aucune valeur n'est entré dans les cases alors on passe dans le default*.
 ## Les fonctions
+
+Les fonctions ont aussi des types, ils sont liés a valeur de retour de la fonction, si les valeurs de retour ont différent ont utilise le mot clé `void`. Les fonctions peuvent aussi avoir des paramètres, ce sont des comme des variables, ainsi il faut leurs mettre un type et potentiellement une valeur par défaut, par convention il faut mettre les paramètre de la fonction sans valeurs par défaut sont avant celle qui en ont. Voici la syntaxe d'une fonction :
+
+```cpp
+int addition (int a, int b = 3)
+{
+	return a + b;
+}
+
+void toto ()
+{
+	if (1 == 2) {
+		return true;
+	}
+	
+	return 1;
+}
+
+void proc ()
+{
+	
+}
+```
+*On appel les fonctions qui ne retourne rien des procédures.*
+
+
+
 
 ## Les boucles
 
