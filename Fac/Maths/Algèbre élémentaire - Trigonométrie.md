@@ -54,10 +54,11 @@ Donc $1=OM=\sqrt{abscisse^{2}+ordonnée^{2}}=\sqrt{cos^{2}(θ)+sin^{2}(θ)}$
 
 ## Valeurs remarquables du cercle trigo
 
-| $θ$    | 0    | $\frac{\pi}{6}$      | $\frac{\pi}{4}$      | $\frac{\pi}{3}$      | $\frac{\pi}{2}$ |
+| $θ$    | $0$    | $\frac{\pi}{6}$      | $\frac{\pi}{4}$      | $\frac{\pi}{3}$      | $\frac{\pi}{2}$ |
 | ---- | ---- | -------------------- | -------------------- | -------------------- | --------------- |
-| $cos$  | 1    | $\frac{\sqrt{3}}{2}$ | $\frac{\sqrt{2}}{2}$ | $\frac{1}{2}$        | 0               |
-| $sin$  | 0    | $\frac{1}{2}$        | $\frac{\sqrt{2}}{2}$ | $\frac{\sqrt{3}}{2}$ | 1               |
+| $cos$  | $1$    | $\frac{\sqrt{3}}{2}$ | $\frac{\sqrt{2}}{2}$ | $\frac{1}{2}$        | $0$               |
+| $sin$  | $0$    | $\frac{1}{2}$        | $\frac{\sqrt{2}}{2}$ | $\frac{\sqrt{3}}{2}$ | $1$               |
+| $tan=\frac{sin}{cos}$  | $0$    | $\frac{1}{\sqrt{3}}=\frac{\sqrt{3}}{3}$        | $1$ | $\sqrt{3}$ |        $null$        |
 
 Remarque: Pour passer de $\frac{\pi}{6}$ à $\frac{\pi}{3}$ il suffit de faire $\frac{\pi}{2} - θ$.
 

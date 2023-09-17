@@ -4,16 +4,16 @@
     "type": "split",
     "children": [
       {
-        "id": "be92d395673d2686",
+        "id": "b5279d0fd6726987",
         "type": "tabs",
         "children": [
           {
-            "id": "efdfb0bb40673fb2",
+            "id": "ec6d76ef25d96001",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Fac/Les bases en C++.md",
+                "file": "Fac/Maths/Algèbre élémentaire - Equations trigonométrique.md",
                 "mode": "source",
                 "source": false
               }
@@ -69,8 +69,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 300,
-    "collapsed": true
+    "width": 300
   },
   "right": {
     "id": "840cad1b8c897f85",
@@ -86,7 +85,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Fac/Les bases en C++.md",
+                "file": "Fac/Maths/Algèbre élémentaire - Equations trigonométrique.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -103,7 +102,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Fac/Les bases en C++.md",
+                "file": "Fac/Maths/Algèbre élémentaire - Equations trigonométrique.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -126,7 +125,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Fac/Les bases en C++.md"
+                "file": "Fac/Maths/Algèbre élémentaire - Equations trigonométrique.md"
               }
             }
           },
@@ -157,10 +156,12 @@
       "command-palette:Ouvrir la palette de commandes": false
     }
   },
-  "active": "efdfb0bb40673fb2",
+  "active": "ec6d76ef25d96001",
   "lastOpenFiles": [
-    "code/algo-p1/ex1.out",
+    "Fac/Maths/Algèbre élémentaire - Trigonométrie.md",
+    "Fac/Maths/Algèbre élémentaire - Equations trigonométrique.md",
     "Fac/Les bases en C++.md",
+    "code/algo-p1/ex1.out",
     "Fac/Les bases du terminal sous macOs, Linux et Windows.md",
     "Fac/Base-Info/Base de l'informatique.md",
     "\".md",
