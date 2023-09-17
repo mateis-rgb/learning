@@ -407,11 +407,26 @@ switch (x) {
 
 ```
 *Un bloc de case se compose par la condition a côté du mot clé case, a savoir que ce que l'on va mettre a coté est une égalité stricte. Et à la fin de nos case il faut mettre break, sinon le programme va continuer de passer dans les cases. De plus on peut mettre un default, qui veut dire que si aucune valeur n'est entré dans les cases alors on passe dans le default*.
+
+
 ## Les fonctions
 
-Les fonctions ont aussi des types, ils sont liés a valeur de retour de la fonction, si les valeurs de retour ont différent ont utilise le mot clé `void`. Les fonctions peuvent aussi avoir des paramètres, ce sont des comme des variables, ainsi il faut leurs mettre un type et potentiellement une valeur par défaut, par convention il faut mettre les paramètre de la fonction sans valeurs par défaut sont avant celle qui en ont. Voici la syntaxe d'une fonction :
+Une fonction est un morceau de code indépendant du programme principale et qui est lancé uniquement lorsqu'on l'appelle, on peux envoyer des données dans cette fonction, c'est ce qu'on appel des arguments ou des paramètres. Les fonctions sont principalement utiliser pour éviter la répétition du code, en effet, si une action est faite plusieurs fois a plusieurs endroits différents, il est plus judicieux de faire une fonction.
+
+Les fonctions ont aussi des types, ils sont liés a la valeur de retour de la fonction, pour cela on utilise la mot clé `return` à la fin de la fonction, il est a noter qu'une fois le `return` la fonction s’arrête et donc le code qui se trouve après ne sera pas exécuté. Si les valeurs de retour sont différentes ont utilise le mot clé `void`. Les fonctions peuvent aussi avoir des paramètres, ce sont des comme des variables, ainsi il faut leurs mettre un type et potentiellement une valeur par défaut, par convention les paramètre de la fonction qui sont sans valeurs par défaut sont avant ceux qui en ont. 
+
+Voici la syntaxe d'une fonction :
 
 ```cpp
+<type> <nom> (<arguments>)
+{
+	// code
+}
+```
+
+Ensuite pour appeler cette fonction il suffit de mettre son nom et des parenthèses, s'il y a des arguments à passer il faut juste mettre les valeurs à la suite avec des virgules pour les séparer.
+
+``` cpp
 int addition (int a, int b = 3)
 {
 	return a + b;
@@ -426,18 +441,268 @@ void toto ()
 	return 1;
 }
 
-void proc ()
-{
-	
+int main () {
+	cout << addition(3, 5) << endl;
+	cout << toto() << endl;
+
+	return 0;
 }
+
+// Sortie : 13 \n 1
 ```
-*On appel les fonctions qui ne retourne rien des procédures.*
 
+Il faut néanmoins faire la distinction entre définition et déclaration de la fonction :
+* La déclaration : l'instruction qui se trouve en entête de la fonction, le type, le nom, les éventuels paramètres.
+* La définition : le corps de la fonction, c'est toutes les instruction qui vont être exécutées.
+Ainsi il est tout a fait possible de déclarer une fonction sans la définir :
 
+```cpp
+int addition (int a, int b);
 
+int main() {
+	cout << addition (5, 4) << endl;
+	
+	return 0;
+}
 
-## Les boucles
+int addition (a, b) {
+	return a + b;
+}
+
+// Sortie : 9
+```
+
 
 ## Les tableaux
 
+Les tableaux sont une structure de donnée qui permettent de stocker plusieurs valeurs de même type dans une variable.
+
+La syntaxe est telle :
+```cpp
+<type> <nom>[<nb d element du tableau>] = {<valeur1>, <valeur2>, <...>};
+```
+*Il est recommander de mettre le nombre d'élément du tableau, mais ce n'est pas une obligation*.
+
+Par exemple, on souhaite ranger dans une variable `chiffres` la liste des entiers de 0 à 9 :
+
+```cpp
+int chiffres[10] = {0, 1, 2, 3, 4, 5, 6, 7, 8, 9};
+```
+
+Les tableaux sont des structures qui peuvent se parcourir et où l'on peut modifier un élément à partir de son indice. Par exemple sur notre liste de chiffre, on veut récupérer l'élément d'indice 3, et ensuite le modifier pour mettre 20 à la place :
+
+```cpp
+int chiffres[10] = {0, 1, 2, 3, 4, 5, 6, 7, 8, 9};
+
+cout << chiffres[4] << endl;
+
+chiffres[4] = 20;
+
+cout << chiffres << endl;
+
+// Sortie 3 \n {0, 1, 2, 20, 4, 5, 6, 7, 8, 9}
+```
+
+ATTENTION  ⚠️ : Lorsque l'on effectue un parcours, il faut compter les éléments en indice, donc en partant de 0. C'est ainsi que le dernier élément d'un tableau de 10 éléments à pour indice 9.
+
+## Les boucles
+
+Les boucles sont des instructions qui permettent de répéter un morceau de code sous une ou plusieurs conditions, il existe 4 types de boucles :
+* Les boucles While
+* Les boucles Do/While
+* Les boucles For
+* Le parcours d'une variable avec Foreach
+
+Les boucles While permettent une exécution du code entre accolades tant que la condition est vrai, voici sa syntaxe :
+
+```cpp
+while (<condition>) {
+	// code
+}
+```
+
+Il est a noté que ces boucles peuvent être dangereuse si les conditions sont mal faites, il faut toujours mettre un changement de variable dans la boucle pour que la condition d'actualise :
+
+```cpp
+int k = 0;
+
+while (k < 5) {
+	cout << k << endl;
+	
+	k++;
+} 
+
+// Sortie : 0 \n 1 \n 2 \n 3 \n 4
+```
+*Ici, la variable k s'incrémente à chaque passage dans la boucle donc la condition `k < 5` sera fausse à un moment*.
+
+Il existe une variante de la boucle `while` c'est la boucle `do/while`, celle ci exécute une fois le code avant de passer dans la condition :
+
+```cpp
+do {
+	// code
+}
+while (<condition>);
+```
+
+Voici le même exemple que celui au dessus :
+
+```cpp
+int k = 0;
+
+do {
+	cout << k << endl;
+
+	k++;
+}
+while (k < 5);
+
+// Sortie : 0 \n 1 \n 2 \n 3 \n 4
+```
+
+Remarque : Ces boucles sont vraiment utilisé lorsqu'il faut demander à un utilisateur une information et que l'on réitère la question si la réponse n'est pas correct, voici un exemple :
+
+```cpp
+int reponse;
+
+do {
+	cout << "Entrez un chiffre entre 0 et 9 : ";
+	cin >> reponse;
+}
+while (reponse < 0 || reponse > 9); 
+```
+
+Remarque : On dit que les boucles `while` et `do/while` sont des boucles non bornées.
+
+La boucle `for` quant à elle est dite bornée car on pose dès la déclaration de la boucle le nombre de fois quelle sera exécutée, voici sa syntaxe :
+
+```cpp
+for (<etat1>; <etat2>; <etat3>) {
+	// code
+}
+```
+
+On distingue 3 état dans la déclaration de la boucle `for`:
+- État 1, qui est exécuté une fois avant le début du code, il sert à initialiser une variable qui permettra de mettre à jour la condition.
+- État 2, qui est de la même manière que pour la boucle `while`, la condition de la boucle.
+- État 3, qui est exécuté à chaque fois que la boucle à fini, il sert généralement à incrémenter ou a décrémenter la variable initialisé dans l'état 1.
+
+Voici un exemple :
+
+```cpp
+for (int k = 0; k < 5; k++) {
+	cout << k << endl;
+} 
+
+// Sortie : 0 \n 1 \n 2 \n 3 \n 4
+```
+
+Remarque : Il est tout à fait possible de mettre des boucles dans des boucles, nous verrons ça lorsque nous verrons les matrices.
+
+Et le dernier type de boucle est utilisé pour le parcours de tableau ou de structure itérables. Pour les boucles `for-each`, on définit une variable de même type que le tableau et on fait un parcours pour chaque élément :
+
+```cpp
+for (<type> <variable> : <tableau du même type que la variable>) {
+	// code
+}
+```
+
+Voici un exemple avec un tableau contenant des entiers de 1 à 5 :
+
+```cpp
+int chiffres[5] = {1, 2, 3, 4, 5};
+
+for (int chiffre : chiffres) {
+	cout << chiffre << endl;
+}
+
+// Sortie : 1 \n 2 \n 3 \n 4 \n 5
+```
+
+
 ## Les chaînes de caractères
+
+Il y a deux façons de construire une chaine de caractère en C++, ici nous ne verrons que la méthode qui est de passer par une bibliothèque qui gère le type et des méthodes concernant les chaînes de caractères.
+
+Tout d'abord il faut importer la bibliothèque `<string>` :
+
+```cpp
+#include <string>
+```
+
+ATTENTION  ⚠️ : Si le `using namespace std` n'est pas mit dans le programme alors il faudra mettre devant chaque instruction qui contient les mots clé de la bibliothèque `std::`.
+
+Ensuite on peut déclarer une variable :
+
+```cpp
+string mot = "hello";
+```
+
+Il est tout a fait possible de faire la concaténation de chaîne de caractères avec des variables :
+
+```cpp
+string prenom = "John";
+string nom = "Doe";
+string nomComplet = prenom + " " + nom;
+
+cout << nomComplet << endl;
+
+// Sortie : John Doe
+```
+
+Il existe aussi la méthode `append()` qui existe pour faire de la concaténation :
+
+```cpp
+string prenom = "John ";
+string nom = "Doe";
+string nomComplet = prenom.append(nom);
+
+cout << nomComplet << endl;
+
+// Sortie : John Doe
+```
+
+ATTENTION  ⚠️ : La concaténation d'entiers dans des chaînes de caractères resterons des chaînes de caractères, voici un exemple :
+
+```cpp
+int x = 1;
+int y = 2;
+
+cout << x + y << endl;
+
+// Sortie : 3
+
+
+string a = "5";
+string b = "4";
+
+cout << a + b << endl;
+
+// Sortie : 54
+```
+
+
+Par ailleurs, on peut utiliser la méthode `length()` pour avoir la longueur d'une chaîne de caractères :
+
+```cpp
+string mot = "coucou";
+
+cout << mot.lenght() << endl;
+
+// Sortie : 6
+```
+
+Remarque : La méthode `size()` existe aussi, il s'agit d'un alias de la méthode `length()`.
+
+Les chaînes de caractères aussi sont des structures itérables, on peut donc les parcourir pour obtenir un caractère.
+
+ATTENTION ⚠️ : Lorsque l'ont fait le parcours d'une chaîne de caractère, un caractère de celle ci n'est plus de type `string` mais de type `char`, voici un exemple :
+
+```cpp
+string mot = "coucou";
+char lettre = mot[4];
+
+cout << lettre << endl;
+
+// Sortie : o
+```

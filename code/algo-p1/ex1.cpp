@@ -194,8 +194,33 @@ int exo2_6 () {
     return 0;
 }
 
+int exo2_8 () {
+    int annee;
+
+    cout << "Entrez une année : ";
+    cin >> annee;
+
+    if (annee > 1582 && ((annee % 4) == 0 && (annee % 100) != 0) && (annee % 400 == 0)) {
+        cout << annee << " est bissextile." << endl;
+ 
+        return 0;
+    }
+
+    cout << annee << "n'est pas bissextile." << endl;
+
+    return 0;
+}
+
+int factoriel (int n) {
+    if (n == 0 || n == 1) {
+        return 1;
+    }
+
+    return n * factoriel(n - 1);
+}
+
 int main () {
-    exo2_6();
+    cout << factoriel(3) << endl;
 
     return 0;
 }
