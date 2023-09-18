@@ -83,7 +83,6 @@ int tp2_5() {
     delta = b*b - 4*a*c;
 
     if (delta < 0) {
-		// complexe<double> <var>(<partie réel>, <partie entière>)
         complex<double> x1((-b / (2*a)), (sqrt(-delta) / (2 * a)));
 		complex<double> x2((-b / (2*a)), (-sqrt(-delta) / (2 * a)));
 
@@ -138,8 +137,48 @@ int tp2_7 () {
 	return 0;
 }
 
+int tp3_2 () {
+	int n;
+
+	cout << "Entrez un nombre dont vous voulez avoir la table de multiplication : ";
+	cin >> n;
+
+	for (int k = 0; k <= 10; k++) {
+		cout << k << " x " << n << " = " <<  k*n << endl;
+	}
+
+	return 0;
+}
+
+int tp3_4 () {
+	int notes[] = {};
+	int currentNote, tailleTableau, moyenne, min, max;
+
+	do {
+		cout << "Entrez une note entre 0 et 20 : ";
+		cin >> currentNote;
+
+		if (currentNote <= 20 && currentNote >= 0) {
+			tailleTableau = sizeof(notes) / sizeof(int);
+
+			if (currentNote < min) {
+				min = currentNote;
+			}
+			else if (currentNote > max) {
+				max = currentNote;
+			}
+
+			notes[tailleTableau] = currentNote;
+		}
+	}
+	while (currentNote == -1);
+
+
+}
+
+
 int main () {
-	tp2_7();
+	tp3_2();
 
 	return 0;
 }
