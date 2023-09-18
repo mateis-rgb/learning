@@ -219,8 +219,32 @@ int factoriel (int n) {
     return n * factoriel(n - 1);
 }
 
+int FactorielOptimiser (int n) {
+    return (n == 0 || n == 1) ? n * FactorielOptimiser(n - 1) : 1;
+}
+
+
+int max () {
+    int x, max;
+
+    do {
+        cout << "Entrez une valeur supérieur à 0 : ";
+        cin >> x;
+
+        if (x > max) {
+            max = x;
+        }
+    }
+    while (x > 0);
+
+    cout << "Le maximum est " << max << endl;
+
+    return 0;
+}
+
+
 int main () {
-    cout << factoriel(3) << endl;
+
 
     return 0;
 }
