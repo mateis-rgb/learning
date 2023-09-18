@@ -3,11 +3,21 @@ Le C++ est un langage de programmation : il sert donc à écrire des application
 
 
 ## Table des matières
+- **[I - Importation des modules](#modules)**
+- **[II - La fonction `main()`](#main)**
+- **[III - Les variables](#variables)**
+- **[IV - La structure d'un programme](#structure)**
+- **[V - La compilation et l'exécution d'un programme](#compile)**
+- **[VI - Les entrées et sorties](#inputs)**
+- **[VII - Les opérateurs & opérateurs logiques](#operateurs)**
+- **[VIII - Les instructions conditionnelles](#conditions)**
+- **[IX - Les fonctions](#functions)**
+- **[X - Les tableaux](#array)**
+- **[XI - Les boucles](#loops)**
+- **[XII - Les chaînes de caractères](#strings)**
 
 
-
-
-## Importations de modules
+<h2 id="modules">I - Importation des modules</h2>
 
 Un module est constitué d'un ou plusieurs fichiers de code source compilés dans un fichier binaire. Le fichier binaire décrit tous les types, fonctions et modèles exportés dans le module. Lorsqu'un fichier source importe un module, le compilateur lit le fichier binaire qui contient le contenu du module.
 
@@ -24,7 +34,7 @@ Ainsi, à la base de tout les programme il y a l'instruction suivante :
 ```
 
 
-## La fonction `main()`
+<h2 id="main">II - La fonction `main()`</h2>
 
 La fonction `main()` est l'endroit où votre code source commence l'exécution. Il est a noté que si aucune instruction est noté dans la fonction `main()` mais a l’exterieur de cette fonction, alors rien ne s’exécuteras.
 
@@ -44,8 +54,7 @@ Il est important de mettre l'instruction `return 0;` car sinon le programme ne s
 ATTENTION ⚠️ : Il est important de mettre le point virgule `;` a la fin de chaque instruction pour signifier la fin de la ligne.
 
 
-## Les variables
-
+<h2 id="variables">III - Les variables</h2>
 Les variables servent à stocker des informations, de par leurs types et leurs valeurs. On définit une variable de la manière suivante :
 ``` cpp
 int x = 3;
@@ -67,7 +76,7 @@ ATTENTION ⚠️ : Il faut absolument typer les variables et pour cela il existe
 ```cpp
 int // entier
 float // nombre a virgule
-double // nombre a vrigule (plus grand ou égale en taille que le float)
+double // nombre a vrigule (plus grand taille en mémoire que le float)
 char // caractère
 bool // booléen (vrai ou faux)
 
@@ -127,8 +136,8 @@ x--; // x = x - 1;
 ```
 *ATTENTION ⚠️ : L'ordre est important*.
 
-## La structure d'un programme
 
+<h2 id="structure">IV - La structure d'un programme</h2>
 Pour qu'un programme fonctionne, il faut qu'il y ait un minimum d'élément dans le fichier `.cpp` pour ça on va commencer par importer la librairie standard :
 
 ```cpp
@@ -171,8 +180,7 @@ int main ()
 Il faut au minimum écrire ça pour que le programme soit compilé et exécuté (cf. partie sur la compilation et l'exécution ci-dessous).
 
 
-## La compilation et l'exécution
-
+<h2 id="compile">V - La compilation et l'exécution d'un programme</h2>
 Une fois le programme fait, il faut l'enregistrer, soit en faisant `fichier -> enregistrer` soit avec un raccourcis `cmd + s` sous macOs, `ctrl + s` sous Windows et Linux, ou voir selon l'éditeur. Pour l'enregistrer, il vous faudra lui donner un nom suivit de l'extension `.cpp`, si cette extension manque, ça ne fonctionneras pas. 
 
 ATTENTION ⚠️ : sur certains éditeurs un type de fichier est présélectionné, faites donc attention à choisir ou bien l'extension que vous souhaitez ou bien a choisir "tout les fichiers" et a noter a la fin `.cpp`.
@@ -223,8 +231,7 @@ Sous Windows, il faut lancer la commande suivante :
 Et lorsque la commande est lancer le programme se lance.
 
 
-## Les entrées et sorties
-
+<h2 id="inputs">VI - Les entrées et sorties</h2>
 En C++ comme dans d'autres langages il est possible à l'utilisateur de communiquer avec le programme par ces périphériques d'entrée (clavier, souris, etc) et de sortie (écran).
 
 Ici nous ne verrons que les entrées de l'utilisateur au clavier et en sortie les messages dans le terminal.
@@ -276,8 +283,7 @@ cout << "Ce sont deux variables qui ont été remplies " << toto << " et " << de
 ```
 
 
-## Les opérateurs & opérateurs logiques
-
+<h2 id="operateurs">VII - Les opérateurs & opérateurs logiques</h2>
 En informatique, l'ordinateur ne comprend que des 0 et des 1, comme l’électricité qui n'a que deux états ouvert (0) ou fermé (1). Le C++ comme dans d'autres langages contient des opérateurs (ou comparateurs) et des opérateurs logiques :
 
 Tout d'abord commençons par les opérateurs, ceux ci servent à faire des comparaisons entre des valeurs ou des variables : 
@@ -333,8 +339,7 @@ cout << !true << endl;
 ```
 
 
-## Les instructions conditionnels
-
+<h2 id="conditions">VIII - Les instructions conditionnels</h2>
 Les instructions conditionnels sont des conditions et si la condition est vrai alors on effectue des instructions sinon on en effectuera d'autres.
 
 Voici la syntaxe :
@@ -409,8 +414,7 @@ switch (x) {
 *Un bloc de case se compose par la condition a côté du mot clé case, a savoir que ce que l'on va mettre a coté est une égalité stricte. Et à la fin de nos case il faut mettre break, sinon le programme va continuer de passer dans les cases. De plus on peut mettre un default, qui veut dire que si aucune valeur n'est entré dans les cases alors on passe dans le default*.
 
 
-## Les fonctions
-
+<h2 id="functions">IX - Les fonctions</h2>
 Une fonction est un morceau de code indépendant du programme principale et qui est lancé uniquement lorsqu'on l'appelle, on peux envoyer des données dans cette fonction, c'est ce qu'on appel des arguments ou des paramètres. Les fonctions sont principalement utiliser pour éviter la répétition du code, en effet, si une action est faite plusieurs fois a plusieurs endroits différents, il est plus judicieux de faire une fonction.
 
 Les fonctions ont aussi des types, ils sont liés a la valeur de retour de la fonction, pour cela on utilise la mot clé `return` à la fin de la fonction, il est a noter qu'une fois le `return` la fonction s’arrête et donc le code qui se trouve après ne sera pas exécuté. Si les valeurs de retour sont différentes ont utilise le mot clé `void`. Les fonctions peuvent aussi avoir des paramètres, ce sont des comme des variables, ainsi il faut leurs mettre un type et potentiellement une valeur par défaut, par convention les paramètre de la fonction qui sont sans valeurs par défaut sont avant ceux qui en ont. 
@@ -473,8 +477,7 @@ int addition (a, b) {
 ```
 
 
-## Les tableaux
-
+<h2 id="array">X - Les tableaux</h2>
 Les tableaux sont une structure de donnée qui permettent de stocker plusieurs valeurs de même type dans une variable.
 
 La syntaxe est telle :
@@ -505,8 +508,8 @@ cout << chiffres << endl;
 
 ATTENTION  ⚠️ : Lorsque l'on effectue un parcours, il faut compter les éléments en indice, donc en partant de 0. C'est ainsi que le dernier élément d'un tableau de 10 éléments à pour indice 9.
 
-## Les boucles
 
+<h2 id="loops">XI - Les boucles</h2>
 Les boucles sont des instructions qui permettent de répéter un morceau de code sous une ou plusieurs conditions, il existe 4 types de boucles :
 * Les boucles While
 * Les boucles Do/While
@@ -620,8 +623,7 @@ for (int chiffre : chiffres) {
 ```
 
 
-## Les chaînes de caractères
-
+<h2 id="strings">XII - Les chaînes de caractères</h2>
 Il y a deux façons de construire une chaine de caractère en C++, ici nous ne verrons que la méthode qui est de passer par une bibliothèque qui gère le type et des méthodes concernant les chaînes de caractères.
 
 Tout d'abord il faut importer la bibliothèque `<string>` :

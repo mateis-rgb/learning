@@ -242,9 +242,19 @@ int max () {
     return 0;
 }
 
+int SuitesNumeriques () {
+    int s1 = 0, s2 = 0, s3 = 1;
+    
+    while (s1 < 100 || s1 > -100) {
+        cout << s1 << " ";
+        s1 = -(s1 + 2);
+    }
+
+    return 0;
+}
 
 int main () {
-
+    SuitesNumeriques();
 
     return 0;
 }
