@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Fac/Maths/Algèbre élémentaire - Equations trigonométrique.md",
+                "file": "Fac/Les bases en C++.md",
                 "mode": "source",
                 "source": false
               }
@@ -85,7 +85,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Fac/Maths/Algèbre élémentaire - Equations trigonométrique.md",
+                "file": "Fac/Les bases en C++.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -102,7 +102,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Fac/Maths/Algèbre élémentaire - Equations trigonométrique.md",
+                "file": "Fac/Les bases en C++.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -125,7 +125,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Fac/Maths/Algèbre élémentaire - Equations trigonométrique.md"
+                "file": "Fac/Les bases en C++.md"
               }
             }
           },
@@ -158,8 +158,8 @@
   },
   "active": "ec6d76ef25d96001",
   "lastOpenFiles": [
-    "Fac/Maths/Algèbre élémentaire - Trigonométrie.md",
     "Fac/Maths/Algèbre élémentaire - Equations trigonométrique.md",
+    "Fac/Maths/Algèbre élémentaire - Trigonométrie.md",
     "Fac/Les bases en C++.md",
     "code/algo-p1/ex1.out",
     "Fac/Les bases du terminal sous macOs, Linux et Windows.md",

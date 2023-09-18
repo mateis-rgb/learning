@@ -103,6 +103,7 @@ int tp2_5() {
     return 0;
 }
 
+/*
 int tp2_7 () {
 	int a, b, rep;
 	char* op;
@@ -136,6 +137,7 @@ int tp2_7 () {
 
 	return 0;
 }
+*/
 
 int tp3_2 () {
 	int n;
@@ -144,7 +146,7 @@ int tp3_2 () {
 	cin >> n;
 
 	for (int k = 0; k <= 10; k++) {
-		cout << k << " x " << n << " = " <<  k*n << endl;
+		cout << k << " x " << n << " = " << k * n << endl;
 	}
 
 	return 0;
@@ -169,16 +171,23 @@ int tp3_4 () {
 			}
 
 			notes[tailleTableau] = currentNote;
+			moyenne += currentNote;
 		}
 	}
 	while (currentNote == -1);
 
+	moyenne = moyenne / tailleTableau;
 
+	cout << "La moyenne des notes saisie est de " << moyenne << endl;
+	cout << "La note minimum est de " << min << endl;
+	cout << "La note maximum est de " << max << endl;
+
+	return 0;
 }
 
 
 int main () {
-	tp3_2();
+	tp3_4();
 
 	return 0;
 }
