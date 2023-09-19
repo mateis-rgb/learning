@@ -243,12 +243,60 @@ int max () {
 }
 
 int SuitesNumeriques () {
-    int s1 = 0, s2 = 0, s3 = 1;
+    int n;
+    int s1 = 0, s2 = 0, s3 = 1, s4 = 1, s5 = 1;
     
-    while (s1 < 100 || s1 > -100) {
+    cout << "Jusqu'a quelle valeur voulez vous que la suite aille : ";
+    cin >> n;
+
+    while (s1 < n) {
         cout << s1 << " ";
-        s1 = -(s1 + 2);
+
+        if (s1 >= 0) {
+            s1 = -(s1+2);
+        }
+        else {
+            s1 = (-s1) + 2;
+        }
     }
+
+    cout << endl;
+
+    for (int k = 0; s2 < n; k++) {
+        s2 += k;
+        cout << s2 << " ";
+    }
+
+    cout << endl;
+
+    for (int k = 0; s3 < n; k++) {
+        cout << s3 << " ";
+        s3 = s3 * 2;
+    }
+
+    cout << endl;
+
+    for (int k = 0; k < n; k++) {
+        cout << s4 << " ";
+        s4 = s4 == 5 ? 1 : s4 + 1;
+    }
+
+    cout << endl;
+
+    int max;
+
+    for (int k = 0; k < n; k++) {
+        cout << s5 << " ";
+        
+        s5 += 1;
+
+        if (s5 > max) {
+            max = s5;
+            s5 = 1;
+        }
+    }
+
+    cout << endl;
 
     return 0;
 }
