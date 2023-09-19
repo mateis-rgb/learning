@@ -249,6 +249,7 @@ int SuitesNumeriques () {
     cout << "Jusqu'a quelle valeur voulez vous que la suite aille : ";
     cin >> n;
 
+    // 1.
     while (s1 < n) {
         cout << s1 << " ";
 
@@ -262,6 +263,7 @@ int SuitesNumeriques () {
 
     cout << endl;
 
+    // 2.
     for (int k = 0; s2 < n; k++) {
         s2 += k;
         cout << s2 << " ";
@@ -269,6 +271,7 @@ int SuitesNumeriques () {
 
     cout << endl;
 
+    // 3.
     for (int k = 0; s3 < n; k++) {
         cout << s3 << " ";
         s3 = s3 * 2;
@@ -276,6 +279,7 @@ int SuitesNumeriques () {
 
     cout << endl;
 
+    // 4.
     for (int k = 0; k < n; k++) {
         cout << s4 << " ";
         s4 = s4 == 5 ? 1 : s4 + 1;
@@ -285,10 +289,11 @@ int SuitesNumeriques () {
 
     int max;
 
+    // 5.
     for (int k = 0; k < n; k++) {
         cout << s5 << " ";
         
-        s5 += 1;
+        s5++;
 
         if (s5 > max) {
             max = s5;
