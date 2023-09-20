@@ -2,6 +2,7 @@
 #include <math.h>
 #include <complex>
 
+
 using namespace std;
 
 int tp1_4 () {
@@ -140,12 +141,12 @@ int tp2_7 () {
 */
 
 int tp3_2 () {
-	int n;
+	int n, rep;
 
-	cout << "Entrez un nombre dont vous voulez avoir la table de multiplication : ";
-	cin >> n;
+	cout << "Entrez un nombre dont vous voulez avoir la table de multiplication ainsi que le nombre de multiplication que vous voulez : " << endl;
+	cin >> n >> rep;
 
-	for (int k = 0; k <= 10; k++) {
+	for (int k = 0; k <= rep; k++) {
 		cout << k << " x " << n << " = " << k * n << endl;
 	}
 
@@ -153,30 +154,28 @@ int tp3_2 () {
 }
 
 int tp3_4 () {
-	int notes[] = {};
-	int currentNote, tailleTableau, moyenne, min, max;
+	int taille;
+	float currentNote, moyenne, min, max;
 
 	do {
 		cout << "Entrez une note entre 0 et 20 : ";
 		cin >> currentNote;
 
 		if (currentNote <= 20 && currentNote >= 0) {
-			tailleTableau = sizeof(notes) / sizeof(int);
-
 			if (currentNote < min) {
 				min = currentNote;
 			}
 			else if (currentNote > max) {
 				max = currentNote;
 			}
-
-			notes[tailleTableau] = currentNote;
+			
 			moyenne += currentNote;
+			taille++;
 		}
 	}
 	while (currentNote == -1);
 
-	moyenne = moyenne / tailleTableau;
+	moyenne = moyenne / taille;
 
 	cout << "La moyenne des notes saisie est de " << moyenne << endl;
 	cout << "La note minimum est de " << min << endl;
@@ -208,15 +207,16 @@ int tp3_5 () {
 	return 0;
 }
 
-int tp3_6 () {
-	
+int tp3_7() {
+	for (int k = 100; k <= 999; k++) {
+		
+	}
 
 	return 0;
 }
 
-
 int main () {
-	tp3_5();
+	tp3_7();
 
 	return 0;
 }
