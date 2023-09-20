@@ -1,7 +1,7 @@
 #include <iostream>
 #include <math.h>
 #include <complex>
-
+#include <string>
 
 using namespace std;
 
@@ -202,14 +202,26 @@ int tp3_5 () {
 		cout << "*!";
 	}
 
-	cout << "*" << endl;
+	if (n%2 == 0) {
+		cout << endl;
+	}
+	else {
+		cout << "*" << endl;
+	}
 
 	return 0;
 }
 
 int tp3_7() {
 	for (int k = 100; k <= 999; k++) {
-		
+		string chaine = to_string(k);
+		int a = chaine[0], b = chaine[1], c = chaine[2];
+
+		if (a != b != c) {
+			if ((a + b + c) == 9) {
+				cout << k << endl;
+			}
+		}
 	}
 
 	return 0;
