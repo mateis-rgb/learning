@@ -208,6 +208,12 @@ int tp3_5 () {
 	return 0;
 }
 
+int tp3_6 () {
+	
+
+	return 0;
+}
+
 
 int main () {
 	tp3_5();
