@@ -185,9 +185,32 @@ int tp3_4 () {
 	return 0;
 }
 
+int tp3_5 () {
+	int n;
+
+	cout << "Entrez un nombre n : ";
+	cin >> n;
+
+	for (int k = 0; k < n; k++)
+	{
+		cout << "*";
+	}
+
+	cout << endl;
+
+	for (int k = 0; k < n/2; k++)
+	{
+		cout << "*!";
+	}
+
+	cout << "*" << endl;
+
+	return 0;
+}
+
 
 int main () {
-	tp3_4();
+	tp3_5();
 
 	return 0;
 }
