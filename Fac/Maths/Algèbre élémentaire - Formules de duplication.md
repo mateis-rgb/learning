@@ -9,13 +9,9 @@ $
 $sin(2x)=2sin(x)cos(x)$
 
 Preuve : **$cos(2x)$**
-$
-=cos(x+x) \\
+$=cos(x+x)$ **$\iff cos(\alpha+\beta)$**
+$ \\
 =cos(x)cos(x)-sin(x)sin(x)\\
-\uparrow \\
-cos(\alpha + \beta) \\
-$
-$
 =cos^{2}(x)-sin^{2}(x) \\
 =cos^{2}(x)-(1-cos^{2}(x)) \\
 =2cos^{2}(x)-1 \\
@@ -24,8 +20,8 @@ $
 $
 
 **$sin(2x)$**
-$
-=sin(x+x) \\
+$=sin(x+x)$ **$\iff sin(\alpha+\beta)$**
+$ \\
 =sin(x)cos(x)+sin(x)cos(x) \\
 =2sin(x)cos(x)
 $
