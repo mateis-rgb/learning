@@ -1,5 +1,6 @@
 #include <iostream>
 #include <math.h>
+#include <array>
 
 using namespace std;
 
@@ -306,8 +307,13 @@ int SuitesNumeriques () {
     return 0;
 }
 
+int exo4_1 () {
+    const int tailleTableau = 10;
+    array<int, tailleTableau> tableau;
+}
+
 int main () {
-    SuitesNumeriques();
+    exo4_1();
 
     return 0;
 }
