@@ -310,10 +310,35 @@ int SuitesNumeriques () {
 int exo4_1 () {
     const int tailleTableau = 10;
     array<int, tailleTableau> tableau;
+
+    return 0;
+}
+
+bool rechercheElement (int x, array<int, 255> tableau) 
+{
+    bool found = false;
+
+    // while (!found) {
+    //     tableau[]
+    // }
+
+    return false;
 }
 
 int main () {
-    exo4_1();
+    array<int, 255> tableau = {0, 1, 2, 3};
+
+    cout << rechercheElement(4, tableau);
+
+    bool toto = false;
+
+    do 
+    {
+        cout << "coucou";
+    }
+    while (toto == false);
+
+
 
     return 0;
 }
