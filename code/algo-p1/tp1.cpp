@@ -2,6 +2,7 @@
 #include <math.h>
 #include <complex>
 #include <string>
+#include <array>
 
 using namespace std;
 
@@ -227,8 +228,40 @@ int tp3_7() {
 	return 0;
 }
 
+int tp4_4 () {
+	// On définit les variables du programme
+	const int taille = 10;
+	float temp, ref, proche, distance;
+	array<float, taille> tableau = {};
+
+	// 
+	for (int k = 0; k < taille; k++) {
+		cout << "Entrez un nombre réel ("<< k+1 <<"/"<< taille <<") : ";
+		cin >> temp;
+
+		tableau[k] = temp;
+	}
+
+	cout << "Entrez un nombre réel qui sera dit référence : ";
+	cin >> ref;
+	
+	proche = tableau[0];
+	distance = abs(tableau[0] - ref);
+
+	for (int k = 0; k < taille; k++) {
+		if (abs(tableau[k] - ref) < distance) {
+			proche = tableau[k];
+			distance = abs(tableau[k] - ref);
+		}
+	}
+
+	cout << "L'élément le plus proche de la référence ("<< ref <<") est : " << proche << endl;
+
+	return 0;
+}
+
 int main () {
-	tp3_7();
+	tp4_4();
 
 	return 0;
 }
