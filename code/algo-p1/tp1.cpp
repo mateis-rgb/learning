@@ -260,10 +260,35 @@ int tp4_4 () {
 	return 0;
 }
 
+int tp4_5 () {
+	int temp;
+	
+	const int tailleNotes = 21;
+	array<int, tailleNotes> notes = {};
 
+	do {
+		cout << "Entrez une note entre 0 et 20 sur IN : ";
+		cin >> temp;
+
+		notes[temp]++;
+	}
+	while (temp >= 0 && temp <= 20);
+
+	for (int k = 0; k < tailleNotes; k++) {
+		cout << k << " : ";
+
+		for (int i = 0; i < notes[k]; i++) {
+			cout << "* ";
+		}
+
+		cout << endl;
+	}
+
+	return 0;
+}
 
 int main () {
-	tp4_4();
+	tp4_5();
 
 	return 0;
 }
