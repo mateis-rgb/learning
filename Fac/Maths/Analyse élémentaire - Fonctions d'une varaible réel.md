@@ -62,4 +62,23 @@ Définition :
 		Donc : $\iff\mid x+y\mid \leqslant\mid x\mid + \mid y\mid$
 
 	- Racine Carré:
-	
+		$\sqrt\cdot: [0; +\infty[\rightarrow\mathbb{R}$
+		$x \mapsto\sqrt x$
+		avec $\sqrt{x^{2}} = \mid x\mid$ et $\sqrt{x}^{2} = x$
+	- Exponentielle
+	- Logarithme néperien
+	- $sin$, $cos$, ...
+
+Definition: Graph d'une fonction
+On appelle le graph d'une fonction $X\subset\mathbb{R}\rightarrow Y\subset\mathbb{R}$ le sous-ensemble de $\mathbb{R}\times\mathbb{R}$ forme des couples $\{x, f(x)\}\in X, Y$
+
+Définition: Injéctivité - Surjéctivité
+Une fonction $f: X \rightarrow Y$ est dite :
+- Injective si:
+$\forall x_{1}, x_{2} \in X$, $f(x_{1}) = f(x_{2})$
+$\iff$ $x_{1} = x_{2}$
+
+- Surjective si :
+$\forall y\in Y, \exists x\in X$ tel que $f(x) = y$
+
+- Bijective  si elle est injective **et** surjective.
