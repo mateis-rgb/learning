@@ -287,8 +287,47 @@ int tp4_5 () {
 	return 0;
 }
 
+int tp_matrices () 
+{
+	const int nlignes = 255, ncolones = 255;
+	using ligne = array<int, ncolones>;
+	using matrice = array<ligne, nlignes>;
+
+	matrice M;
+
+	M[0][1];
+
+	return 0;
+}
+
+int tp_max() {
+	bool result = 0;
+	string mot = "";
+    cout << "quel est votre mot : ";
+    getline(cin, mot);
+    int taille_string = mot.length();
+
+    for (int i = 0; i < taille_string; ++i) {
+        for(int j = taille_string - 1; j >= 0; j--) {
+			if (mot[i] == mot[j]) {
+                result = 1;
+            } else {
+                result = 0;
+            }
+        }
+    }
+
+	if (result) {
+		cout << "Votre mot est un palindrome" << endl;
+	} else {
+		cout << "Votre mot n'est pas un palindrome" << endl;
+	}
+
+	return 0;
+}
+
 int main () {
-	tp4_5();
+	tp_max();
 
 	return 0;
 }
