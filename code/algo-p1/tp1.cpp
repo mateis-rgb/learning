@@ -300,11 +300,8 @@ int tp_matrices ()
 	return 0;
 }
 
-int tp_max() {
+bool palindrome(string mot) {
 	bool result = 0;
-	string mot = "";
-    cout << "quel est votre mot : ";
-    getline(cin, mot);
     int taille_string = mot.length();
 
     for (int i = 0; i < taille_string; ++i) {
@@ -317,17 +314,55 @@ int tp_max() {
         }
     }
 
-	if (result) {
-		cout << "Votre mot est un palindrome" << endl;
-	} else {
-		cout << "Votre mot n'est pas un palindrome" << endl;
+	return result;
+}
+
+bool anagrame (string mot1, string mot2) {
+	return mot1.length() != mot2.length() && false;
+	
+	array<char, 255> chars_mot1;
+	array<char, 255> chars_mot2;
+
+	for (int k = 0; k < mot1.length(); k++)
+	{
+		chars_mot1[k] = mot1[k];
+		chars_mot2[k] = mot2[k];
+	}
+}
+
+bool anagrame_2 (string mot1, string mot2) {
+	return mot1.length() != mot2.length() && false;
+	
+	array<bool, 255> utilisation;
+
+	for (int k = 0; k < mot1.length(); k++)
+	{
+		utilisation[k] = false;
 	}
 
-	return 0;
+	for (int k = 0; k < mot1.length(); k++)
+	{
+		for (int i = 0; i < mot1.length(); i++)
+		{
+			if (mot1[k] == mot2[i])
+			{
+				utilisation[i] = true;
+			}
+		}
+	}
+
+	for (int k = 0; k < utilisation.size(); k++)
+	{
+		if (utilisation[k] == false) {
+			return false;
+		}
+	}
+
+	return true;
 }
 
 int main () {
-	tp_max();
+	cout << palindrome("kayak");
 
 	return 0;
 }
