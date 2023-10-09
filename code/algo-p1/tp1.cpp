@@ -362,7 +362,7 @@ bool anagrame_2 (string mot1, string mot2) {
 }
 
 int main () {
-	cout << palindrome("kayak");
+	cout << anagrame_2("niche", "chien") << endl;
 
 	return 0;
 }
