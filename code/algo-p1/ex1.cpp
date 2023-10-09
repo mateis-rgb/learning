@@ -314,7 +314,7 @@ int exo4_1 () {
     return 0;
 }
 
-bool rechercheElement (int x, array<int, 255> tableau) 
+bool rechercheElement (int x, int tableau[]) 
 {
     bool found = false;
 
@@ -326,7 +326,8 @@ bool rechercheElement (int x, array<int, 255> tableau)
 }
 
 int main () {
-    array<int, 255> tableau = {0, 1, 2, 3};
+    int tableau[] = {0, 1};
+    // array<int, 255> tableau = {0, 1, 2, 3};
 
     cout << rechercheElement(4, tableau);
 
