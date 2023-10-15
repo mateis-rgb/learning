@@ -10,8 +10,8 @@
 \begin{document}
 	\maketitle
 
-	\section{Conversion d'une base $b$ vers la base décimal}
-		Pour convertir des nombres codés en base 2, 8, 16 et 20. La méthode est la même, on multiplie chacun des chiffres par la base $b$ élevé au carré d'indice où se trouve le chiffre en question. Voici le tableau des conversions pour aller plus vite :  
+	\section{Conversion d'une base $b$ vers la base décimale}
+		Pour convertir des nombres codés en base 2, 8, 16 et 20, la méthode est la même. On multiplie chacun des chiffres par la base $b$ élevée à la puissance de l'indice où se trouve le chiffre en question. Voici le tableau des conversions pour aller plus vite :  
 		
 		\begin{center}
 			\begin{tabular}{ | c | c | c | c | c | c | c | c | c | c | c | c | }
@@ -24,14 +24,14 @@
 				\hline
 					$10^n$ & & & & & & & & 1000 & 100 & 10 & 1 \\
 				\hline
-					$16^n$ & & & & & & & & 4096 & 256 & 8 &1 \\
+					$16^n$ & & & & & & & & 4096 & 256 & 16 & 1 \\
 				\hline
 					$20^n$ & & & & & & & & 8000 & 400 & 20 & 1 \\
 				\hline
 			\end{tabular}
 		\end{center}
 		
-		Ainsi on regarde dans le tableau les valeurs qui nous intéresse et en fait l'addition.
+		Ainsi, on regarde dans le tableau les valeurs qui nous intéressent et on les additionne.
 	
 	\section{Addition en binaire}
 		Voici les règles d'addition en binaire :
@@ -54,9 +54,9 @@
 				\hline
 					8 & -128 & 127 & 256 \\
 				\hline
-					16 & $-32_-768$ & $32_-767$ & $65_-536$ \\
+					16 & $-32,768$ & $32,767$ & $65,536$ \\
 				\hline
-					32 & $-2_-145_-483_-648$ & $2_-145_-483_-647$ & $4_-294_-967_-296$ \\
+					32 & $-2,147,483,648$ & $2,147,483,647$ & $4,294,967,296$ \\
 				\hline
 			\end{tabular}
 		\end{center}
@@ -64,7 +64,7 @@
 		Si on veut convertir un nombre négatif, on doit :
 		\begin{enumerate}
 			\item On prend la valeur absolue du nombre.
-			\item On la code en binaire sur le nombre choisis de bits.
+			\item On la code en binaire sur le nombre choisi de bits.
 			\item On utilise le complément à deux de la valeur codée en inversant les 0 et les 1.
 			\item On ajoute 1 au résultat.
 		\end{enumerate}
@@ -74,15 +74,15 @@
 		\begin{center}
 			$-18_{10}$ \\
 			$18_{10}$ \\
-			$0001_-0010_2$ \\
-			$1110_-1101_{\bar2}$ \\
-			$1110_-1110_{\bar2}$ \\			
+			$0001,0010_2$ \\
+			$1110,1101_{\bar2}$ \\
+			$1110,1110_{\bar2}$ \\			
 		\end{center}
 
-		Ainsi, -18 s'écrit $1110_-1110_{\bar2}$ en binaire.
+		Ainsi, -18 s'écrit $1110,1110_{\bar2}$ en binaire.
 	
 	\section{Coder un réel flottant}
-		Pour coder un réel flottant au format IEEE 754 en simple précision (sur 32bits), on commence par s'intéresser au signe du réel, on dit alors que $S = 1$ si le réel est négatif et $S = 0$ sinon. Ensuite, on code la partie entière en valeur absolue, on appelle ça la mantisse. Et pour finir, on code la partie décimale avec des puissances de deux négatives (voici un tableau des puissances de deux négatives, ci-dessous). Plus simplement, pour coder en binaire la partie décimale, il faut multiplier la partie décimale par 2 jusqu'à obtenir 0, a chaque étape on garde le chiffre le plus à gauche du résultat (c'est à dire la partie entière) de la multiplication qui sera 1 ou 0, puis, on réitère la multiplication sur la partie décimale du résultat de la multiplication en supprimant le premier 1 s'il existe.
+		Pour coder un réel flottant au format IEEE 754 en simple précision (sur 32 bits), on commence par s'intéresser au signe du réel. On dit alors que $S = 1$ si le réel est négatif et $S = 0$ sinon. Ensuite, on code la partie entière en valeur absolue, que l'on appelle la mantisse. Pour la partie décimale, on utilise des puissances de deux négatives (voici un tableau des puissances de deux négatives, ci-dessous). Plus simplement, pour coder en binaire la partie décimale, il faut multiplier la partie décimale par 2 jusqu'à obtenir 0. À chaque étape, on garde le chiffre le plus à gauche du résultat (c'est-à-dire la partie entière) de la multiplication, qui sera 1 ou 0. Ensuite, on réitère la multiplication sur la partie décimale du résultat de la multiplication, en supprimant le premier 1 s'il existe.
 		
 		\begin{center}
 			\begin{tabular}{ | c | c | c | c | c | c | }
@@ -91,41 +91,40 @@
   				\hline
   					$2^n$ & 1 & $\frac{1}{2} = 0,5$ & $\frac{1}{4} = 0,25$ & $\frac{1}{8} = 0,125$ & $\frac{1}{16} = 0,0625$ \\
 	  			\hline
-		
 			\end{tabular}
 		\end{center}
 	
-		Une fois que l'on a converti toutes les parties du nombre réel en binaire, dans la partie entière (codé en binaire) on décale la virgule vers la gauche jusqu'au premier 1 qui compose la mantisse. Une fois ça, on obtient la mantisse tronqué. Maintenant qu'on a déplacé la virgule, on compte le nombre de rang que l'on a déplacé. On ajoute a ce nombre 127 et le convertie en binaire, on obtient alors l'exposant décalé. Après ça, on place le bit du signe, puis l'exposant décalé, enfin la mantisse tronqué et pour terminer on ajoute des 0 pour que l'on obtienne un 32bits. Une fois tout ça fait, on convertis le résultat en hexadécimal. Voici un exemple :
+		Une fois que l'on a converti toutes les parties du nombre réel en binaire, dans la partie entière (codée en binaire), on décale la virgule vers la gauche jusqu'au premier 1 qui compose la mantisse. Une fois cela fait, on obtient la mantisse tronquée. Maintenant qu'on a déplacé la virgule, on compte le nombre de rangs que l'on a déplacé. On ajoute à ce nombre 127 et le convertit en binaire. On obtient ainsi l'exposant décalé. Après cela, on place le bit du signe, puis l'exposant décalé, enfin la mantisse tronquée. Pour terminer, on ajoute des 0 pour obtenir un total de 32 bits. Une fois tout cela fait, on convertit le résultat en hexadécimal. Voici un exemple :
 		
 		\begin{center}
 			$-1027,625_{10}$ \\
 			$S = 1$ \\
-			$1027_{10} = 0100_-0000_-0011_2$ \\
+			$1027_{10} = 0100,0000,0011_2$ \\
 			$0,625_{10} = 101_2$ \\
-			$M = 0100_-0000_-0011,101_2$ \\
-			$M_t=0000_-0000_-1110_-1_2$ \\
-			$E_d=1000_-1001_2$ \\
-			$\iff 1100_-0100_-1000_-0000_-0111_-0100_-0000_-0000_2$ \\
-			$\iff C4_-80_-74_-00_{16}$
+			$M = 0100,0000,0011,101_2$ \\
+			$M_t = 0000,0000,1110,1_2$ \\
+			$E_d = 1000,1001_2$ \\
+			$\iff 1100,0100,1000,0000,0111,0100,0000,0000_2$ \\
+			$\iff C4,80,74,00_{16}$
 		\end{center} 
 				
 		\section{Unicode et représentation UTF}
-			L'UTF-8 est rétro-compatible en fonction des chaînes de caractères a coder. Voici un tableau avec le nombre d'octets nécessaires en fonction du point de code de chaque caractère : 
+			L'UTF-8 est rétro-compatible en fonction des chaînes de caractères à coder. Voici un tableau avec le nombre d'octets nécessaires en fonction du point de code de chaque caractère : 
 		
 			\begin{enumerate}
-				\item Les 127 premiers caractères de l'ASCII 7 bits ont les mêmes valeurs en UTF-8 et sont donc codés sur un octet
-				\item Pour coder les caractères de valeurs comprises entre 128 et 2047 on utilise deux octets
-				\item Puis trois octets pour coder les caractères de valeurs comprises entre 2048 et 65535
-				\item Enfin, on utilise quatre octets pour les caractères de valeurs supérieures à 65535
+				\item Les 127 premiers caractères de l'ASCII 7 bits ont les mêmes valeurs en UTF-8 et sont donc codés sur un octet.
+				\item Pour coder les caractères de valeurs comprises entre 128 et 2047, on utilise deux octets.
+				\item Puis trois octets pour coder les caractères de valeurs comprises entre 2048 et 65535.
+				\item Enfin, on utilise quatre octets pour les caractères de valeurs supérieures à 65535.
 			\end{enumerate}
 			
-		\section{L'algèbre de bool}
-			Soit deux variables booléennes $a$ et $b$. On note les opérations booléennes ainsi $a+b$, $a.b$ et $\bar{a}$, voici leurs table de vérité :
+		\section{L'algèbre de booléens}
+			Soit deux variables booléennes $a$ et $b$. On note les opérations booléennes ainsi : $a + b$, $a \cdot b$, et $\bar{a}$. Voici leurs tables de vérité :
 		
 			\begin{center}
 				\begin{tabular}{ | c | c | c | c | c | c | }
 					\hline
-						$a$ & $b$ & $a+b$ & $a.b$ & $\bar{a}$ & $\bar{b}$  \\
+						$a$ & $b$ & $a + b$ & $a \cdot b$ & $\bar{a}$ & $\bar{b}$  \\
 					\hline
 						0 & 0 & 0 & 0 & 1 & 1 \\
 					\hline					
@@ -138,59 +137,32 @@
 				\end{tabular}
 			\end{center}
 			
-			Ainsi on définit une fonction booléenne $f_1(a,b) = a_0 b_0 + ... + a_n b_n$.
+			Ainsi, on définit une fonction booléenne $f_1(a, b) = a_0 b_0 + \ldots + a_n b_n$.
 			
-			Voici les règles de calcul pour les expressions algébriques de bool :
+			Voici les règles de calcul pour les expressions algébriques de booléens :
 			
 			\begin{center}
 				\begin{tabular}{ | c | c | c | c | c | }
 					\hline
-						Loi &  & Forme + & & Forme .  \\
+						Loi &  & Forme + & & Forme $\cdot$  \\
 					\hline
-						élément neutre & R1 & $x+0=x$ & R2 & $x.1=x$ \\
+						Élément neutre & R1 & $x + 0 = x$ & R2 & $x \cdot 1 = x$ \\
 					\hline
-						d'idempotence & R3 & $x+x=x$ & R4 & $x.x=x$  \\
+						D'idempotence & R3 & $x + x = x$ & R4 & $x \cdot x = x$  \\
 					\hline
-						d'inversion & R5 & $x+\bar{x}=1$ & R6 & $x.\bar{x}=0$ \\
+						D'inversion & R5 & $x + \bar{x} = 1$ & R6 & $x \cdot \bar{x} = 0$ \\
 					\hline
-						d'absorption & R7 & $x+x.y=x$ & R8 & $x.(x+y)=x$ \\
+						D'absorption & R7 & $x + x \cdot y = x$ & R8 & $x \cdot (x + y) = x$ \\
 					\hline
-						de De Morgan & R9 & $\bar{x+y}=\bar{x}+\bar{y}$ & R10 & $\bar{x.y}=\bar{x}+\bar{y}$ \\
+						De Morgan & R9 & $\overline{x + y} = \bar{x} \cdot \bar{y}$ & R10 & $\overline{x \cdot y} = \bar{x} + \bar{y}$ \\
 					\hline
-						de commutativité & R11 & $x+y = y+x$ & R12 & $x.y = y.x$ \\
+						De commutativité & R11 & $x + y = y + x$ & R12 & $x \cdot y = y \cdot x$ \\
 					\hline
-						d'associativité & R13 & $x+(y+z) = (x+y)+z$ & R14 & $x.(y.z) = (x.y).z$\\
+						D'associativité & R13 & $x + (y + z) = (x + y) + z$ & R14 & $x \cdot (y \cdot z) = (x \cdot y) \cdot z$\\
 					\hline
-						de distributivité & R15 & $x.(y+z) = x.y + x.z$ & R16 & $x+y.z=(x+y).(x+z)$\\
+						De distributivité & R15 & $x \cdot (y + z) = x \cdot y + x \cdot z$ & R16 & $x + y \cdot z = (x + y) \cdot (x + z)$\\
 					\hline
 				\end{tabular}
 			\end{center}
 			
 \end{document}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
