@@ -2,3 +2,5 @@
 *.obsidian
 *.vscode
 *.out
+*.log
+*.aux
