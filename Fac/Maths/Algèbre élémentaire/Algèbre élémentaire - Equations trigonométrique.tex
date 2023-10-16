@@ -1,0 +1,95 @@
+\documentclass{article}
+\usepackage{amsmath, amssymb}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+
+\title{Algèbre élémentaire - Équations trigonométriques}
+\author{Matéis R.}
+\date{Septembre 2023}
+
+\begin{document}
+\maketitle
+
+On souhaite résoudre des équations du type :
+
+\begin{equation*}
+\begin{aligned}
+I - \begin{cases}
+\sin(x) &= a & & x\in \mathbb{R} \\
+\cos(x) &= a & & a \in \left[ -1, 1 \right[
+\end{cases}
+\end{aligned}
+\end{equation*}
+
+Ou :
+
+\begin{equation*}
+\begin{aligned}
+II - \begin{cases}
+\sin(x) &= \sin(y) & \text{pour} & x, y \in \mathbb{R} \\
+\cos(x) &= \cos(y) &
+\end{cases}
+\end{aligned}
+\end{equation*}
+
+\section{Proposition (Résolution des équations $I$)}
+
+Soit $a \in \left[-1, 1 \right]$
+
+L'équation $\sin(x) = a$ d'inconnue $x$ a toujours une et une seule solution dans l'intervalle $\left[-\frac{\pi}{2}, \frac{\pi}{2}\right]$ (notée $\arcsin(a)$ en analyse). L'ensemble des solutions de $\sin(x) = a$ est l'ensemble $\{ \arcsin(a) + 2k\pi, k \in \mathbb{Z} \} \cup \{ -\arcsin(a) + 2k\pi, k \in \mathbb{Z} \}$
+
+L'équation $\cos(x) = a$ d'inconnue $x$ a toujours une et une seule solution dans l'intervalle $\left[0, \pi \right]$ (notée $\arccos(a)$ en analyse). L'ensemble des solutions de $\cos(x) = a$ est l'ensemble $\{ \arccos(a) + 2k\pi, k \in \mathbb{Z} \} \cup \{ -\arccos(a) + 2k\pi, k \in \mathbb{Z} \}$
+
+Exemple : 
+$\sin(x) = -\frac{\sqrt{3}}{2}$ 
+$\iff$ $x \in \{ \frac{\pi}{3} + 2k\pi, k \in \mathbb{Z} \} \cup \{\frac{2\pi}{3} + 2k\pi, k \in \mathbb{Z} \}$
+$\iff$ $x=\frac{\pi}{3} [ 2\pi ]$ ou $x=\frac{2\pi}{3} [ 2\pi ]$ avec la notation modulo
+
+$\cos(x) = -\frac{\sqrt{3}}{2}$ 
+$\iff$ $x \in \{ \frac{\pi}{6} + 2k\pi, k \in \mathbb{Z} \} \cup \{-\frac{\pi}{6} + 2k\pi, k \in \mathbb{Z} \}$
+$\iff$ $x=\frac{\pi}{6} [ 2\pi ]$ ou $x=-\frac{\pi}{6} [ 2\pi ]$ avec la notation modulo
+
+\section{Proposition (Résolution des équations $II$)}
+
+Soit $y \in \mathbb{R}$
+
+L'ensemble des solutions de l'équation $\sin(x)=\sin(y)$ est $\{ y + 2k\pi, k \in \mathbb{Z} \} \cup \{ -y + 2k\pi, k \in \mathbb{Z} \}$
+
+L'ensemble des solutions de l'équation $\cos(x)=\cos(y)$ est $\{ y + 2k\pi, k \in \mathbb{Z} \} \cup \{ -y + 2k\pi, k \in \mathbb{Z} \}$
+
+Exemple :  $\sin(2x) = \sin(x)$
+$\iff$ $2x=x+2k\pi, k \in \mathbb{Z}$
+	ou $2x=\pi-x+2k\pi, k \in \mathbb{Z}$
+$\iff$ $x=2k\pi, k \in \mathbb{Z}$
+	ou $3x=\pi+2k\pi, k \in \mathbb{Z}$
+$\iff$ $x=2k\pi, k \in \mathbb{Z}$
+	ou $x=\frac{\pi}{3} + \frac{2k\pi}{3}, k \in \mathbb{Z}$
+
+Avec la notation modulo 
+$\iff$ $x = 0 [2\pi]$
+	ou $3x = \pi [2\pi]$
+$\iff$ $x = 0 [2\pi]$
+	ou $x = \frac{\pi}{3} [2\pi]$
+
+\section{Proposition (Résolution des équations avec $\tan()$)}
+
+Soit $a \in \mathbb{R}$
+
+L'équation $\tan(x)=a$ possède une et une seule solution notée $\arctan(a)$ dans l'intervalle $\left]-\frac{\pi}{2}, \frac{\pi}{2} \right[$. L'ensemble des solutions de l'équation est $\{ \arctan(a) + k\pi, k \in \mathbb{Z} \}$ ou $\{ \arctan(a)[\pi] \}$ en notation modulo.
+
+\section{Formules d'addition et de duplication :}
+
+Théorème : soient $\alpha, \beta \in \mathbb{R}$
+
+Alors : $\sin(\alpha + \beta) = \sin(\alpha)\cos(\beta) + \sin(\beta)\cos(\alpha)$
+
+Corollaire :
+\begin{align*}
+\sin(\alpha + \beta) &= \sin(\alpha)\cos(\beta) + \sin(\beta)\cos(\alpha) \\
+\sin(\alpha - \beta) &= \sin(\alpha)\cos(\beta) - \sin(\beta)\cos(\alpha) \\
+\cos(\alpha + \beta) &= \cos(\alpha)\cos(\beta) - \sin(\alpha)\sin(\beta) \\
+\cos(\alpha - \beta) &= \cos(\alpha)\cos(\beta) + \sin(\alpha)\sin(\beta) \\
+\tan(\alpha+\beta) &= \frac{\tan(\alpha) + \tan(\beta)}{1 - \tan(\alpha)\tan(\beta)}
+\end{align*}
+
+\end{document}

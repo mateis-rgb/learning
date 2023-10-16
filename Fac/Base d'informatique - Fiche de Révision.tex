@@ -94,7 +94,19 @@
 			\end{tabular}
 		\end{center}
 	
-		Une fois que l'on a converti toutes les parties du nombre réel en binaire, dans la partie entière (codée en binaire), on décale la virgule vers la gauche jusqu'au premier 1 qui compose la mantisse. Une fois cela fait, on obtient la mantisse tronquée. Maintenant qu'on a déplacé la virgule, on compte le nombre de rangs que l'on a déplacé. On ajoute à ce nombre 127 et le convertit en binaire. On obtient ainsi l'exposant décalé. Après cela, on place le bit du signe, puis l'exposant décalé, enfin la mantisse tronquée. Pour terminer, on ajoute des 0 pour obtenir un total de 32 bits. Une fois tout cela fait, on convertit le résultat en hexadécimal. Voici un exemple :
+		Une fois que l'on a converti toutes les parties du nombre réel en binaire, dans la partie entière (codée en binaire), on décale la virgule vers la gauche jusqu'au premier 1 qui compose la mantisse. Une fois cela fait, on obtient la mantisse tronquée. Maintenant qu'on a déplacé la virgule, on compte le nombre de rangs que l'on a déplacé. On ajoute à ce nombre 127 et le convertit en binaire. On obtient ainsi l'exposant décalé. 
+		\\ \\
+Après cela, on place le bit du signe ($S$), puis l'exposant décalé ($E_d$), enfin la mantisse tronquée ($M_t$). Pour terminer, on ajoute des 0 pour obtenir un total de 32 bits.		
+		
+		\begin{center}
+			\begin{tabular}{ | l | c | c | c | }
+				\hline
+					S & $E_d$ & $M_t$ & Nb 0 pour aller jusqu'à 32bits \\
+				\hline
+			\end{tabular}
+		\end{center}			
+		
+Une fois tout cela fait, on convertit le résultat en hexadécimal. Voici un exemple :		
 		
 		\begin{center}
 			$-1027,625_{10}$ \\
