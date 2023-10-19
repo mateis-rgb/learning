@@ -1,6 +1,6 @@
 *perso*
-*.obsidian
-*.vscode
+.obsidian/
+.vscode/
 *.out
 *.log
 *.aux
