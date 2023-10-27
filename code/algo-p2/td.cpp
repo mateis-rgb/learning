@@ -87,18 +87,13 @@ float EcartType (tabAge tableau)
 }
 
 int ValeurMediane (tabAge tableau)
-{
-	int milieu;
-	int median;
-	
+{	
 	if (ageMax % 2 == 0)
 	{
-		milieu = ageMax / 2;
-	
-		return (tableau[milieu] + tableau[milieu-1]) / 2;
+		return (tableau[ageMax / 2] + tableau[(ageMax+1) / 2]) / 2;
 	}
 
-	return tableau[floor(ageMax / 2)];
+	return tableau[floor((ageMax+1) / 2)];
 }
 
 void Affichage (tabAge tableau)
