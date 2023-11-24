@@ -7,6 +7,8 @@ using Jeu = std::array<char, nMax>;
 
 void Init (Jeu &plateau, int nbMoutons, int &taillePlateau)
 {
+    taillePlateau = 2*nbMoutons + 1;
+
     // On insere M moutons blanc
     for (int k = 0; k < nbMoutons; k++)
     {
@@ -17,12 +19,10 @@ void Init (Jeu &plateau, int nbMoutons, int &taillePlateau)
     plateau[nbMoutons] = 'X';
 
     // On insere M moutons noir
-    for (int k = nbMoutons + 1; k < (2 * nbMoutons + 1); k++)
+    for (int k = nbMoutons + 1; k < taillePlateau; k++)
     {
         plateau[k] = 'N';
     }
-
-    taillePlateau = 2*nbMoutons + 1;
 }
 
 void Affichage (Jeu plateau, int taillePlateau)
@@ -116,14 +116,19 @@ char DemandeChoix ()
     return -1;
 }
 
-bool Deplacement (Jeu &plateau, int taillePlateau, char caseADep)
+bool Deplacement (Jeu &plateau, int taillePlateau, char caseADep, int distance)
 {
     for (int k = 0; k < taillePlateau - 1; k++)
     {
-        if (plateau[k] == caseADep && plateau[k + 1] == 'X')
+        if (plateau[k] == caseADep && plateau[k + (distance)] == 'X')
         {
-            Echange(plateau, k, k + 1);
-
+            if (!EstJouable(plateau, k, k + (distance)))
+            {
+                return false;
+            }
+            
+            Echange(plateau, k, k + (distance));
+            
             return true;
         }
     }
@@ -138,15 +143,15 @@ void Joue (Jeu &plateau, int taillePlateau)
         char choix = DemandeChoix();
         bool estDeplacer;
         
-        if (choix) 
+        if (choix 
         {
             if (choix == 'B' || choix == 'b')
             {
-                Deplacement(plateau, taillePlateau, 'B');   
+                Deplacement(plateau, taillePlateau, 'B'; 2);   
             }
             else if (choix == 'N' || choix == 'n')
             {
-                Deplacement(plateau, taillePlateau, 'N');   
+                Deplacement(plateau, taillePlateau, 'N', -2);   
             }
         }
     } 
