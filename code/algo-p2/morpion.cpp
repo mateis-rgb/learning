@@ -52,25 +52,24 @@ void jouer (matrice &plateau, int x, int y, bool joueur_est_rond)
 bool aGagne (matrice plateau, bool joueur_est_rond)
 {
 	bool resultat = false;
+	char caractere_a_comparer = joueur_est_rond ? 'o' : 'x';
 
-	if (joueur_est_rond)
+
+	// verification en colone
+	for (int k = 0; k < taille_matrice; k++)
 	{
-		// verification en colone
-		for (int k = 0; k < taille_matrice; k++)
+		if ((plateau[0][k] == caractere_a_comparer) && (plateau[1][k] == caractere_a_comparer && plateau[2][k] == caractere_a_comparer))
 		{
-			if ((plateau[0][k] == 'o') && (plateau[1][k] == 'o' && plateau[2][k] == 'o'))
-			{
-				resultat = true;
-			}
+			resultat = true;
 		}
+	}
 
-		// verification en ligne
-		for (int k = 0; k < taille_matrice; k++)
+	// verification en ligne
+	for (int k = 0; k < taille_matrice; k++)
+	{
+		if ((plateau[k][0] == caractere_a_comparer) && plateau[k][1] == caractere_a_comparer && (plateau[k][2] == caractere_a_comparer))
 		{
-			if ((plateau[k][0] == 'o') && plateau[k][1] == 'o' && (plateau[k][2] == 'o'))
-			{
-				resultat = true;
-			}
+			resultat = true;
 		}
 	}
 
