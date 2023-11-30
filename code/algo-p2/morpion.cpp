@@ -73,6 +73,20 @@ bool aGagne (matrice plateau, bool joueur_est_rond)
 		}
 	}
 
+	// vérification en diagonale
+	if (plateau[1][1] == caractere_a_comparer)
+	{
+		if (plateau[0][0] == caractere_a_comparer && plateau[2][2] == caractere_a_comparer)
+		{
+			resultat = true;
+		}
+
+		if (plateau[0][2] == caractere_a_comparer && plateau[2][0] == caractere_a_comparer)
+		{
+			resultat = true;
+		}
+	}
+
 	return resultat;
 }
 
@@ -146,23 +160,11 @@ int main ()
 
 			affichage(plateau);
 
-			if (k == 0)
+			if (aGagne(plateau, k))
 			{
-				if (aGagne(plateau, k))
-				{
-					std::cout << "\nBravo, vous avez gagné.\n";
+				std::cout << "\nBravo, vous avez gagné.\n";
 
-					return 0;
-				}
-			}
-			else
-			{
-				if (aGagne(plateau, k))
-				{
-					std::cout << "\nBravo, vous avez gagné.\n";
-
-					return 0;
-				}
+				return 0;
 			}
 		}
 
