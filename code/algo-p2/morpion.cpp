@@ -106,7 +106,7 @@ bool verification_diagonale (matrice plateau, char caractere_a_comparer)
 		return false;
 	}
 
-	while (resultat || k < taille_matrice)
+	while (resultat && k < taille_matrice)
 	{
 		if (plateau[k][k] != caractere_a_comparer)
 		{
@@ -123,7 +123,7 @@ bool verification_diagonale (matrice plateau, char caractere_a_comparer)
 
 	k = 0;
 
-	while (resultat || k < taille_matrice)
+	while (resultat && k < taille_matrice)
 	{
 		if (plateau[indice_dernier_caractere - k][k] != caractere_a_comparer)
 		{
@@ -131,11 +131,6 @@ bool verification_diagonale (matrice plateau, char caractere_a_comparer)
 		}
 		
 		k++;
-	}
-
-	if (resultat)
-	{
-		return resultat;
 	}
 
 	return resultat;
