@@ -48,65 +48,129 @@ void jouer (matrice &plateau, int x, int y, bool joueur_est_rond)
 	}
 }
 
-// Fct qui permet de savoir si c'est gagné (trois 'x' ou 'o' alignés en ligne ou collone)
-bool aGagne (matrice plateau, bool joueur_est_rond)
+bool verification_colone (matrice plateau, char caractere_a_comparer)
 {
+	int k = 0;
 	bool resultat = false;
-	char caractere_a_comparer = joueur_est_rond ? 'o' : 'x';
 
-
-	// verification en colone
-	for (int k = 0; k < taille_matrice; k++)
+	while (resultat || k < taille_matrice)
 	{
-		if ((plateau[0][k] == caractere_a_comparer) && (plateau[1][k] == caractere_a_comparer && plateau[2][k] == caractere_a_comparer))
+		resultat = true;
+		
+		for (int i = 0; i < taille_matrice; i++)
 		{
-			resultat = true;
+			if (plateau[i][k] != caractere_a_comparer)
+			{
+				resultat = false;
+			}
 		}
+
+		k++;
 	}
+	
+	return resultat;
+}
 
-	// verification en ligne
-	for (int k = 0; k < taille_matrice; k++)
+bool verification_ligne (matrice plateau, char caractere_a_comparer)
+{
+	int k = 0;
+	bool resultat = true;
+
+	while (resultat || k < taille_matrice)
 	{
-		if ((plateau[k][0] == caractere_a_comparer) && plateau[k][1] == caractere_a_comparer && (plateau[k][2] == caractere_a_comparer))
+		resultat = true;
+		
+		for (int i = 0; i < taille_matrice; i++)
 		{
-			resultat = true;
-		}
-	}
-
-	// vérification en diagonale
-	if (plateau[1][1] == caractere_a_comparer)
-	{
-		if (plateau[0][0] == caractere_a_comparer && plateau[2][2] == caractere_a_comparer)
-		{
-			resultat = true;
+			if (plateau[k][i] != caractere_a_comparer)
+			{
+				resultat = false;
+			}	
 		}
 
-		if (plateau[0][2] == caractere_a_comparer && plateau[2][0] == caractere_a_comparer)
-		{
-			resultat = true;
-		}
+		k++;
 	}
 
 	return resultat;
 }
 
+bool verification_diagonale (matrice plateau, char caractere_a_comparer)
+{
+	bool resultat = true;
+
+	int indice_dernier_caractere = taille_matrice - 1;
+	int k = 0;
+
+	if (taille_matrice%2 == 0)
+	{
+		return false;
+	}
+
+	while (resultat || k < taille_matrice)
+	{
+		if (plateau[k][k] != caractere_a_comparer)
+		{
+			resultat = false;
+		}
+
+		k++;
+	}
+
+	if (resultat)
+	{
+		return resultat;
+	}
+
+	k = 0;
+
+	while (resultat || k < taille_matrice)
+	{
+		if (plateau[indice_dernier_caractere - k][k] != caractere_a_comparer)
+		{
+			resultat = false;
+		}
+		
+		k++;
+	}
+
+	if (resultat)
+	{
+		return resultat;
+	}
+
+	return resultat;
+}
+
+// Fct qui permet de savoir si c'est gagné (trois 'x' ou 'o' alignés en ligne ou collone)
+bool aGagne (matrice plateau, bool joueur_est_rond)
+{
+	char caractere_a_comparer = joueur_est_rond ? 'o' : 'x';
+
+	// verification en colone
+	return verification_colone(plateau, caractere_a_comparer);
+
+	// verification en ligne
+	return verification_ligne(plateau, caractere_a_comparer);
+
+	// vérification en diagonale
+	return verification_diagonale(plateau, caractere_a_comparer);
+}
+
 // Fct qui permet de savoir si le plateau ne peux plus etre jouer (toutes les cases sont utilisés)
 bool estJouable (matrice plateau)
 {
-	bool resultat = false;
-
 	for (int k = 0; k < taille_matrice; k++)
 	{
 		for (int i = 0; i < taille_matrice; i++)
 		{
 			if (estVide(plateau, k, i))
 			{
-				resultat = true;
+				return true;
 			}
 		}
 	}
 
-	return resultat;
+	return false;
 }
 
 // Proc affichage du plateau
@@ -139,6 +203,7 @@ int main ()
 {
 	matrice plateau = init();
 	int nbCoups = 0;
+	int joueur = -1;
 
 	std::cout << "Voici le jeu du morpion, voici la grille vide: \n";
 	
@@ -146,31 +211,33 @@ int main ()
 
 	do
 	{
-		for (int k = 0; k <= 1; k++)
-		{
-			int x, y;
+		joueur = joueur == 0 ? 1 : 0;
 
-			do {
-				std::cout << "\nJoueur "<< k + 1 <<" a votre tour, entrez les coordonnées (x, y) où vous jouez:";
-				std::cin >> x >> y;
-			}
-			while (!estVide(plateau, x, y));
+		int x, y;
 
-			jouer(plateau, x, y, k);
-
-			affichage(plateau);
-
-			if (aGagne(plateau, k))
-			{
-				std::cout << "\nBravo, vous avez gagné.\n";
-
-				return 0;
-			}
+		do {
+			std::cout << "\nJoueur "<< joueur + 1 <<" a votre tour, entrez les coordonnées (x, y) où vous jouez:";
+			std::cin >> x >> y;
 		}
+		while (!estVide(plateau, x, y));
+
+		jouer(plateau, x, y, joueur);
+
+		affichage(plateau);
 
 		nbCoups++;
 	}
-	while (estJouable(plateau));
+	while (estJouable(plateau) || aGagne(plateau, joueur));
+
+	if (!estJouable(plateau))
+	{
+		std::cout << "Le plateau est bloqué.\n";
+	}
+
+	if (aGagne(plateau, joueur))
+	{
+		std::cout << "Bravo joueur " << joueur + 1 << ", vous avez gagné.\n";
+	}
 
 	return 0;
 }
