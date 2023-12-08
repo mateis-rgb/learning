@@ -5,6 +5,10 @@
 const int ageMax = 100;
 using tabAge = std::array<int, ageMax>; 
 
+void Fusion (tabAge tableau1, int tailleTab1, tabAge tableau2, int tailleTab2, tabAge &tableauFusionne, int tailleTabFusion) {
+	
+}
+
 void Init (tabAge &tableau)
 {
 	for (int k = 0; k < ageMax; k++) 
