@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Fac/Maths/Arithmétique dans ZI/Arithmétique dans ZI.md",
+                "file": "Fac/Les bases en C++.md",
                 "mode": "source",
                 "source": false
               }
@@ -86,7 +86,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Fac/Maths/Arithmétique dans ZI/Arithmétique dans ZI.md",
+                "file": "Fac/Les bases en C++.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -103,7 +103,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Fac/Maths/Arithmétique dans ZI/Arithmétique dans ZI.md",
+                "file": "Fac/Les bases en C++.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -126,7 +126,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Fac/Maths/Arithmétique dans ZI/Arithmétique dans ZI.md"
+                "file": "Fac/Les bases en C++.md"
               }
             }
           },
@@ -159,6 +159,7 @@
   },
   "active": "90c1189d630ab4f4",
   "lastOpenFiles": [
+    "Fac/Maths/Arithmétique dans ZI/Arithmétique dans ZI.md",
     "Fac/Les bases en C++.md",
     "README.md",
     "Fac/Les bases du terminal sous macOs, Linux et Windows.md",
