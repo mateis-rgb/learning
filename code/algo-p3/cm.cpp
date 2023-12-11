@@ -1,6 +1,6 @@
 #include <iostream>
 
-int factorielle (int n)
+unsigned int factorielle (unsigned int n)
 {
 	if (n == 0)
 	{
@@ -22,7 +22,7 @@ int somme (int n)
 
 int main()
 {
-	std::cout << factorielle(3);
+	std::cout << factorielle(4);
 
 	return 0;
 }
