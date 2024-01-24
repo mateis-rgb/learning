@@ -13,13 +13,26 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Fac/Les bases en C++.md",
+                "file": "Fac/Maths/Arithmétique dans ZI/Arithmétique dans ZI.md",
+                "mode": "source",
+                "source": false
+              }
+            }
+          },
+          {
+            "id": "7c4689462d997d94",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "Formation Accompagner les pratiquants.md",
                 "mode": "source",
                 "source": false
               }
             }
           }
-        ]
+        ],
+        "currentTab": 1
       }
     ],
     "direction": "vertical"
@@ -86,7 +99,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Fac/Les bases en C++.md",
+                "file": "Formation Accompagner les pratiquants.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -103,7 +116,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Fac/Les bases en C++.md",
+                "file": "Formation Accompagner les pratiquants.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -126,7 +139,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Fac/Les bases en C++.md"
+                "file": "Formation Accompagner les pratiquants.md"
               }
             }
           },
@@ -157,9 +170,10 @@
       "command-palette:Open command palette": false
     }
   },
-  "active": "90c1189d630ab4f4",
+  "active": "7c4689462d997d94",
   "lastOpenFiles": [
     "Fac/Maths/Arithmétique dans ZI/Arithmétique dans ZI.md",
+    "Formation Accompagner les pratiquants.md",
     "Fac/Les bases en C++.md",
     "README.md",
     "Fac/Les bases du terminal sous macOs, Linux et Windows.md",

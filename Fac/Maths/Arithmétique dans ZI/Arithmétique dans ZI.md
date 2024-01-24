@@ -7,13 +7,12 @@
 - Hérédité:
 	On suppose que $P(n_0),...,P(n)$ sont vraies et on montre $P(n+1)$ est vraie.
 
-Alors, le principe de récurrene forte dit que $P(n)$ est vrai $\forall n >= n_0$
+Alors, le principe de récurrence forte dit que $P(n)$ est vrai $\forall n >= n_0$
 
-Exemple :
-	Soit $(U_n), n >= 0$ une suite définie par $U_0 = 1$
-	$\forall n >= 0, U_{n+1}$ 
-		$= 1 + U_0 + ... + U_n$
-		$= 1 +$ somme de $k=0$ à $n$ de $U_k$
+Exemple  :
+	Soit $(U_n), n >= 0$ une suite définie par $U_0 = 1, \forall n >= 0$ 
+	$U_{n+1}= 1 + U_0 + ... + U_n$
+	$U_{n+1}= 1 +$ somme de $k=0$ à $n$ de $U_k$
 	On cherche à exprimer $U_n$ en fonction de $n$
 	On calcule $U_1=2, U_2=4, U_3=8, U_4=16$
 
@@ -23,8 +22,7 @@ Récurrence forte:
 	On vérifie que $P(0)$ est vraie (triviale)
 * Hérédité :
 	On suppose que $P(0), ..., P(n)$ sont vraies et on montre que $P(n+1)$ est vraie
-	$U_{n+1} = 1 + U_0+...+U_n$
-	$=1+2^0+...+2^n$ 
+	$U_{n+1} = 1 + U_0+...+U_n=1+2^0+...+2^n$ 
 
 $(a-1)(a^n+a^{n+1}+...+a+1) = a^{n+1}+a^n+...+a^2+a-a^n-a^{n+1}-...-a^2-a-1$
 $(a-1)(a^n+a^{n+1}+...+a+1) = a^{n+1}-1$
