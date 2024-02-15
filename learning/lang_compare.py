@@ -4,7 +4,7 @@ def create_random_array () -> list:
 	array: list = list();
 
 	for k in range(10000):
-		array.append(randint(-99999, 99999));
+		array[k] = randint(-99999, 99999);
 	
 	return array;
 
