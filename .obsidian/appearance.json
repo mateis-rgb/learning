@@ -1,4 +1,7 @@
 {
   "accentColor": "",
-  "theme": "system"
+  "theme": "system",
+  "textFontFamily": "",
+  "monospaceFontFamily": "JetBrains Mono",
+  "baseFontSize": 18
 }
