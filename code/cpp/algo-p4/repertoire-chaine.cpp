@@ -14,35 +14,70 @@ struct maillon
 	maillon * suiv;
 };
 
-using reperoire = maillon *;
+using repertoire = maillon *;
 
-
-void supprimer_premier (reperoire & R)
+void supprimerPremier (repertoire & R)
 {
-	reperoire aux = R;
+	repertoire aux = R;
 
 	R = R->suiv;
 
 	delete aux;
 }
 
-
-void vide (reperoire & R)
+void vide (repertoire & R)
 {
 	if (R != nullptr)
 	{
-		supprimer_premier(R);
+		supprimerPremier(R);
 
 		vide(R);
 	}
+}
+
+void initialiserRepertoire (repertoire & R)
+{
+	if (R != nullptr) vide(R);
 
 	R = nullptr;
 }
 
-
-void initialiserRepertoire (reperoire & R)
+void ajouterEnTete (std::string nom, std::string prenom, std::string tel, repertoire & R)
 {
-	if (R != nullptr) effacer (R);
+	repertoire aux = R;
+	personne temp;
+
+	temp.nom = nom;
+	temp.prenom = prenom;
+	temp.tel = tel;
+
+	R->val = temp;
+	R->suiv = aux;
+}
+
+void ajouterEnQueue (std::string nom, std::string prenom, std::string tel, repertoire & R)
+{
+	if (R != nullptr && R->suiv != nullptr)
+	{
+		return ajouterEnQueue(nom, prenom, tel, R);
+	}
+
+	repertoire aux;
+	personne temp;
+
+	temp.nom = nom;
+	temp.prenom = prenom;
+	temp.tel = tel;
+
+	aux->val = temp;
+	aux->suiv = nullptr;
+
+	R->suiv = aux;
+}
+
+void afficherPersonne (personne P)
+{
+	
 }
 
 int main (void)
