@@ -1,0 +1,18 @@
+SELECT * FROM services, personnels, patients, consultations, conges LIMIT 0;
+SELECT * FROM services, personnels, patients, consultations, conges;
+SELECT nom, localis, batim FROM services;
+SELECT services.codserv, qualif FROM services INNER JOIN personnels ON services.codserv = personnels.codserv;
+SELECT nom, prenom, datnais FROM personnels WHERE qualif = 'CHEF DE SERVICE';
+SELECT nom, prenom, sx, qualif FROM personnels WHERE hsupp IS NOT NULL;
+SELECT DISTINCT qualif FROM personnels WHERE hsupp IS NOT NULL;
+SELECT nom, prenom, sx, qualif, salaire FROM personnels WHERE salaire > 20000 AND salaire < 35000;
+SELECT nom, prenom, sx, qualif, (salaire * 6.50) FROM personnels WHERE salaire > 20000 AND salaire < 35000;
+SELECT nom, prenom, datnais, sx, qualif FROM personnels WHERE qualif = 'CHEF DE SERVICE' OR qualif = 'ASSISTANT';
+SELECT nom, prenom, sx, qualif FROM personnels WHERE nom LIKE 'BOU%';
+SELECT nom, prenom, sx, qualif FROM personnels WHERE nom LIKE '_AR%';
+SELECT nom, prenom, datint, sx, qualif FROM personnels WHERE (qualif = 'INTERNE' OR qualif = 'DOCTEUR') AND sx = '2';
+SELECT nom, prenom, datint, sx, qualif FROM personnels WHERE qualif = 'INTERNE' OR (qualif = 'DOCTEUR' AND sx = '2');
+SELECT nom, prenom, datint, sx, qualif FROM personnels WHERE datint > '1990-01-01';
+SELECT nom, prenom, datnais, sx, qualif, salaire FROM personnels WHERE qualif = 'CHEF DE SERVICE' OR qualif = 'ASSISTANT' ORDER BY salaire ASC;
+SELECT nom, prenom, datnais, sx, qualif, salaire FROM personnels WHERE qualif = 'CHEF DE SERVICE' OR qualif = 'ASSISTANT' ORDER BY datnais ASC;
+SELECT nom, prenom, datnais, sx, qualif, salaire FROM personnels WHERE qualif = 'CHEF DE SERVICE' OR qualif = 'ASSISTANT' ORDER BY qualif, salaire ASC;

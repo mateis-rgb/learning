@@ -1,0 +1,1 @@
+SELECT NomF, produit.NomP, Prix FROM fournisseur INNER JOIN produit ON fournisseur.NumF = produit.NumF INNER JOIN commande ON produit.NomP = commande.NomP INNER JOIN client ON commande.NumC = client.NumC WHERE NomC = 'Jean';
