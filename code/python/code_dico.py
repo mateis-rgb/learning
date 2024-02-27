@@ -1,7 +1,7 @@
 """ Ici, on décidera de faire un programme qui lorsqu'on l'appel en commande on écrira : `python3 code_dico.py <correspondence_file_path> <input_file_path> <chiffrer|dechiffrer|init> <output_file_path>`
 """
 import argparse
-from sys import argv
+# from sys import argv
 from json import dumps as stringify, loads as parse
 from colorama import Fore
 from pyfiglet import figlet_format
@@ -103,17 +103,65 @@ def decode (input_path: str, corres: dict) -> list[str]:
 
 def main():
 	code = figlet_format("Code Dico.PY")
-	print(f"{Fore.GREEN}{code}{Fore.WHITE}")
+	print(f"{Fore.GREEN} {code} {Fore.WHITE}")
 
 	parser = argparse.ArgumentParser(description="Algorithme de chiffrement.")
 
-	parser.add_argument("correspond json file", metavar="correspond_json_file", type=str, nargs=1, help="Chemin du fichier json de correspondance.")
-	parser.add_argument("input text file", metavar="input_text_file", type=str, nargs=1, help="Chemin du fichier texte en entrée, avant chiffrement.")
-	parser.add_argument("mode", type=str, nargs=1, choices=["chiffrer", "dechiffrer", "init"], help="Mode de chiffrement <chiffrer|dechiffrer|init>")
-	parser.add_argument("output text file", metavar="output_text_file", type=str, nargs=1, help="Chemin du fichier texte en sortie, après le chiffrement.")
-	
-	
+	# parser.add_argument("input", metavar="input_text_file", type=str, nargs=1, help="Chemin du fichier texte en entrée, avant chiffrement.")
+	# parser.add_argument("mode", type=str, nargs=1, choices=["chiffrer", "dechiffrer", "init"], help="Mode de chiffrement <chiffrer|dechiffrer|init>")
+	# parser.add_argument("output", metavar="output_text_file", type=str, nargs=1, help="Chemin du fichier texte en sortie, après le chiffrement.")
+	# parser.add_argument("correspond", metavar="correspond_json_file", type=str, nargs=1, help="Chemin du fichier json de correspondance.")
 
+	class Arguments:
+		pass
+
+	arguments = Arguments()
+
+	parser.add_argument("-i", "--input", nargs=1, help="Chemin du fichier texte en entrée, avant chiffrement.")
+	parser.add_argument("-o", "--output", nargs=1, help="Chemin du fichier texte en sortie, après le chiffrement.")
+	parser.add_argument("-m", "--mode", nargs=1, choices=["chiffrer", "dechiffrer", "init"], help="Mode de chiffrement <chiffrer|dechiffrer|init>")
+	parser.add_argument("-c", "--correspond", nargs=1, required=False, help="Chemin du fichier json de correspondance.")
+
+	args = parser.parse_args(namespace=arguments)
+	
+	in_path: str = arguments.input[0]
+	mode: str = arguments.mode[0]
+	out_path: str = arguments.output[0]
+	cor_path: str = None if arguments.correspond == None else arguments.correspond[0]
+
+	if mode == "init" and cor_path == None:
+		dict_code: dict = init(in_path)
+		dict_path: str = "./dico_corres.json"
+
+		with open(dict_path, "w") as file:
+			file.write(stringify(dict_code))
+	
+		print(f"{Fore.BLUE}[program]: {Fore.WHITE}le dictionnaire de correspondance à bien été crée.\n{Fore.BLUE}[program]: {Fore.WHITE}veuillez l'utiliser lorsque vous utiliserez a nouveau le programme avec ces fichier d'entré et de sortie:\n{Fore.BLUE}[program]: {Fore.WHITE}`python3 code_dico.py {dict_path} {in_path} {mode} {out_path}`")
+	
+		return
+	elif cor_path != None:
+		with open(cor_path, "r") as corres:
+			correspondant: dict = parse(corres.readline())
+
+			if mode == "chiffrer":
+				traitment: list[str] = code(in_path, correspondant)
+
+				with open(out_path, "w") as file:
+					file.writelines(traitment)
+
+				print(f"{Fore.BLUE}[program]: {Fore.WHITE}le codage s'est bien effectué.")
+				
+				return
+
+			if mode == "dechiffrer":
+				traitment: list[str] = decode(in_path, correspondant)
+
+				with open(out_path, "w") as file:
+					file.writelines(traitment)
+
+				print(f"{Fore.BLUE}[program]: {Fore.WHITE}le décodage s'est bien effectué.")
+				
+				return
 
 """
 def main(args):
