@@ -1,102 +1,144 @@
 """ Ici, on décidera de faire un programme qui lorsqu'on l'appel en commande on écrira : `python3 main.py <input> <chiffrer|dechiffrer> <output>`
 """
-import sys;
+import argparse
+from colorama import Fore
+from pyfiglet import figlet_format
 
 def valeur_absolue (valeur: int) -> int:
-	if (valeur < 0):
-		return -valeur;
+	""" Fonction valeur absolue
 
-	return valeur;
+	Args:
+		valeur (int): entier positif ou négatif
+
+	Returns:
+		int: entier sans signe
+	"""	
+	if valeur < 0:
+		return -valeur
+
+	return valeur
+
+class Arguments:
+	""" Classe utilisé par le parseur d'arguments, recopié tels quel depuis la documentation,
+		il permet de pouvoir utiliser une variable (instance de cette classe) pour les arguments du parseur.
+	"""
+	pass
 
 
-def code (input_path: str) -> list[str]:
-	traitment: list[str] = [];
+def code (input_path: str, decalage: int) -> list[str]:
+	""" Fonction de codage
+
+	Args:
+		input_path (str): Chemin d'acces au fichier en entrée
+		decalage (int): Décalage du code césar
+
+	Returns:
+		list[str]: document chiffrer en liste de chaines de caractère représentant chaque ligne du fichier
+	"""	
+	traitment: list[str] = []
 
 	with open(input_path, "r") as file:
-		lines: list[str] = file.readlines();
+		lines: list[str] = file.readlines()
 	
 		for line in lines:
-			trait_line: str = "";
+			trait_line: str = ""
 			
 			for car in line:
-				code: int = ord(car);
+				code: int = ord(car)
 
 				# si le caractère est un retour a la ligne passe le caractere dans la ligne traité
 				if (code == 10):
-					trait_line += car;
+					trait_line += car
 				
 				# on regarde si le caractere est un x, y, z
 				elif (code >= 120 and code <= 122):
-					trait_line += chr(valeur_absolue(120 - code) + 97);
+					trait_line += chr(valeur_absolue(120 - code) + 97)
 				
 				else:
-					trait_line += chr(code + 3);
+					trait_line += chr(code + decalage)
 
-			traitment.append(trait_line);
+			traitment.append(trait_line)
 
-	return traitment;
+	return traitment
 
-def decode (input_path: str) -> list[str]:
-	traitment: list[str] = [];
+
+def decode (input_path: str, decalage: int) -> list[str]:
+	""" Fonction de décodage
+
+	Args:
+		input_path (str): Chemin d'acces au fichier en entrée
+		decalage (int): Décalage du code césar
+
+	Returns:
+		list[str]: document déchiffrer en liste de chaines de caractère représentant chaque ligne du fichier
+	"""	
+	traitment: list[str] = []
 
 	with open(input_path, "r") as file:
-		lines: list[str] = file.readlines();
+		lines: list[str] = file.readlines()
 
 		for line in lines:
-			trait_line: str = "";
+			trait_line: str = ""
 			
 			for car in line:
-				code: int = ord(car);
+				code: int = ord(car)
 
 				# si le caractère est un retour a la ligne passe le caractere dans la ligne traité
 				if (code == 10):
-					trait_line += car;
+					trait_line += car
 				
 				# on regarde si le caractere est un x, y, z
 				elif (code >= 97 and code <= 99):
-					trait_line += chr(valeur_absolue(97 - code) + 120);
+					trait_line += chr(valeur_absolue(97 - code) + 120)
 
 				else:
-					trait_line += chr(code - 3);
+					trait_line += chr(code - decalage)
 
-			traitment.append(trait_line);
+			traitment.append(trait_line)
 
-	return traitment;
+	return traitment
 
 
-def main(args):
-	if (len(args) != 4):
-		raise ValueError("\n\n[error]: Le programme doit avoir 3 arguments:\n\t- input file path\n\t- mode: <chiffrer|dechiffrer>\n\t- output file path");
+def main():
+	screen = figlet_format("Code CESAR.PY")
+	print(f"{Fore.GREEN} {screen} {Fore.WHITE}")
 
-	in_path: str = args[1];
-	mode: str = args[2];
-	out_path: str = args[3];
+	parser = argparse.ArgumentParser(description="Algorithme de chiffrement par le code cesar.")
 
-	if (mode != "chiffrer" and mode != "dechiffrer"):
-		raise ValueError("\n\n[error]: Le mode doit absolument être \"chiffrer\" ou \"dechiffrer\".");
+	arguments = Arguments()
 
-	if (mode == "chiffrer"):
-		traitment: list[str] = code(in_path);
+	parser.add_argument("-i", "--input", nargs=1, help="Chemin du fichier texte en entrée, avant chiffrement.")
+	parser.add_argument("-o", "--output", nargs=1, help="Chemin du fichier texte en sortie, après le chiffrement.")
+	parser.add_argument("-m", "--mode", nargs=1, choices=["chiffrer", "dechiffrer"], help="Mode de chiffrement <chiffrer|dechiffrer>")
+	parser.add_argument("-d", "--decalage", nargs=1, type=int, help="Entier, utilisé pour le décalage de chiffrement ou de déchiffrement")
+
+	args = parser.parse_args(namespace=arguments)
+	
+	in_path: str = arguments.input[0]
+	mode: str = arguments.mode[0]
+	out_path: str = arguments.output[0]
+	decal: int = arguments.decalage[0]
+
+	if mode == "chiffrer":
+		traitment: list[str] = code(in_path, decal)
 
 		with open(out_path, "w") as file:
-			file.writelines(traitment);
+			file.writelines(traitment)
 
-		print("[program]: le codage s'est bien effectué.");
+		print("[program]: le codage s'est bien effectué.")
 		
-		return;
+		return
 
-	if (mode == "dechiffrer"):
-		traitment: list[str] = decode(in_path);
+	if mode == "dechiffrer":
+		traitment: list[str] = decode(in_path, decal)
 
 		with open(out_path, "w") as file:
-			file.writelines(traitment);
+			file.writelines(traitment)
 
-		print("[program]: le décodage s'est bien effectué.");
+		print("[program]: le décodage s'est bien effectué.")
 		
-		return;
+		return
+			
 
-	raise Exception("[error]: Quelque chose s'est mal passé, réessayer avec d'autres valeurs, ou des valeurs conforment au programme.");
-
-
-if (__name__ == "__main__"):
-	main(sys.argv);
+if __name__ == "__main__":
+	main()

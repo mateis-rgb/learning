@@ -1,0 +1,1 @@
+SELECT nom FROM (SELECT nom FROM personnels WHERE qualif = 'INFIRMIERE') INNER JOIN (SELECT nom FROM personnels WHERE qualif = 'SECRETAIRE MEDICALE');

@@ -1,7 +1,6 @@
 """ Ici, on décidera de faire un programme qui lorsqu'on l'appel en commande on écrira : `python3 code_dico.py <correspondence_file_path> <input_file_path> <chiffrer|dechiffrer|init> <output_file_path>`
 """
 import argparse
-# from sys import argv
 from json import dumps as stringify, loads as parse
 from colorama import Fore
 from pyfiglet import figlet_format
@@ -13,6 +12,9 @@ def valeur_absolue (valeur: int) -> int:
 	return valeur
 
 class Arguments:
+	""" Classe utilisé par le parseur d'arguments, recopié tels quel depuis la documentation,
+		il permet de pouvoir utiliser une variable (instance de cette classe) pour les arguments du parseur.
+	"""
 	pass
 
 
@@ -109,6 +111,7 @@ def main():
 		print(f"{Fore.BLUE}[program]: {Fore.WHITE}le dictionnaire de correspondance à bien été crée.\n{Fore.BLUE}[program]: {Fore.WHITE}veuillez l'utiliser lorsque vous utiliserez a nouveau le programme avec ces fichier d'entré et de sortie:\n{Fore.BLUE}[program]: {Fore.WHITE}`python3 code_dico.py {dict_path} {in_path} {mode} {out_path}`")
 	
 		return
+	
 	elif cor_path != None:
 		with open(cor_path, "r") as corres:
 			correspondant: dict = parse(corres.readline())
