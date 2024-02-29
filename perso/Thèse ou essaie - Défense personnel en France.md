@@ -11,4 +11,8 @@
 	- Recenser le nombre de cartouche par individu et le limiter en nombre en fonction du calibre
 	- Posséder un endroit pour stocker et entreposer son arme et ses munitions sous clefs 
 - Posséder des armes favoriserai leur fabrication en France, pour retrouver une souveraineté dans l'armement personnel
-- Augmenter le nombre d'arme par habitant réduirait la criminalité
+- Augmenter le nombre d'arme par habitant pourrait soit réduire la criminalité ou l'augmenter
+- Quand on regarde les pays les plus armés d'Europe, 
+"" 
+En Europe, la Serbie est en tête (et numéro deux au monde, derrière les Etats-Unis), avec 69,7 armes à feu pour 100 habitants. Elle est suivie de la Suisse, avec 45,7 armes pour 100 habitants, et Chypre, avec 36,1. Quatre pays scandinaves (Suède, Norvège, Islande et Finlande) sont parmi les dix pays les plus "armés". La Roumanie ferme la marche, avec moins de 0,5 armes pour 100 habitants.
+"" https://voxeurop.eu/fr/une-carte-deurope-des-pays-ou-les-habitants-sont-les-plus-armes/
