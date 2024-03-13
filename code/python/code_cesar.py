@@ -45,17 +45,21 @@ def code (input_path: str, decalage: int) -> list[str]:
 			
 			for car in line:
 				code: int = ord(car)
+				decal: int = code + decalage
 
 				# si le caractère est un retour a la ligne passe le caractere dans la ligne traité
-				if (code == 10):
+				if not car.isalpha():
 					trait_line += car
-				
-				# on regarde si le caractere est un x, y, z
-				elif (code >= 120 and code <= 122):
-					trait_line += chr(valeur_absolue(120 - code) + 97)
-				
-				else:
-					trait_line += chr(code + decalage)
+
+				# si le caractère est entre a-z et A-Z
+				elif code >= 65 and code <= 90:
+					if decal <= 90:
+						trait_line += chr(decal)
+					
+					else:
+						
+
+				elif code <= 97 and code >= 122:
 
 			traitment.append(trait_line)
 
@@ -84,7 +88,7 @@ def decode (input_path: str, decalage: int) -> list[str]:
 				code: int = ord(car)
 
 				# si le caractère est un retour a la ligne passe le caractere dans la ligne traité
-				if (code == 10):
+				if (not car.isalpha()):
 					trait_line += car
 				
 				# on regarde si le caractere est un x, y, z
@@ -125,7 +129,7 @@ def main():
 		with open(out_path, "w") as file:
 			file.writelines(traitment)
 
-		print("[program]: le codage s'est bien effectué.")
+		print(f"{Fore.BLUE}[program]: {Fore.WHITE}le codage s'est bien effectué.")
 		
 		return
 
@@ -135,7 +139,7 @@ def main():
 		with open(out_path, "w") as file:
 			file.writelines(traitment)
 
-		print("[program]: le décodage s'est bien effectué.")
+		print(f"{Fore.BLUE}[program]: {Fore.WHITE}le décodage s'est bien effectué.")
 		
 		return
 			

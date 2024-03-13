@@ -9,12 +9,27 @@ class Arguments:
 	"""
 	pass
 
+def frequence_apparition (string: str) -> dict:
+	apparition: dict = {}
+	string_len = len(string)
+
+	for k in range(string_len):
+		value: str = string[k].lower()
+
+		if apparition.get(value):
+			apparition[value] += 1
+		else:
+			apparition[value] = 1
+
+	for key, value in apparition.items():
+		apparition[key] = round((value / string_len) * 100, 3)
+
+	return apparition
+
 
 def bruteforce (in_path: str) -> list[str]:
 	traitment: list[str] = []
 	ascii_printable = printable[:-38]
-	
-	print(in_path, "\n")
 
 	"""
 	decalage len list tte valeurs possible
@@ -30,23 +45,25 @@ def bruteforce (in_path: str) -> list[str]:
 			lines: list[str] = file.readlines()
 
 			for line in lines:
-				trait_line: str = ""
+
+				print(frequence_apparition(line))
+			# 	trait_line: str = ""
 				
-				for car in line:
-					code: int = ord(car)
+			# 	for car in line:
+			# 		code: int = ord(car)
 
-					# si le caractère est un retour a la ligne passe le caractere dans la ligne traité
-					if (code == 10):
-						trait_line += car
+			# 		# si le caractère est un retour a la ligne passe le caractere dans la ligne traité
+			# 		if (code == 10):
+			# 			trait_line += car
 					
-					# on regarde si le caractere est un x, y, z
-					elif (code >= 97 and code <= 99):
-						trait_line += chr(valeur_absolue(97 - code) + 120)
+			# 		# on regarde si le caractere est un x, y, z
+			# 		elif (code >= 97 and code <= 99):
+			# 			trait_line += chr(valeur_absolue(97 - code) + 120)
 
-					else:
-						trait_line += chr(code - k)
+			# 		else:
+			# 			trait_line += chr(code - k)
 
-			traitment.append(trait_line)
+			# traitment.append(trait_line)
 
 
 
