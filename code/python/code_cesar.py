@@ -3,6 +3,9 @@
 import argparse
 from colorama import Fore
 from pyfiglet import figlet_format
+from string import ascii_letters, ascii_lowercase
+
+alphabet_length = len(ascii_lowercase)
 
 def valeur_absolue (valeur: int) -> int:
 	""" Fonction valeur absolue
@@ -44,22 +47,19 @@ def code (input_path: str, decalage: int) -> list[str]:
 			trait_line: str = ""
 			
 			for car in line:
-				code: int = ord(car)
-				decal: int = code + decalage
-
-				# si le caractère est un retour a la ligne passe le caractere dans la ligne traité
-				if not car.isalpha():
+				if car not in ascii_letters:
 					trait_line += car
+				
+				else:
+					index: int = 0
 
-				# si le caractère est entre a-z et A-Z
-				elif code >= 65 and code <= 90:
-					if decal <= 90:
-						trait_line += chr(decal)
+					if car.islower():
+						index = (ascii_letters.index(car) + decalage) % alphabet_length
 					
 					else:
-						
+						index = (ascii_letters.index(car) + decalage) % alphabet_length + alphabet_length
 
-				elif code <= 97 and code >= 122:
+					trait_line += ascii_letters[index]
 
 			traitment.append(trait_line)
 
@@ -85,18 +85,19 @@ def decode (input_path: str, decalage: int) -> list[str]:
 			trait_line: str = ""
 			
 			for car in line:
-				code: int = ord(car)
-
-				# si le caractère est un retour a la ligne passe le caractere dans la ligne traité
-				if (not car.isalpha()):
+				if car not in ascii_letters:
 					trait_line += car
 				
-				# on regarde si le caractere est un x, y, z
-				elif (code >= 97 and code <= 99):
-					trait_line += chr(valeur_absolue(97 - code) + 120)
-
 				else:
-					trait_line += chr(code - decalage)
+					index: int = 0
+
+					if car.islower():
+						index = (ascii_letters.index(car) - decalage) % alphabet_length
+					
+					else:
+						index = (ascii_letters.index(car) - decalage) % alphabet_length + alphabet_length
+
+					trait_line += ascii_letters[index]
 
 			traitment.append(trait_line)
 
@@ -105,7 +106,7 @@ def decode (input_path: str, decalage: int) -> list[str]:
 
 def main():
 	screen = figlet_format("Code CESAR.PY")
-	print(f"{Fore.GREEN} {screen} {Fore.WHITE}")
+	print(f"{Fore.GREEN}{screen}{Fore.WHITE}")
 
 	parser = argparse.ArgumentParser(description="Algorithme de chiffrement par le code cesar.")
 

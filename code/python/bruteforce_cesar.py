@@ -1,7 +1,7 @@
 import argparse
 from colorama import Fore
 from pyfiglet import figlet_format
-from string import printable;
+from string import ascii_letters;
 
 class Arguments:
 	""" Classe utilisé par le parseur d'arguments, recopié tels quel depuis la documentation,
@@ -9,27 +9,82 @@ class Arguments:
 	"""
 	pass
 
+frequence_apparition_lettres_fr: dict = {
+	"e": 12.10,
+	"a": 7.11,
+	"i": 6.59
+}
+
+alphabet_length: int = len(ascii_letters)
+
+
+def dict_sort(dictionnary: dict) -> dict:
+	sorted_dict = dict(
+        sorted(
+			dictionnary.items(), 
+			key=lambda x: x[1], 
+			reverse=True
+		)
+	)
+
+	return sorted_dict
+
+
 def frequence_apparition (string: str) -> dict:
 	apparition: dict = {}
-	string_len = len(string)
+	string_len: int = len(string)
+	string_len_without_alpha: int = 0
 
 	for k in range(string_len):
 		value: str = string[k].lower()
 
-		if apparition.get(value):
-			apparition[value] += 1
-		else:
-			apparition[value] = 1
+		if value.isalpha():
+			string_len_without_alpha += 1
+
+			if apparition.get(value):
+				apparition[value] += 1
+
+			else:
+				apparition[value] = 1
 
 	for key, value in apparition.items():
-		apparition[key] = round((value / string_len) * 100, 3)
+		apparition[key] = round((value / string_len_without_alpha) * 100, 3)
 
-	return apparition
+	return dict_sort(apparition)
 
 
-def bruteforce (in_path: str) -> list[str]:
+def decode (text: str, decalage: int) -> str:
+	""" Fonction de décodage
+
+	Args:
+		text (str): texte a dechiffrer
+		decalage (int): Décalage du code césar
+
+	Returns:
+		str: texte déchiffrer
+	"""	
+	traitment: str = ""
+	
+	for car in text:
+		if car not in ascii_letters:
+			traitment += car
+		
+		else:
+			index: int = 0
+
+			if car.islower():
+				index = (ascii_letters.index(car) - decalage) % alphabet_length
+			
+			else:
+				index = (ascii_letters.index(car) - decalage) % alphabet_length + alphabet_length
+
+			traitment += ascii_letters[index]
+
+	return traitment
+
+
+def bruteforce (in_path: str) -> str:
 	traitment: list[str] = []
-	ascii_printable = printable[:-38]
 
 	"""
 	decalage len list tte valeurs possible
@@ -39,31 +94,27 @@ def bruteforce (in_path: str) -> list[str]:
 
 
 	with open(in_path, "r") as file:
-		for k in range(len(ascii_printable)):
-			traitment: list[str] = []
-			
-			lines: list[str] = file.readlines()
+		decoded_file: dict[int, str] = dict()
+		frequences_list: dict[int, str] = dict()
+		good_lists: list[str] = list()
 
-			for line in lines:
+		for k in range(len(ascii_letters)):
+			text: str = file.read()
 
-				print(frequence_apparition(line))
-			# 	trait_line: str = ""
-				
-			# 	for car in line:
-			# 		code: int = ord(car)
+			decoded_file[k] = decode(text, k)
 
-			# 		# si le caractère est un retour a la ligne passe le caractere dans la ligne traité
-			# 		if (code == 10):
-			# 			trait_line += car
-					
-			# 		# on regarde si le caractere est un x, y, z
-			# 		elif (code >= 97 and code <= 99):
-			# 			trait_line += chr(valeur_absolue(97 - code) + 120)
+		for key, value in decoded_file:
+			frequence_apparition_decoded: dict = frequence_apparition(value)
 
-			# 		else:
-			# 			trait_line += chr(code - k)
+			frequences_list[key] = frequence_apparition_decoded
 
-			# traitment.append(trait_line)
+		for frequence in frequences_list:
+			first_frequences: list = frequence.keys()[:3]
+			first_good_frequences: list = frequence_apparition_lettres_fr.keys()
+
+			if (first_frequences == first_good_frequences):
+				good_lists.append()
+
 
 
 
