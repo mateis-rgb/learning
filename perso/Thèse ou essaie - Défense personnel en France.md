@@ -9,12 +9,13 @@
 - Le meilleur moyen de pouvoir se défendre est de posséder une arme mais sous conditions :
 	- Passer une formation spécifique pour l'arme concernée
 	- Être apte physiquement et psychologiquement
-	- Recenser le nombre de cartouche par individu et le limiter en nombre en fonction du calibre
+	- Recenser le nombre, le model, le s/n des cartouches par individu et le limiter leurs nombre en fonction du calibre
 	- Posséder un endroit pour stocker et entreposer son arme et ses munitions sous clefs
 - Posséder des armes favoriserai leur fabrication en France, pour retrouver notre souveraineté dans l'armement
 - Augmenter le nombre d'arme par habitant pourrait soit réduire la criminalité ou l'augmenter
-- Légaliser l'achat, la vente et le port d'armes à feux permettrait de réduire le trafic d'armes sur notre téritoire
-- Le port d'armes a feux est un sujet sensible a cause des différentes fusillades qu'il y a pu avoir avec ces dernières, mais soyons réaliste trois minutes, si plusieurs personnes avaient été armé le soir de la fusillade dans la boite de nuit à Orlando, il  y aurait-il eu 53 personnes blessé dont 49 décedé
+- Légaliser l'achat, la vente et le port d'armes à feux permettrait de réduire grandement le trafic d'armes sur notre téritoire
+- La possibilité a chaque individu apte a posseder une arme permettrait d'appeler ceux ci en  contexte de guerre, etant donner que pour acquerir leur arme il faudrait nécessairement avoir passer des formations theoriques et pratiques
+- Le port d'armes a feux est un sujet sensible a cause des différentes fusillades qu'il y a pu avoir avec ces dernières, mais soyons réaliste trois minutes, si plusieurs personnes avaient été armé le soir de la fusillade dans la boite de nuit à Orlando, y aurait-il eu 53 personnes blessé et 49 décedé
 
 >En Europe, la Serbie est en tête (et numéro deux au monde, derrière les Etats-Unis), avec 69,7 armes à feu pour 100 habitants. Elle est suivie de la Suisse, avec 45,7 armes pour 100 habitants, et Chypre, avec 36,1. Quatre pays scandinaves (Suède, Norvège, Islande et Finlande) sont parmi les dix pays les plus "armés". La Roumanie ferme la marche, avec moins de 0,5 armes pour 100 habitants.
 https://voxeurop.eu/fr/une-carte-deurope-des-pays-ou-les-habitants-sont-les-plus-armes/
