@@ -1,7 +1,8 @@
 import argparse
 from colorama import Fore
 from pyfiglet import figlet_format
-from string import ascii_letters;
+from string import ascii_letters
+from numpy import minimum
 
 class Arguments:
 	""" Classe utilisé par le parseur d'arguments, recopié tels quel depuis la documentation,
@@ -30,7 +31,7 @@ def dict_sort(dictionnary: dict) -> dict:
 	return sorted_dict
 
 
-def frequence_apparition (string: str) -> dict:
+def frequence_apparition (string: str) -> dict[str, float]:
 	apparition: dict = {}
 	string_len: int = len(string)
 	string_len_without_alpha: int = 0
@@ -86,37 +87,46 @@ def decode (text: str, decalage: int) -> str:
 def bruteforce (in_path: str) -> str:
 	traitment: list[str] = []
 
-	"""
-	decalage len list tte valeurs possible
-	pour trouver des proba d'apparition de lettres
-	stocker celui qui a la plus grande apparition de e -> 12,10%
-	"""
-
-
 	with open(in_path, "r") as file:
 		decoded_file: dict[int, str] = dict()
-		frequences_list: dict[int, str] = dict()
-		good_lists: list[str] = list()
+		frequences_list: dict[int, dict[str, float]] = dict()
+		differences: dict[int, dict[str, float]] = dict()
+
+		min_diff: int = 0
+
+		text: str = file.read()
 
 		for k in range(len(ascii_letters)):
-			text: str = file.read()
-
 			decoded_file[k] = decode(text, k)
 
-		for key, value in decoded_file:
-			frequence_apparition_decoded: dict = frequence_apparition(value)
+		for key, value in decoded_file.items():
+			frequence_apparition_decoded: dict[str, float] = frequence_apparition(value)
 
 			frequences_list[key] = frequence_apparition_decoded
 
-		for frequence in frequences_list:
-			first_frequences: list = frequence.keys()[:3]
-			first_good_frequences: list = frequence_apparition_lettres_fr.keys()
+		for key, value in frequences_list.items():
+			diff: dict[str, float] = dict()
 
-			if (first_frequences == first_good_frequences):
-				good_lists.append()
+			for letter, percent in value.items():
+				if letter in ["a", "e", "i"]:
+					diff[letter] = round(abs(percent - frequence_apparition_lettres_fr[letter]), 3)
 
+			if len(diff) == 3:
+				differences[key] = dict_sort(diff)
+				
+		for indice, difference in differences.items():
+			if (min_diff != indice):
+				min_diff_dict = differences[min_diff]
+				
+				min_values: list[float] = list(min_diff_dict.values())
+				diff_values: list[float] = list(difference.values())
 
+				mini: list[float] = minimum(min_values, diff_values)
 
+				if (mini == diff_values).all():
+					min_diff = indice
+					
+		return decoded_file[min_diff]
 
 
 def main():
@@ -143,6 +153,4 @@ def main():
 	return
 
 if __name__ == "__main__":
-	# main()
-
-	bruteforce("./output.txt")
+	main()

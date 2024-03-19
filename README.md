@@ -1,2 +1,2 @@
-# Notes
+# learning
 Personnal and professionnal notes
