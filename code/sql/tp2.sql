@@ -15,4 +15,4 @@ SELECT nom, prenom, datint, sx, qualif FROM personnels WHERE qualif = 'INTERNE' 
 SELECT nom, prenom, datint, sx, qualif FROM personnels WHERE datint > '1990-01-01';
 SELECT nom, prenom, datnais, sx, qualif, salaire FROM personnels WHERE qualif = 'CHEF DE SERVICE' OR qualif = 'ASSISTANT' ORDER BY salaire ASC;
 SELECT nom, prenom, datnais, sx, qualif, salaire FROM personnels WHERE qualif = 'CHEF DE SERVICE' OR qualif = 'ASSISTANT' ORDER BY datnais ASC;
-SELECT nom, prenom, datnais, sx, qualif, salaire FROM personnels WHERE qualif = 'CHEF DE SERVICE' OR qualif = 'ASSISTANT' ORDER BY qualif, salaire ASC;
+SELECT nom, prenom, datnais, sx, qualif, salaire FROM personnels WHERE qualif = 'CHEF DE SERVICE' OR qualif = 'ASSISTANT' ORDER BY qualif, salaire DESC;
