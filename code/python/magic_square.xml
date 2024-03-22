@@ -1,6 +1,6 @@
 <instance format="XCSP3" type="CSP">
   <variables>
-    <array id="mat" size="[5][5]"> 0..24 </array>
+    <array id="mat" size="[3][3]"> 1..9 </array>
   </variables>
   <constraints>
     <allDifferent> mat[][] </allDifferent>

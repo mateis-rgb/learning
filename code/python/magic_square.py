@@ -6,10 +6,10 @@ def ask_size () -> int :
 	size: int = int(input("Enrez un nombre n (qui correspondra à la taille de la matrice): "))
 
 	return size
-
+	
 
 def gen_matrix (size: int) -> list[list[int]]:
-	mat = VarArray(size=[n, n], dom=range(1, (n*n)+1))
+	mat = VarArray(size=[size, size], dom=range(1, (size*size)+1))
 
 	satisfy(
 		AllDifferent(mat)
@@ -59,12 +59,14 @@ def diagonal_verify (mat: list[list[int]], waiting: int) -> bool:
 	top_bottom_diag_sum: int = 0
 	bottom_top_diag_sum: int = 0
 
-	# On parcours 
-	for k in range(len(mat + 1)):
+	# On parcours la matrice
+	for k in range(len(mat[0])):
 		top_bottom_diag_sum += mat[k][k]
 		bottom_top_diag_sum += mat[len(mat) - k][k]
 
+	# On vérifie si les deux longueurs des diagonales sont égales
 	if top_bottom_diag_sum == bottom_top_diag_sum:
+		# Si oui, on verifie si la somme est égale au résultat attendu
 		if top_bottom_diag_sum != waiting:
 			return False
 
@@ -89,13 +91,16 @@ def verify (mat: list[list[int]], size: int) -> bool:
 	return False
 
 # A faire {
-def gen_possibilites (size: int, waiting: int, possibilites: list[int]) -> list[list[int]]:
+def gen_possibilites (size: int, waiting: int, possibilites: list[int]) -> list[list[int]]:	
+	all_values: list[int] = [k for k in range (1, size*size + 1)]
+	
 	current_possibilies: list[int] = [1, 2, 3]
+
+
 
 	if len(current_possibilies) != size:
 		raise Exception("Something went wrong...")
 
-	return [current_possibilies, gen_possibilites(size, waiting, possibilites - current_possibilies)]
 
 
 def fill_matrix (matrix: list[list[int]], possibilites: list[list[int]]) -> list[list[int]]:
