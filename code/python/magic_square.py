@@ -54,7 +54,7 @@ def col_verify (mat: list[list[int]], waiting: int) -> bool:
 	# Sinon après tout les parcours sans retours, on retourne vrai
 	return True
 
-
+# a commenter {
 def diagonal_verify (mat: list[list[int]], waiting: int) -> bool:
 	top_bottom_diag_sum: int = 0
 	bottom_top_diag_sum: int = 0
@@ -69,6 +69,8 @@ def diagonal_verify (mat: list[list[int]], waiting: int) -> bool:
 			return False
 
 	return True
+# }
+
 
 def verify (mat: list[list[int]], size: int) -> bool:
 	waiting: int = (size*(size*size + 1) / 2)
@@ -86,13 +88,26 @@ def verify (mat: list[list[int]], size: int) -> bool:
 	# Sinon on retourne faux 
 	return False
 
+# A faire {
+def gen_possibilites (size: int, waiting: int, possibilites: list[int]) -> list[list[int]]:
+	current_possibilies: list[int] = [1, 2, 3]
+
+	if len(current_possibilies) != size:
+		raise Exception("Something went wrong...")
+
+	return [current_possibilies, gen_possibilites(size, waiting, possibilites - current_possibilies)]
+
+
+def fill_matrix (matrix: list[list[int]], possibilites: list[list[int]]) -> list[list[int]]:
+	return matrix
+# }
 
 def main():
-	print(f"{Fore.GREEN} {figlet_format('magic square.py')} {Fore.WHITE}")
+	print(f"{Fore.GREEN}{figlet_format('magic square.py')}{Fore.WHITE}")
 
 	size: int = ask_size()
 
-	mat = gen_matrix(size)
+	mat: list[list[int]] = gen_matrix(size)
 
 	print(mat)
 
