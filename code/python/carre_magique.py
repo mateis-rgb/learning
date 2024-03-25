@@ -7,13 +7,9 @@ def ask_size () -> int:
 	"""
 	while True:
 		try:
-			taille: int = int(input("Entrez la taille du carré magique (un nombre impair) : "))
+			taille: int = int(input("Entrez la taille du carré magique : "))
 			
-			if taille % 2 == 0:
-				print("La taille doit être un nombre impair.")
-			
-			else:
-				return taille
+			return taille
 			
 		except ValueError:
 			print("Veuillez entrer un nombre valide.")
@@ -28,11 +24,11 @@ def creer_carre_magique(taille: int) -> list[list[int]]:
 	carre_magique: list[list[int]] = [[0] * taille for _ in range(taille)]
 
 	# Initialisation des variables pour le placement des nombres dans le carré
-	i: int = taille // 2
+	i: int = taille / 2
 	j: int = taille - 1
 	num: int = 1
 	max_num: int = taille * taille  # Calcul du nombre maximum dans le carré
-	somme_magique: float = taille * (max_num + 1) // 2  # Calcul de la somme magique pour chaque ligne, colonne et diagonale
+	somme_magique: float = taille * (max_num + 1) / 2  # Calcul de la somme magique pour chaque ligne, colonne et diagonale
 
 	# Boucle pour placer les nombres dans le carré
 	while num <= max_num:
@@ -120,6 +116,7 @@ def afficher_carre_magique(carre_magique: list[list[int]], taille: int):
 		
 		print("\n", end="")
 		print("+---"*taille, "+", sep="", end="\n")
+
 
 def main():
 	"""
