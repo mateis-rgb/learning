@@ -18,7 +18,7 @@ def gen_matrix (size: int) -> list[list[int]]:
 	if solve() is SAT:
 		return values(mat)
 	
-	raise Exception("Something went wrong...")
+	raise Exception("Something went wrong")
 
 
 def line_verify (mat: list[list[int]], waiting: int) -> bool:
@@ -112,7 +112,7 @@ def main():
 
 	size: int = ask_size()
 
-	mat: list[list[int]] = gen_matrix(size)
+	mat: list[list[int]] = generate_matrix(size)
 
 	print(mat)
 
