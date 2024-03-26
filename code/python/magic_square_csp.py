@@ -1,38 +1,50 @@
-from pycsp3 import satisfy, VarArray, AllDifferent, Sum, solve, SAT
+from pycsp3 import VarArray, satisfy, AllDifferent, solve, values
+import math
 
-n = int(input("Entrez la taille du carré magique (pair ou impair) : "))
+def ask_size() -> int:
+    while True:
+        try:
+            size = int(input("Entrez un nombre n (qui correspondra à la taille de la matrice): "))
+            if size < 3:
+                print("La taille doit être supérieure ou égale à 3.")
+                continue
+            return size
+        except ValueError:
+            print("Veuillez entrer un nombre entier valide.")
 
-# Définition des variables
-square = VarArray(size=n*n, dom=range(1, n*n+1))
+def generate_magic_square(size: int) -> list[list[int]]:
+    magic_sum = size * (size**2 + 1) // 2
+    mat = VarArray(size=[size, size], dom=range(1, (size*size)+1))
 
-# Contrainte : tous les éléments doivent être distincts
-satisfy(
-	AllDifferent(square)
-)
+    satisfy(AllDifferent(mat))
 
-# Contraintes supplémentaires pour les lignes, colonnes et diagonales
-magic_sum = n * (n * n + 1) // 2
+    # Contraintes pour les lignes et les colonnes
+    for i in range(size):
+        satisfy(sum(mat[i][j] for j in range(size)) == magic_sum)
+        satisfy(sum(mat[j][i] for j in range(size)) == magic_sum)
 
-for i in range(n):
-	# Lignes
-	satisfy(
-		Sum(square[i * n: (i + 1) * n]) == magic_sum
-	)
-	# Colonnes
-	satisfy(
-		Sum([square[j * n + i] for j in range(n)]) == magic_sum
-	)
-# Diagonale principale
-satisfy(
-	Sum([square[i * (n + 1)] for i in range(n)]) == magic_sum
-)
-# Diagonale secondaire (si la taille est impaire)
-if n % 2 != 0:
-	satisfy(
-		Sum([square[i * (n - 1)] for i in range(1, n + 1)]) == magic_sum
-	)
+    # Contraintes pour la diagonale principale
+    satisfy(sum(mat[i][i] for i in range(size)) == magic_sum)
 
-if solve() is SAT:
-	print(True)
-else:
-	print(False)
+    # Contraintes pour la diagonale secondaire (si la taille est impaire)
+    if size % 2 != 0:
+        satisfy(sum(mat[i][size-i-1] for i in range(size)) == magic_sum)
+
+    if solve():
+        return [[values(mat[i][j])[0] for j in range(size)] for i in range(size)]
+    
+    raise Exception("Impossible de générer la matrice magique")
+
+def print_matrix(mat: list[list[int]]):
+    for row in mat:
+        print(row)
+
+def main():
+    print("Génération d'un carré magique")
+    size = ask_size()
+    magic_square = generate_magic_square(size)
+    print("Carré magique généré :")
+    print_matrix(magic_square)
+
+if __name__ == "__main__":
+    main()

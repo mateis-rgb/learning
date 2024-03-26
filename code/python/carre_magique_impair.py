@@ -8,48 +8,60 @@ def ask_size () -> int:
 	while True:
 		try:
 			taille: int = int(input("Entrez la taille du carré magique (un nombre impair) : "))
-		
-			return taille
+			
+			if taille % 2 == 0:
+				print("La taille doit être un nombre impair.")
+			
+			else:
+				return taille
 			
 		except ValueError:
 			print("Veuillez entrer un nombre valide.")
 
 
 def creer_carre_magique(taille: int) -> list[list[int]]:
-    """
-    Crée un carré magique de taille donnée.
-    """
+	"""
+	Crée un carré magique de taille donnée.
+	"""
 
-    # Initialisation d'une liste vide pour stocker le carré magique
-    carre_magique: list[list[int]] = [[0] * taille for _ in range(taille)]
+	# Initialisation d'une liste vide pour stocker le carré magique
+	carre_magique: list[list[int]] = [[0] * taille for _ in range(taille)]
 
-    # Initialisation des variables pour le placement des nombres dans le carré
-    i: int = taille // 2
-    j: int = taille - 1
-    num: int = 1
-    max_num: int = taille * taille  # Calcul du nombre maximum dans le carré
+	# Initialisation des variables pour le placement des nombres dans le carré
+	i: int = taille // 2
+	j: int = taille - 1
+	num: int = 1
+	max_num: int = taille * taille  # Calcul du nombre maximum dans le carré
+	somme_magique: float = taille * (max_num + 1) // 2  # Calcul de la somme magique pour chaque ligne, colonne et diagonale
 
-    # Boucle pour placer les nombres dans le carré
-    while num <= max_num:
-        # Placer le prochain nombre dans la case
-        carre_magique[i][j] = num
-        num += 1
+	# Boucle pour placer les nombres dans le carré
+	while num <= max_num:
+		# Vérification des conditions pour la position du prochain nombre
+		if i == -1 and j == taille:
+			j = taille - 2
+			i = 0
+		else:
+			if j == taille:
+				j = 0
+			if i < 0:
+				i = taille - 1
 
-        # Déterminer la prochaine position pour placer le nombre
-        new_i: int = (i - 1) % taille
-        new_j: int = (j + 1) % taille
+		# Vérification si la case est déjà remplie, si oui, déplacer les indices
+		if carre_magique[i][j] != 0:
+			j = j - 2
+			i = i + 1
+			continue
+		else:
+			# Placer le prochain nombre dans la case
+			carre_magique[i][j] = num
+			num = num + 1
 
-        # Vérifier si la case suivante est déjà remplie ou si c'est une case hors du carré
-        if carre_magique[new_i][new_j] != 0:
-            # Si oui, déplacer vers le bas
-            i = (i + 1) % taille
-        else:
-            # Sinon, déplacer à la case suivante
-            i, j = new_i, new_j
+		# Déplacer les indices pour la prochaine itération
+		j = j + 1
+		i = i - 1
 
-    # Retourner le carré magique une fois terminé
-    return carre_magique
-
+	# Retourner le carré magique une fois terminé
+	return carre_magique
 
 
 def verifier_carre_magique(carre_magique: list[list[int]]) -> bool:
@@ -88,34 +100,26 @@ def verifier_carre_magique(carre_magique: list[list[int]]) -> bool:
 	return True
 
 
-def afficher_carre_magique(carre_magique: list[list[int]]) -> None:
-    """
-    Affiche le carré magique.
-    """
-    print("Voici le carré magique : ")
-    for row in carre_magique:
-        print(" ".join(map(str, row)))
+def afficher_carre_magique(carre_magique: list[list[int]], taille: int):
+	"""
+	Affiche le carré magique.
+	"""
 
-# def afficher_carre_magique(carre_magique: list[list[int]], taille: int):
-# 	"""
-# 	Affiche le carré magique.
-# 	"""
-
-# 	somme_attendu: float = taille*(taille*taille+1) / 2
+	somme_attendu: float = taille*(taille*taille+1) / 2
 	
-# 	print(f"\n\nLa somme de chaque ligne sera de : {int(somme_attendu)}")
-# 	print("Voici le carré magique : ")
+	print(f"\n\nLa somme de chaque ligne sera de : {int(somme_attendu)}")
+	print("Voici le carré magique : ")
 	
-# 	print("+---"*taille, "+", sep="")
+	print("+---"*taille, "+", sep="")
 
-# 	for i in range(taille):
-# 		print("| ", sep="", end="")
+	for i in range(taille):
+		print("| ", sep="", end="")
 
-# 		for j in range(taille):
-# 			print(f"{carre_magique[i][j]} | ", sep="", end="")
+		for j in range(taille):
+			print(f"{carre_magique[i][j]} | ", sep="", end="")
 		
-# 		print("\n", end="")
-# 		print("+---"*taille, "+", sep="", end="\n")
+		print("\n", end="")
+		print("+---"*taille, "+", sep="", end="\n")
 
 def main():
 	"""
@@ -128,9 +132,8 @@ def main():
 
 	while not verifier_carre_magique(carre_magique):
 		carre_magique = creer_carre_magique(taille)
-		print(carre_magique)
 
-	afficher_carre_magique(carre_magique)
+	afficher_carre_magique(carre_magique, taille)
 
 
 if __name__ == "__main__":
