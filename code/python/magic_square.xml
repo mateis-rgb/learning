@@ -1,8 +1,0 @@
-<instance format="XCSP3" type="CSP">
-  <variables>
-    <array id="mat" size="[4][4]"> 1..16 </array>
-  </variables>
-  <constraints>
-    <allDifferent> mat[][] </allDifferent>
-  </constraints>
-</instance>

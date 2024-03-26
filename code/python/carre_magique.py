@@ -1,65 +1,47 @@
 from colorama import Fore
 from pyfiglet import figlet_format
 
-from typing import List
-
 def demander_taille() -> int:
 	"""
 	Demande à l'utilisateur la taille du carré magique.
 	"""
 	while True:
 		try:
-			# Demande à l'utilisateur d'entrer la taille du carré magique
-			taille: int = int(input("Entrez la taille du carré magique : "))
+			taille: int = int(input("Entrez la taille du carré magique (un nombre impair ou pair) : "))
+		
 			return taille
 		except ValueError:
-			# Gère l'erreur si l'utilisateur entre une valeur non numérique
 			print("Veuillez entrer un nombre valide.")
 
 
-def creer_carre_magique(taille: int) -> List[List[int]]:
+def creer_carre_magique(taille: int) -> list[list[int]]:
 	"""
 	Crée un carré magique de taille donnée.
 	"""
-	# Initialisation d'une liste vide pour stocker le carré magique
-	carre_magique: List[List[int]] = [[0] * taille for _ in range(taille)]
-	
-	# Initialisation des variables pour le placement des nombres dans le carré
-	i: int = taille // 2
-	j: int = taille - 1
-	num: int = 1
-	max_num: int = taille * taille
-	somme_magique: int = taille * (max_num + 1) // 2
+	carre_magique: list[list[int]] = [[0] * taille for k in range(taille)]
 
-	# Boucle pour placer les nombres dans le carré
-	while num <= max_num:
-		# Vérification des conditions pour la position du prochain nombre
-		if i == -1 and j == taille:
-			j = taille - 2
-			i = 0
-		else:
-			if j == taille:
-				j = 0
-			if i < 0:
-				i = taille - 1
-		# Vérification si la case est déjà remplie, si oui, déplacer les indices
-		if carre_magique[i][j] != 0:
-			j = j - 2
-			i = i + 1
-			continue
-		else:
-			# Placer le prochain nombre dans la case
-			carre_magique[i][j] = num
-			num = num + 1
-		# Déplacer les indices pour la prochaine itération
-		j = j + 1
-		i = i - 1
+	# Définition des indices de départ pour le nombre 1
+	i: int = 0
+	j: int = taille // 2
 
-	# Retourner le carré magique une fois terminé
+	# Placement des nombres dans le carré magique
+	for num in range(1, taille * taille + 1):
+		carre_magique[i][j] = num
+		new_i: int = (i - 1) % taille
+		new_j: int = (j + 1) % taille
+
+		# Vérification si la case suivante est déjà occupée
+		if carre_magique[new_i][new_j] != 0:
+			# Si oui, descendre d'une ligne
+			i = (i + 1) % taille
+		else:
+			# Sinon, déplacer à la case suivante
+			i, j = new_i, new_j
+
 	return carre_magique
 
 
-def verifier_carre_magique(carre_magique: List[List[int]]) -> bool:
+def verifier_carre_magique(carre_magique: list[list[int]]) -> bool:
 	"""
 	Vérifie si le carré magique est valide.
 	"""
@@ -100,14 +82,26 @@ def verifier_carre_magique(carre_magique: List[List[int]]) -> bool:
 	return True
 
 
-def afficher_carre_magique(carre_magique: List[List[int]]) -> None:
+def afficher_carre_magique(carre_magique: list[list[int]], taille: int):
 	"""
 	Affiche le carré magique.
 	"""
+
+	somme_attendu: float = taille*(taille*taille+1) / 2
+	
+	print(f"\n\nLa somme de chaque ligne sera de : {int(somme_attendu)}")
 	print("Voici le carré magique : ")
-	for row in carre_magique:
-		# Affiche chaque ligne du carré magique
-		print(" ".join(map(str, row)))
+	
+	print("+---"*taille, "+", sep="")
+
+	for i in range(taille):
+		print("| ", sep="", end="")
+
+		for j in range(taille):
+			print(f"{carre_magique[i][j]} | ", sep="", end="")
+		
+		print("\n", end="")
+		print("+---"*taille, "+", sep="", end="\n")
 
 
 def main() -> None:
@@ -119,14 +113,15 @@ def main() -> None:
 	# Demande à l'utilisateur de saisir la taille du carré magique
 	taille: int = demander_taille()
 	# Crée un carré magique valide
-	carre_magique: List[List[int]] = creer_carre_magique(taille)
+	carre_magique: list[list[int]] = creer_carre_magique(taille)
 
 	# Si le carré magique n'est pas valide, en crée un nouveau jusqu'à ce qu'il soit valide
 	while not verifier_carre_magique(carre_magique):
 		carre_magique = creer_carre_magique(taille)
+		print(carre_magique)
 
 	# Affiche le carré magique valide
-	afficher_carre_magique(carre_magique)
+	afficher_carre_magique(carre_magique, taille)
 
 
 if __name__ == "__main__":

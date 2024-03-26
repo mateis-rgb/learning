@@ -8,11 +8,83 @@ def ask_size () -> int :
 	return size
 	
 
-def gen_matrix (size: int) -> list[list[int]]:
+def line_sum (mat: list[list[int]]) -> list[int]:
+	line_s: list[int] = []
+	
+	# On parcours la matrice en ligne 
+	for line in mat:
+		line_s.append(sum(line))
+
+	return line_s
+
+
+def col_sum (mat: list[list[int]]) -> bool:
+	col_s: list[int] = []
+
+	# On parcours la matrice de gauche à droite
+	for k in range(len(mat) + 1):
+		col_s_calc: int = 0
+
+		# Pour chaque ligne on prends la colone d'indice k, pour faire la somme de la colone
+		for line in mat:
+			col_s_calc += line[k]
+		
+		col_s.append(col_s_calc)
+
+	# Sinon après tout les parcours sans retours, on retourne vrai
+	return col_s
+
+
+def top_bottom_diag_sum (mat: list[list[int]]) -> bool:
+	top_bottom_diag_sum_calc: int = 0
+
+	# On parcours la matrice
+	for k in range(len(mat[0])):
+		top_bottom_diag_sum_calc += mat[k][k]
+
+	return top_bottom_diag_sum_calc
+
+
+def bottom_top_diag_sum (mat: list[list[int]]) -> bool:
+	bottom_top_diag_sum_calc: int = 0
+
+	# On parcours la matrice
+	for k in range(len(mat[0])):
+		bottom_top_diag_sum_calc += mat[len(mat) - k][k]
+
+	return bottom_top_diag_sum_calc
+
+
+def generate_matrix (size: int) -> list[list[int]]:
 	mat = VarArray(size=[size, size], dom=range(1, (size*size)+1))
 
-	satisfy(
+	waiting: int = size * ((size*size) + 1) / 2
+
+	lines_sum = line_sum(mat)
+	cols_sum = col_sum(mat)
+	t_b_diag_sum = top_bottom_diag_sum(mat)
+	b_t_diag_sum = bottom_top_diag_sum(mat)
+
+	satisfy (
 		AllDifferent(mat)
+	)
+
+	for l_sum in lines_sum:
+		satisfy (
+			l_sum == waiting
+		)
+
+	for c_sum in cols_sum:
+		satisfy (
+			c_sum == waiting
+		)
+
+	satisfy (
+		t_b_diag_sum == waiting
+	)
+
+	satisfy (
+		b_t_diag_sum == waiting
 	)
 
 	if solve() is SAT:
@@ -20,92 +92,6 @@ def gen_matrix (size: int) -> list[list[int]]:
 	
 	raise Exception("Something went wrong")
 
-
-def line_verify (mat: list[list[int]], waiting: int) -> bool:
-	# On parcours la matrice en ligne 
-	for line in mat:
-		line_sum: int = 0
-
-		# On fait la somme de toutes les valeurs de la ligne
-		for k in line:
-			line_sum += k
-
-		# Si le résultat attendu est différent de la somme calculé on retourne faux
-		if line_sum != waiting:
-			return False
-
-	# Sinon lorsque toutes les lignes ont été parcouru sans avoir été retourné, on retourne vrai
-	return True
-
-
-def col_verify (mat: list[list[int]], waiting: int) -> bool:
-	# On parcours la matrice de gauche à droite
-	for k in range(len(mat + 1)):
-		col_sum: int = 0
-
-		# Pour chaque ligne on prends la colone d'indice k, pour faire la somme de la colone
-		for line in mat:
-			col_sum += line[k]
-
-		# On vérifie si la somme de la colone est différent du résultat attendu, si le cas échéant on retourne faux
-		if col_sum != waiting:
-			return False
-	
-	# Sinon après tout les parcours sans retours, on retourne vrai
-	return True
-
-# a commenter {
-def diagonal_verify (mat: list[list[int]], waiting: int) -> bool:
-	top_bottom_diag_sum: int = 0
-	bottom_top_diag_sum: int = 0
-
-	# On parcours la matrice
-	for k in range(len(mat[0])):
-		top_bottom_diag_sum += mat[k][k]
-		bottom_top_diag_sum += mat[len(mat) - k][k]
-
-	# On vérifie si les deux longueurs des diagonales sont égales
-	if top_bottom_diag_sum == bottom_top_diag_sum:
-		# Si oui, on verifie si la somme est égale au résultat attendu
-		if top_bottom_diag_sum != waiting:
-			return False
-
-	return True
-# }
-
-
-def verify (mat: list[list[int]], size: int) -> bool:
-	waiting: int = (size*(size*size + 1) / 2)
-
-	# On vérifie si la ligne correspond au calcul attendu
-	if line_verify(mat, waiting):
-		
-		# On vérifie si la colone correspond au calcul attendu
-		if col_verify (mat, waiting):
-
-			# On vérifie si les diagonales correspond au calcul attendu
-			if diagonal_verify (mat, waiting):
-				return True
-
-	# Sinon on retourne faux 
-	return False
-
-# A faire {
-def gen_possibilites (size: int, waiting: int, possibilites: list[int]) -> list[list[int]]:	
-	all_values: list[int] = [k for k in range (1, size*size + 1)]
-	
-	current_possibilies: list[int] = [1, 2, 3]
-
-
-
-	if len(current_possibilies) != size:
-		raise Exception("Something went wrong...")
-
-
-
-def fill_matrix (matrix: list[list[int]], possibilites: list[list[int]]) -> list[list[int]]:
-	return matrix
-# }
 
 def main():
 	print(f"{Fore.GREEN}{figlet_format('magic square.py')}{Fore.WHITE}")
