@@ -5,4 +5,5 @@ SELECT titre FROM album WHERE annee = (SELECT annee FROM album WHERE titre = 'Ar
 SELECT MAX(duree) DureeMax FROM album;
 SELECT ville, COUNT(ville) FROM album NATURAL JOIN label GROUP BY ville;
 SELECT COUNT(refAlbum) albums FROM label NATURAL JOIN album NATURAL JOIN joue WHERE nom = 'Coltrane' AND prenom = 'John';
-SELECT nom || ' ' || prenom nom_prenom, COUNT(refAlbum) albums FROM label NATURAL JOIN album NATURAL JOIN joue WHERE nom != 'Coltrane' AND prenom != 'John';
+
+SELECT titre, COUNT(refAlbum) count_albums FROM label NATURAL JOIN album NATURAL JOIN joue WHERE nom != 'Coltrane' AND prenom != 'John' GROUP BY titre HAVING COUNT(refAlbum) > (SELECT COUNT(refAlbum) albums FROM label NATURAL JOIN album NATURAL JOIN joue WHERE nom = 'Coltrane' AND prenom = 'John');
