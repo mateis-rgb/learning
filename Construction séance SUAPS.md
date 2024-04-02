@@ -3,9 +3,9 @@ Thème : Circulation de balle, Attaque
 Durée : 1h30
 
 ## Construction :
-- ### Échauffement individuel ou en duo (5min)
+- ### Échauffement individuel ou en duo (3 min)
 
-- ### Jeu d’échauffement (10min)
+- ### Jeu d’échauffement (7 min)
 	#### Touchdown :
 	Objectif :
 		- Monter en cardio
@@ -21,7 +21,7 @@ Durée : 1h30
 		- Si le PB se fait toucher, il doit d'arreter et faire une passe
 		- Si le PB se fait toucher par deux joueurs, balle à l'adversaire (Manche 2)
 
-- ### Situation de travail (~20/15 min)
+- ### Situation de travail (15 min)
 	Circulation de balle
 	Objectif:
 		- Réussir toutes les passes malgré la vitesse
@@ -48,9 +48,22 @@ Durée : 1h30
 	Lorsque celui qui a le ballon le lache son collègue doit le ratrapper avant que le ballon touche le sol 
 	Sinon petit gage (1 burpies ou 2 pompe ou 2 abdos ou 2 squats)
 
-- ### Echauffement gardien (10min)
+- ### Echauffement gardien (10 min)
 
-- ### Situation de travail (~20/25 min)
+- ### Situation de travail (20 min)
+	Travail (Engagement / désengagement)
+	Objectif :
+		- Prendre son ballon en course
+		- Fin d'échauffement gardien
+	<br>
+
+		3 personnes sur la base arrière, le reste à AL G :
+		- AL G passe à AR G dans sa course.
+		- AR G passe au DM dans sa course.
+		- DM passe à AR D dans sa course, pour tir à la demande du GB (fin échauffement GB)
+
+
+- ### Situation de travail (20 min)
 	Travail (ROTA G ou D)
 	Objectif :
 		- PB: Être menacant devant son intervalle (tirer pour marquer)
@@ -66,5 +79,5 @@ Durée : 1h30
 
 	Une fois bien intégré s'il y a 3 défense de suite qui gagne, changement attaque défese, et on fait la même chose
 
-- ### Opposition (~20/25 min)
+- ### Opposition (20 min)
 	Deux équipes de niveau équivalent (Marie Noël) pour opposition avec rota en attaque
