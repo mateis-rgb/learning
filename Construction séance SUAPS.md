@@ -61,6 +61,7 @@ Durée : 1h30
 		- AL G passe à AR G dans sa course.
 		- AR G passe au DM dans sa course.
 		- DM passe à AR D dans sa course, pour tir à la demande du GB (fin échauffement GB)
+		Les postes arrières se désengagent et on recommence. Une fois que tout le monde est passé AL, on change les 3 AR.
 
 
 - ### Situation de travail (20 min)
