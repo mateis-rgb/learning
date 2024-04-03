@@ -1,6 +1,7 @@
-Niveau : SUAPS
-Thème : Circulation de balle, Attaque
-Durée : 1h30
+Niveau : SUAPS <br>
+Thème : Circulation de balle, Attaque <br>
+Durée : 1h30 <br>
+<br>
 
 ## Construction :
 - ### Échauffement individuel ou en duo (3 min)
