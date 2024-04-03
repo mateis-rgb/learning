@@ -1,6 +1,6 @@
 Niveau : SUAPS <br>
 Thème : Circulation de balle, Attaque <br>
-Durée : 1h30 <br>
+Durée : 1h30
 
 ## Construction :
 - ### Échauffement individuel ou en duo (3 min)
@@ -10,7 +10,6 @@ Durée : 1h30 <br>
 	Objectif :
 		- Monter en cardio
 		- Circulation de passe sans interruption
-	<br>
 
 		Règles: 
 		- Jeu sans drible
@@ -25,7 +24,6 @@ Durée : 1h30 <br>
 	Circulation de balle
 	Objectif:
 		- Réussir toutes les passes malgré la vitesse
-	<br>
 
 		Règles: 
 		- Un par poste, le reste sur le demi-centre
@@ -55,7 +53,6 @@ Durée : 1h30 <br>
 	Objectif :
 		- Prendre son ballon en course
 		- Fin d'échauffement gardien
-	<br>
 
 		3 personnes sur la base arrière, le reste à AL G :
 		- AL G passe à AR G dans sa course.
@@ -68,8 +65,7 @@ Durée : 1h30 <br>
 	Travail (ROTA G ou D)
 	Objectif :
 		- PB: Être menacant devant son intervalle (tirer pour marquer)
-		- Def: Défense à 100%, 0-6
-	<br> 
+		- Def: Défense à 100%, 0-6 
 
 	Chacun a son poste (possibilité de doubler les postes), pivot 23 (entre 2 et 3 dans le sens de la lecture)
 	<br>
