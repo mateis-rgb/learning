@@ -1,5 +1,8 @@
-from random import randint, shuffle
-from string import ascii_uppercase, ascii_lowercase, digits
+from math import floor
+from random import random
+
+def randint (minimum: int, maximum: int) -> int:
+	return 
 
 # Exercice 1
 def ex1 () -> None:
