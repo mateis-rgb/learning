@@ -115,3 +115,23 @@ en séniors :
 
 
 # -> Faire une activité pour les arbitres du club
+
+
+## Travail au poste -> Arrière
+
+Tir :
+- Soit à 6m suite à un duel
+- Soit à 10~12m en extension
+- Soit à 9m à la hanche
+
+Caractéristiques :
+- Maitriser tout les types de duels
+- Savoir rentré pivot
+- Présenter du danger
+- Prendre le ballon en course
+- Avoir de bons appuis
+- Bonne vision de jeu (localisé)
+
+Le placement :
+- Voir le but dans son ensemble dans son intervalle
+
