@@ -4,16 +4,16 @@
     "type": "split",
     "children": [
       {
-        "id": "c8f2cefddfe054ff",
+        "id": "05a422c629e65acb",
         "type": "tabs",
         "children": [
           {
-            "id": "abf0b49b2e034de3",
+            "id": "a1dd99557d40fa78",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Formation Accompagner les pratiquants.md",
+                "file": "Énergie 1.md",
                 "mode": "source",
                 "source": false
               }
@@ -86,7 +86,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Formation Accompagner les pratiquants.md",
+                "file": "Énergie 1.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -103,7 +103,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Formation Accompagner les pratiquants.md",
+                "file": "Énergie 1.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -126,7 +126,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Formation Accompagner les pratiquants.md"
+                "file": "Énergie 1.md"
               }
             }
           },
@@ -160,20 +160,43 @@
       "command-palette:Open command palette": false
     }
   },
-  "active": "ff0920719d01824a",
+  "active": "a1dd99557d40fa78",
   "lastOpenFiles": [
-    "Fac/Les bases en C++.md",
+    "Énergie 1.md",
     "Formation Accompagner les pratiquants.md",
-    "Construction séance SUAPS.md",
-    "Fac/Maths/Arithmétique dans ZI/Arithmétique dans ZI.md",
-    "README.md",
-    "Fac/Les bases du terminal sous macOs, Linux et Windows.md",
-    "Fac/Maths/Algèbre élémentaire - Equations trigonométrique.md",
-    "Fac/Maths/Algèbre élémentaire - Trigonométrie.md",
-    "code/algo-p1/ex1.out",
-    "Fac/Base-Info/Base de l'informatique.md",
-    "\".md",
-    "code/algo-p1/tp1.cpp",
-    "code/algo-p1/ex1.cpp"
+    "cours/but1_geii",
+    "cours/Nouveau dossier",
+    "cours/fac/Maths/Arithmétique dans ZI/Arithmétique dans ZI.md",
+    "cours/fac/Maths/Analyse élémentaire/Analyse élémentaire - Monotonie, opération et composition de fonctions.md",
+    "cours/fac/Maths/Analyse élémentaire/Analyse élémentaire - Les ensembles.md",
+    "cours/fac/Maths/Analyse élémentaire/Analyse élémentaire - Fonctions d'une varaible réel.tex",
+    "cours/fac/Maths/Analyse élémentaire/Analyse élémentaire - Fonctions d'une varaible réel.pdf",
+    "cours/fac/Maths/Analyse élémentaire/Analyse élémentaire - Fonctions d'une varaible réel.log",
+    "cours/fac/Maths/Analyse élémentaire/Analyse élémentaire - Fonctions d'une varaible réel.fls",
+    "cours/fac/Maths/Analyse élémentaire/Analyse élémentaire - Fonctions d'une varaible réel.fdb_latexmk",
+    "cours/fac/Maths/Analyse élémentaire/Analyse élémentaire - Fonctions d'une varaible réel.aux",
+    "cours/fac/Maths/Algèbre élémentaire/Algèbre élémentaire - Trigonométrie.md",
+    "cours/fac/Maths/Algèbre élémentaire/Algèbre élémentaire - Transformation somme-produit.md",
+    "cours/fac/Maths/Algèbre élémentaire/Algèbre élémentaire - Formules de duplication.md",
+    "cours/fac/Maths/Algèbre élémentaire/Algèbre élémentaire - Equations trigonométrique.tex",
+    "cours/fac/Maths/Algèbre élémentaire/Algèbre élémentaire - Equations trigonométrique.pdf",
+    "cours/fac/Maths/Algèbre élémentaire/Algèbre élémentaire - Equations trigonométrique.md",
+    "cours/fac/Base-Info/Base de l'informatique.md",
+    "cours/fac/Les bases en C++.md",
+    "cours/fac/Les bases du terminal sous macOs, Linux et Windows.md",
+    "cours/fac/IA - Utiliser la science comme un outil diplomatique.md",
+    "fac/Maths/Arithmétique dans ZI/Arithmétique dans ZI.md",
+    "fac/Maths/Analyse élémentaire/Analyse élémentaire - Monotonie, opération et composition de fonctions.md",
+    "fac/Maths/Analyse élémentaire/Analyse élémentaire - Les ensembles.md",
+    "fac/Maths/Algèbre élémentaire/Algèbre élémentaire - Trigonométrie.md",
+    "fac/Maths/Algèbre élémentaire/Algèbre élémentaire - Transformation somme-produit.md",
+    "fac/Maths/Algèbre élémentaire/Algèbre élémentaire - Formules de duplication.md",
+    "fac/Maths/Algèbre élémentaire/Algèbre élémentaire - Equations trigonométrique.md",
+    "fac/Base-Info/Base de l'informatique.md",
+    "fac/Les bases en C++.md",
+    "fac/Les bases du terminal sous macOs, Linux et Windows.md",
+    "fac/IA - Utiliser la science comme un outil diplomatique.md",
+    "Fac/Les bases en C++.md",
+    "Construction séance SUAPS.md"
   ]
 }
