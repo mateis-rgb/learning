@@ -54,5 +54,6 @@ int randint (int max)
 	// On définit la graine du pseudo aléatoire avec le temps
 	srand(time(NULL));
 
+	// On tire un nombre aléatoire entre 0 et max (inclu)
 	return rand() % (max + 1);
 }
