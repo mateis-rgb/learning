@@ -7,3 +7,4 @@ node_modules
 *.aux
 *.gz
 *.xml
+*.exe

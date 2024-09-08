@@ -1,20 +1,36 @@
 #include <stdio.h>
 
-int factoriel (int nombre)
+int fill_array(int array_length)
 {
-	return nombre * factoriel(nombre - 1);
+	int array[array_length];
+
+	for (int k = 0; k < array_length; k++)
+	{
+		int temp = 0;
+
+		printf("Entrez une valeur a stocker dans le tableau: ");
+		scanf("%d", &temp);
+
+		array[k] = temp;
+	}
+
+	printf("Le tableau est complet. \n");
+
+	return array;
 }
 
-int main ()
+void display_array(int array[], int array_length)
 {
-	int input;
+	for (int k = 0; k < array_length; k++)
+	{
+		printf("%d\n", array[k]);
+	}
+}
 
-	printf("Entrez une factoriel a calculer: ");
-	scanf("%d", input);
+int main (void)
+{
+	const int len = 10;
+	int array[len] = fill_array(len);
 
-	int fact = factoriel(input);
-
-	printf("la factoriel calculee est: %d", fact);
-
-	return 0;
+	display_array(array, len);
 }
