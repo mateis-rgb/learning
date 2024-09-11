@@ -10,10 +10,10 @@ int main (void)
 	scanf("%f", &rad);
 
 	// On fait la conversion
-	deg = (180/(2*pi))*rad;
+	deg = (360/(2*pi))*rad;
 
 	// On affiche le résultat
-	printf("%f radians = %f degres", rad, deg);
+	printf("%f radians = %f degres\n", rad, deg);
 
 	return 0;
 }

@@ -1,95 +1,91 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <time.h>
+#include <sys/time.h>
 
-time_t getCurrentTime (void);
-time_t getDifferenceTime (time_t start, time_t stop);
-int * getFormattedTime (time_t timestamp);
-void displayTime (int formattedTime[3]);
-void askRandomMultiplication (time_t * array, int &size);
+double getDifferenceTime (clock_t start, clock_t stop);
+double calculateAverage (double * array, int size);
+void askRandomMultiplication (double * array, int * size);
 int randint (int max);
 
 int main (void)
-{
+{	
 	int times_size = 0;
-	time_t times[255];
+	int cpt = 0;
+	double times[255];
+	double average = 0;
 
-	askRandomMultiplication(times, times_size);
+	// On définit la graine du pseudo aléatoire avec le temps
+	srand(time(NULL));
 
+	while (cpt == times_size)
+	{
+		askRandomMultiplication(times, &times_size);
+	
+		cpt++;
+	}
 
+	average = calculateAverage(times, times_size);
 
-
-
-	// int temp = 0;
-
-	// int startTime, stopTime;
-
-	// startTime = getCurrentTime();
-
-	// printf("votre chiffre preferer: ");
-	// scanf("%d", &temp);
-
-	// stopTime = getCurrentTime();
-
-	// printf("vous avez mis ");
-	// displayTime(getFormattedTime(getDifferenceTime(startTime, stopTime)));
-
+	printf("==> Temps moyen de réponse : %.0fms", average);
+	
 	return 0;
 }
 
-time_t getCurrentTime (void)
+double getDifferenceTime (clock_t start, clock_t stop)
 {
-	return time(NULL);
+	return (stop - start) / CLOCKSPER;
 }
 
-time_t getDifferenceTime (time_t start, time_t stop)
+double calculateAverage (double * array, int size)
 {
-	return stop - start;
+	double average = 0;
+
+	for (int k = 0; k < size; k++)
+	{
+		average = average + array[k];
+	}
+
+	return average / size; 
 }
 
-int * getFormattedTime (time_t timestamp)
+void askRandomMultiplication (double * array, int * size)
 {
-	static int formattedTime[3];
+	struct timeval tval_before, tval_after, tval_result;
 
-	formattedTime[0] = timestamp / 3600;
-	formattedTime[1] = (timestamp % 3600) / 60;
-	formattedTime[2] = timestamp % 60;
+	// clock_t start, stop;
 
-	return formattedTime;
-}
+	double diff = 0;
 
-void displayTime (int formattedTime[3])
-{
-	if (formattedTime[0] != 0) printf("%dh", formattedTime[0]);
-	if (formattedTime[1] != 0) printf("%dm", formattedTime[1]);
-	
-	printf("%ds\n", formattedTime[2]);
-}
-
-void askRandomMultiplication (time_t * array, int &size)
-{
-	time_t start = getCurrentTime();
 	int a = randint(10);
 	int b = randint(10);
 	int temp = 0;
 	
+	gettimeofday(&tval_before, NULL);
+
 	do
 	{
 		printf("%d x %d = ", a, b);
 		scanf("%d", &temp);
-
-		if ()
 	}
-	while ((a*b) == temp);
+	while ((a*b) != temp && temp != -1);
 
-	time_t stop = getCurrentTime();
+	gettimeofday(&tval_after, NULL);
+
+	if (temp != -1)
+	{
+		timersub();
+
+		printf("Vous avez trouvé en %fms\n", diff);
+
+		array[*size] = diff;
+
+		(*size)++;
+	}
 }
 
 int randint (int max)
 {
-	// On définit la graine du pseudo aléatoire avec le temps
-	srand(time(NULL));
-
 	// On tire un nombre aléatoire entre 0 et max (inclu)
 	return rand() % (max + 1);
 }
