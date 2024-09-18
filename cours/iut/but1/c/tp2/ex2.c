@@ -3,7 +3,7 @@
 int main (void)
 {
 	// On définit la variable de moyenne
-	float average = 0.0;
+	float average;
 
 	// On demande l'entrée à l'utilisateur
 	printf("Entrez une moyenne : ");

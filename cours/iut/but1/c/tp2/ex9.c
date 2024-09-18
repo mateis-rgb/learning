@@ -14,18 +14,15 @@ int main (void)
 	// Tant que le compteur est strictement inferieur à l'entrée de l'utilisateur
 	while (k < nbr)
 	{
-		// Tout les nombres sont divisibles par 1 donc pas interessant de le notifier
-		if (k != 1)
+	
+		// On regarde la divisibilité du nombre entré par rapport à tt les autres nombres
+		if (nbr % k == 0)
 		{
-			// On regarde la divisibilité du nombre entré par rapport à tt les autres nombres
-			if (nbr % k == 0)
-			{
-				// S'il y a au moins un diviseur
-				hasDivider = 1;
+			// S'il y a au moins un diviseur
+			hasDivider = 1;
 
-				// On fait l'affichage
-				printf("%d est un diviseur de %d\n", k, nbr);
-			}
+			// On fait l'affichage
+			printf("%d est un diviseur de %d\n", k, nbr);
 		}
 		// On incrémente le compteur
 		k++;
