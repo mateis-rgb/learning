@@ -10,7 +10,8 @@ ajouter_alias() {
         # Vérifie si les alias existent déjà
         if ! grep -Fxq "alias la=" "$fichier" || ! grep -Fxq "alias py=" "$fichier" || ! grep -Fxq "alias pip=" "$fichier" || ! grep -Fxq "alias gcc=" "$fichier" || ! grep -Fxq "alias g++=" "$fichier"; then
             # Ajoute les alias au fichier
-            echo -e "$ALIAS_A_AJOUTER" >> "$fichier"
+            cp $fichier $fichier.bak
+            echo -e "$ALIAS_A_AJOUTER" > "$fichier"
             echo "Alias ajoutés à $fichier"
 			source $fichier
         else
