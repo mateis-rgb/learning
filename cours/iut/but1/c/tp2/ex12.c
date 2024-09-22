@@ -3,7 +3,7 @@
 /* Prototypage de la fonction qui récupère la longueur d'un entier
 * @var {int} n
 * @returns {int}
-*/ 
+*/
 int get_int_length (int n);
 
 int main (void)
@@ -20,19 +20,9 @@ int main (void)
 	nbr_length = get_int_length(nbr);
 
 	// On affiche une première ligne
-	for (int k = 0; k <= nbr_length + 4; k++)
-	{
-		printf("*");
-	}
-
-	// On affiche le nombre avec les étoiles
+	for (int k = 0; k <= nbr_length + 4; k++) printf("*");
 	printf("\n* %d *\n", nbr);
-
-	// On affiche la dernière ligne
-	for (int k = 0; k <= nbr_length + 4; k++)
-	{
-		printf("*");
-	}
+	for (int k = 0; k <= nbr_length + 4; k++) printf("*");
 
 	// On fait un retour à la ligne pour le retour en console
 	printf("\n");
