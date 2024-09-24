@@ -1,74 +1,84 @@
 #include <stdio.h>
 #include <curl/curl.h>
-#include <stdlib.h>
-#include <string.h>
 
-typedef struct
-{
-	char *string;
-	size_t size;
-} Response;
- 
-size_t write_chunk(void *data, size_t size, size_t nmemb, void *userdata);
 
-int get(char * url, Response * response)
+/**
+ * @brief Send GET HTTP request
+ * 
+ * @param url 
+ */
+void get (char * url);
+
+/**
+ * @brief Send POST HTTP request
+ * 
+ * @param url 
+ * @param data 
+ */
+void post (char * url, char * data);
+
+void get (char * url)
 {
+	// On définit les variables
 	CURL * curl;
-	CURLcode result;
+	CURLcode res;
 
+	// On initialise l'instance de curl
 	curl = curl_easy_init();
 
-	if (curl == NULL)
+	if (curl)
 	{
-		fprintf(stderr, "HTTP request failed\n");
+		// On ajoute l'url comme option de curl
+		curl_easy_setopt(curl, CURLOPT_URL, url);
 
-		return -1;
+		// On affiche le résultat si la response arrive
+		res = curl_easy_perform(curl);
+		printf("\n");
+
+		// Si la response n'est pas OK
+		if (res != CURLE_OK)
+		{
+			// On affiche l'erreur
+			fprintf(stderr, "curl_easy_perform() failed: %s\n", curl_easy_strerror(res));
+		}
+
+		// On nettoie l'instance de curl
+		curl_easy_cleanup(curl);
 	}
-
-	(* response).string = malloc(1);
-	(* response).size = 0;
-
-	curl_easy_setopt(curl, CURLOPT_URL, (* url));
-	curl_easy_setopt(curl, CURLOPT_WRITEFUNCTION, write_chunk);
-	curl_easy_setopt(curl, CURLOPT_WRITEDATA, (void *) &(* response));
-
-	result = curl_easy_perform(curl);
-
-	if (result != CURLE_OK)
-	{
-		fprintf(stderr, "Error: %s\n", curl_easy_strerror(result));
-
-		return -1;
-	}
-
-	curl_easy_cleanup(curl);
-
-	free((* response).string);
-
-	return 0;
 }
 
-size_t write_chunk(void *data, size_t size, size_t nmemb, void *userdata)
+void post (char * url, char * data)
 {
+	// On définit les variables
+	CURL * curl;
+	CURLcode res;
 
-	size_t real_size = size * nmemb;
+	// On initialise globalement curl
+	curl_global_init(CURL_GLOBAL_ALL);
 
-	Response *response = (Response *) userdata;
+	// On initialise l'instance de curl
+	curl = curl_easy_init();
 
-	char *ptr = realloc(response->string, response->size + real_size + 1);
-
-	if (ptr == NULL)
+	if (curl)
 	{
-		return CURLE_WRITE_ERROR;
+		// On ajoute l'url dans les options la requete
+		curl_easy_setopt(curl, CURLOPT_URL, url);
+
+		// On ajoute les data dans les options de la requete
+		curl_easy_setopt(curl, CURLOPT_POSTFIELDS, data);
+
+		// On affiche le résultat si la response arrive
+		res = curl_easy_perform(curl);
+		printf("\n");
+
+		// Si la response n'est pas OK
+		if (res != CURLE_OK)
+		{
+			// On affiche l'erreur
+			fprintf(stderr, "curl_easy_perform() failed: %s\n", curl_easy_strerror(res));
+		}
+
+		// On nettoie l'instance de curl
+		curl_easy_cleanup(curl);
 	}
-
-	response->string = ptr;
-
-	memcpy(&(response->string[response->size]), data, real_size);
-
-	response->size += real_size;
-
-	response->string[response->size] = 0;
-
-	return real_size;
 }

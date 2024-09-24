@@ -1,9 +1,9 @@
 {
     "files.associations": {
-        "*.embeddedhtml": "html",
         "*.page-template": "vue",
         "*.layout-template": "vue",
         "*.vue": "vue",
+        "*.embeddedhtml": "html",
         ".env*": "dotenv",
         "iostream": "cpp",
         "__bit_reference": "cpp",
@@ -74,7 +74,8 @@
         "time.h": "c",
         "socket.h": "c",
         "string.h": "c",
-        "types.h": "c"
+        "types.h": "c",
+        "stdlib.h": "c"
     },
     "C_Cpp.errorSquiggles": "disabled"
 }
