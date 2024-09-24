@@ -13,8 +13,8 @@ void logo (void)
 	printf("              |_| |_____|           |_|                          \n");
 }
 
-void askToUrl (char * url)
-{
-	printf("Entrez l'url que vous voulez tester : ");
-	scanf("%s" &url);
-}
+// void askToUrl (char * url)
+// {
+// 	printf("Entrez l'url que vous voulez tester : ");
+// 	scanf("%s" &url);
+// }
