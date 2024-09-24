@@ -3,7 +3,6 @@
 
 #include "./gui.c"
 #include "./request.c"
-#include "./types.c"
 
 int main (void)
 {

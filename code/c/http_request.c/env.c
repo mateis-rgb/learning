@@ -1,0 +1,5 @@
+#define NAME "http_request.c"
+#define VERSION "1.0.0"
+#define AUTHOR "mateis-rgb"
+#define GITHUB "https://github.com/mateis-rgb/"
+#define REPO "https://github.com/mateis-rgb/http_request.c"

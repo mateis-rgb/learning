@@ -2,6 +2,8 @@
 #include <stdlib.h>
 #include <string.h>
 
+#include "./env.c"
+
 /**
  * @brief Clear the terminal
  * 
@@ -56,12 +58,12 @@ void clearScreen (void)
 
 void logo (void)
 {
-	printf(" _     _   _                                           _\n");         
-	printf("| |__ | |_| |_ _ __     _ __ ___  __ _ _   _  ___  ___| |_   ___ \n"); 
-	printf("| '_ \\| __| __| '_ \\   | '__/ _ \\/ _` | | | |/ _ \\/ __| __| / __|\n");
-	printf("| | | | |_| |_| |_) |  | | |  __/ (_| | |_| |  __/\\__ \\ |_ | (__ \n");
-	printf("|_| |_|\\__|\\__| .__/___|_|  \\___|\\__, |\\__,_|\\___||___/\\__(_)___|\n");
-	printf("              |_| |_____|           |_|                          \n");
+	printf("\x1b[1;33m _     _   _\x1b[1;0m                                           _\n");         
+	printf("\x1b[1;33m| |__ | |_| |_ _ __\x1b[1;0m     _ __ ___  __ _ _   _  ___  ___| |_   \x1b[1;31m___ \n"); 
+	printf("\x1b[1;33m| '_ \\| __| __| '_ \\\x1b[1;0m   | '__/ _ \\/ _` | | | |/ _ \\/ __| __| \x1b[1;31m/ __|\n");
+	printf("\x1b[1;33m| | | | |_| |_| |_) |\x1b[1;0m  | | |  __/ (_| | |_| |  __/\\__ \\ |_ \x1b[1;31m| (__ \n");
+	printf("\x1b[1;33m|_| |_|\\__|\\__| .__/\x1b[1;0m___|_|  \\___|\\__, |\\__,_|\\___||___/\\__\x1b[1;31m(_)___|\n");
+	printf("\x1b[1;33m              |_|\x1b[1;0m |_____|           |_|                          \n");
 }
 
 int help (void)
@@ -74,9 +76,10 @@ int help (void)
 	printf("\n---------\n");
 	printf("Credits : \n");
 	printf("---------\n");
-	printf("Name: http_request.c\n");
-	printf("Version: 0.0.1(a)\n\n");
-	printf("Author: mateis-rgb (https://github.com/mateis-rgb/)\n");
+	printf("Name: %s\n", NAME);
+	printf("Version: %s\n", VERSION);
+	printf("Author: %s (%s)\n", AUTHOR, GITHUB);
+	printf("GitHub Repository: %s\n\n", REPO);
 	printf("Que voulez vous faire (quitter[0] / poursuivre le programme[1]) : ");
 	scanf("%d", &temp);
 	
@@ -106,8 +109,8 @@ int askForMethod(void)
 char * askForUrl (void)
 {
 	// On initialise les variables
-	char url_temp[255] = "";
-	char * url = (char *) malloc(255 * sizeof (char));
+	char url_temp[256] = "";
+	char * url = (char *) malloc(256 * sizeof (char));
 
 	// On demande l'entrée à l'utilisateur
 	printf("Entrez l'url que vous voulez tester : ");
