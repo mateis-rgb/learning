@@ -1,0 +1,45 @@
+\documentclass[french]{article}
+	\usepackage[T1]{fontenc}
+	\usepackage{lmodern}        % Caractères plus lisibles
+	\usepackage{babel}          % Réglages linguistiques (avec french)
+	\pagestyle{empty}
+% \usepackage{charter} % Use the Charter font
+
+\usepackage[
+	a4paper, % Paper size
+	top=1in, % Top margin
+	bottom=1in, % Bottom margin
+	left=1in, % Left margin
+	right=1in, % Right margin
+	% showframe % Uncomment to show frames around the margins for debugging purposes
+]{geometry}
+
+\setlength{\parindent}{1em} % Paragraph indentation
+\setlength{\parskip}{2em} % Vertical space between paragraphs
+
+% \usepackage[ddmmyyyy]{datetime}
+
+\usepackage{fancyhdr} % Required for customizing headers and footers
+
+\fancypagestyle{firstpage}{%
+	\fancyhf{} % Clear default headers/footers
+	\renewcommand{\headrulewidth}{0pt} % No header rule
+	\renewcommand{\footrulewidth}{1pt} % Footer rule thickness
+}
+
+\fancypagestyle{subsequentpages}{%
+	\fancyhf{} % Clear default headers/footers
+	\renewcommand{\headrulewidth}{1pt} % Header rule thickness
+	\renewcommand{\footrulewidth}{1pt} % Footer rule thickness
+}
+
+\AtBeginDocument{\thispagestyle{firstpage}} % Use the first page headers/footers style on the first page
+\pagestyle{subsequentpages} % Use the subsequent pages headers/footers style on subsequent pages
+
+%----------------------------------------------------------------------------------------
+
+\begin{document}
+
+Collision Devices est une entreprise créé en 2016 par deux amis, Denis GABORIT et Baptiste ESSEUL. M GABORIT était un ancien élève du DUT GEII à l'époque où c'était un DUT. Il est maintenant le Président et M. ESSEUL est quant à lui le Directeur général. Leur entreprise concoit et fabrique des pédales pour guitar qui fait différents effets. Ils font la recherche et developpement, l'assemblage et la vente de chacune de leur pédale.
+
+\end{document}

@@ -1,0 +1,106 @@
+\documentclass[french]{article}
+	\usepackage[T1]{fontenc}
+	\usepackage{lmodern}        % Caractères plus lisibles
+	\usepackage{babel}          % Réglages linguistiques (avec french)
+	\pagestyle{empty}
+% \usepackage{charter} % Use the Charter font
+
+\usepackage[
+	a4paper, % Paper size
+	top=1in, % Top margin
+	bottom=1in, % Bottom margin
+	left=1in, % Left margin
+	right=1in, % Right margin
+	% showframe % Uncomment to show frames around the margins for debugging purposes
+]{geometry}
+
+\setlength{\parindent}{1em} % Paragraph indentation
+\setlength{\parskip}{2em} % Vertical space between paragraphs
+
+% \usepackage[ddmmyyyy]{datetime}
+
+\usepackage{fancyhdr} % Required for customizing headers and footers
+
+\fancypagestyle{firstpage}{%
+	\fancyhf{} % Clear default headers/footers
+	\renewcommand{\headrulewidth}{0pt} % No header rule
+	\renewcommand{\footrulewidth}{1pt} % Footer rule thickness
+}
+
+\fancypagestyle{subsequentpages}{%
+	\fancyhf{} % Clear default headers/footers
+	\renewcommand{\headrulewidth}{1pt} % Header rule thickness
+	\renewcommand{\footrulewidth}{1pt} % Footer rule thickness
+}
+
+\AtBeginDocument{\thispagestyle{firstpage}} % Use the first page headers/footers style on the first page
+\pagestyle{subsequentpages} % Use the subsequent pages headers/footers style on subsequent pages
+
+%----------------------------------------------------------------------------------------
+
+\begin{document}
+
+%----------------------------------------------------------------------------------------
+%	YOUR NAME AND CONTACT INFORMATION
+%----------------------------------------------------------------------------------------
+
+\hfill
+\begin{tabular}{@{} l}
+	\bigskip Angers, \today \\ % Date
+\end{tabular}
+
+%----------------------------------------------------------------------------------------
+%	ADDRESSEE AND GREETING
+%----------------------------------------------------------------------------------------
+
+\begin{tabular}{l @{}}
+	Matéis RAGON \\
+	69 Rue du Commandant Bourgeois \\ % Address
+	49130 Les Ponts de Cé \\
+	Tel: +33 (0) 6 60 08 37 41 \\
+	Mail: mateisragon.pro@gmail.com
+\end{tabular}
+
+\hfill
+\begin{tabular}{@{} l}
+	Collision Devices \\
+	21 Rue des Magnolias \\
+	49130 Les Ponts de Cé
+\end{tabular}
+
+\bigskip % Vertical whitespace
+
+\textbf{\underline{Objet}} :  Candidature à une alternance.
+
+
+\bigskip % Vertical whitespace
+
+Cher Monsieur,
+
+%----------------------------------------------------------------------------------------
+%	LETTER CONTENT
+%----------------------------------------------------------------------------------------
+
+Actuellement en BUT1 de Génie Électrique et Informatique Industrielle. Je vous sollicite afin d'obtenir un poste en alternance dans votre entreprise.
+
+À l'issue de cette alternance, j'espère pouvoir intégrer pleinement votre entreprise et développer ainsi que perfectionner mes compétences.
+
+J'ai déjà eu l'occasion de travailler en entreprise sur des postes à "responsabilité", notamment en tant que chef de rang et responsable de salle dans un restaurant.
+
+De nature engagé, je pratique le handball en tant que joueur, arbitre et bénévole au sein de l’équipe de communication du Pouzauges Vendée Handball, ce qui me permet de développer mon esprit d’équipe, ma créativité et ma réactivité. Et depuis peu, j'ai créé mon association de cinéma.
+
+Disponible dès la fin des cours au mois de juin, je serais déterminé à m’investir pleinement dans les tâches que vous me confierez. Et me tiens à votre disposition pour un éventuel entretien ou si vous avez des questions.
+
+\bigskip % Vertical whitespace
+
+Je vous prie d’agréer, Monsieur, l’expression de mes salutations distinguées.
+
+\vspace{50pt} % Vertical whitespace
+
+\hfill
+\begin{tabular}{@{} l}
+	Matéis RAGON
+\end{tabular}
+
+
+\end{document}
