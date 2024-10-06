@@ -76,7 +76,8 @@
         "string.h": "c",
         "types.h": "c",
         "stdlib.h": "c",
-        "functions.C": "cpp"
+        "functions.C": "cpp",
+        "stdio.h": "c"
     },
     "C_Cpp.errorSquiggles": "disabled"
 }
