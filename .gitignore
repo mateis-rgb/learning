@@ -1,10 +1,11 @@
 node_modules
-*perso*
 .obsidian
 .vscode
+
 *.out
 *.log
 *.aux
 *.gz
 *.xml
 *.exe
+*.pdf

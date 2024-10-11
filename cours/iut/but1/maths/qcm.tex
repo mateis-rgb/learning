@@ -1,0 +1,66 @@
+\documentclass[french]{article}
+	\usepackage[T1]{fontenc}
+	\usepackage{lmodern}        % Caractères plus lisibles
+	\usepackage{babel}          % Réglages linguistiques (avec french)
+	\pagestyle{empty}
+% \usepackage{charter} % Use the Charter font
+
+\usepackage[
+	a4paper, % Paper size
+	top=1in, % Top margin
+	bottom=1in, % Bottom margin
+	left=1in, % Left margin
+	right=1in, % Right margin
+	% showframe % Uncomment to show frames around the margins for debugging purposes
+]{geometry}
+
+\setlength{\parindent}{1em} % Paragraph indentation
+\setlength{\parskip}{2em} % Vertical space between paragraphs
+
+% \usepackage[ddmmyyyy]{datetime}
+
+\usepackage{fancyhdr} % Required for customizing headers and footers
+
+\fancypagestyle{firstpage}{%
+	\fancyhf{} % Clear default headers/footers
+	\renewcommand{\headrulewidth}{0pt} % No header rule
+	\renewcommand{\footrulewidth}{1pt} % Footer rule thickness
+}
+
+\fancypagestyle{subsequentpages}{%
+	\fancyhf{} % Clear default headers/footers
+	\renewcommand{\headrulewidth}{1pt} % Header rule thickness
+	\renewcommand{\footrulewidth}{1pt} % Footer rule thickness
+}
+
+\AtBeginDocument{\thispagestyle{firstpage}} % Use the first page headers/footers style on the first page
+\pagestyle{subsequentpages} % Use the subsequent pages headers/footers style on subsequent pages
+
+%----------------------------------------------------------------------------------------
+
+\begin{document}
+
+Voici deux questions de QCM sur les complexes et la trigonométrie pour un niveau BUT1 GEII : \\
+
+Ces questions couvrent les concepts de la forme trigonométrique des complexes et des relations entre les complexes et les fonctions trigonométriques. \\
+
+\textbf{1. Question 1 :}
+   	Soit \( z = 1 + i \), où \( i \) est l’unité imaginaire. Quelle est la forme trigonométrique de \( z \) ?
+	
+	\begin{itemize}
+		\item[1.] \( z = \sqrt{2} \left( \cos \frac{\pi}{4} + i \sin \frac{\pi}{4} \right) \)
+		\item[2.] \( z = \sqrt{3} \left( \cos \frac{\pi}{6} + i \sin \frac{\pi}{6} \right) \)
+		\item[3.] \( z = 2 \left( \cos \frac{\pi}{2} + i \sin \frac{\pi}{2} \right) \)
+		\item[4.] \( z = \frac{1}{2} \left( \cos \frac{\pi}{3} + i \sin \frac{\pi}{3} \right) \)
+	\end{itemize}
+
+\textbf{2. Question 2 :}
+	Soit \( z = e^{i \theta} \) avec \( \theta = \frac{\pi}{3} \). Quelle est la partie réelle de \( z \) ?
+	
+	\begin{itemize}
+		\item[1.] \( \frac{1}{2} \)
+		\item[2.] \( \frac{\sqrt{2}}{2} \)
+		\item[3.] \( 1 \)
+		\item[4.] \( \frac{\sqrt{3}}{2} \)
+   	\end{itemize}
+\end{document}
