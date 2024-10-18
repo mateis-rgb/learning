@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="fr">
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>Context menu test</title>
+
+		<link rel="stylesheet" href="https://unpkg.com/7.css">
+
+		<style>
+			#context-menu {
+				position: fixed;
+				visibility: hidden;
+			}
+		</style>
+	</head>
+	<body>
+		<div id="context-menu">
+			<ul role="menu" class="can-hover" style="width: 200px">
+				<li role="menuitem" tabindex="0" aria-haspopup="true">View</li>
+				
+				<li role="menuitem" tabindex="0" aria-haspopup="true">
+					Sort by
+				
+					<ul role="menu">
+						<li role="menuitem"><a href="#menu">Name</a></li>
+						<li role="menuitem"><a href="#menu">Size</a></li>
+						<li role="menuitem"><a href="#menu">Item type</a></li>
+						<li role="menuitem"><a href="#menu">Date modified</a></li>
+					</ul>
+				</li>
+				
+				<li role="menuitem" class="has-divider"><a href="#menu">Refresh</a></li>
+				
+				<li role="menuitem" aria-disabled="true"><a href="#menu">Paste</a></li>
+					<li role="menuitem" aria-disabled="true" class="has-divider">
+					<a href="#menu">Paste shortcut</a>
+				</li>
+				
+				<li role="menuitem">
+					<img src="https://img.icons8.com/color/18/000000/monitor--v1.png"/>
+					<a href="#menu">Screen resolution</a>
+				</li>
+				
+				<li role="menuitem">
+					<img src="https://img.icons8.com/color/18/000000/virtual-machine2.png"/>
+					<a href="#menu">Gadgets</a>
+				</li>
+				
+				<li role="menuitem">
+					<img src="https://img.icons8.com/color/18/000000/remote-desktop.png"/>
+					<a href="#menu">Personalize</a>
+				</li>
+			</ul>
+		</div>
+
+
+		<script>
+			let events = ["contextmenu", "touchstart"];
+			let contextMenu = document.querySelector("#context-menu");
+
+			var timeout;
+			var lastTap = 0;
+
+			events.forEach((eventType) => {
+				document.addEventListener(
+					eventType,
+					(e) => {
+			//preventDefault() method stops the default action of a selected element from happening by a user
+					e.preventDefault();
+					//x and y position of mouse or touch
+			//mouseX represents the x-coordinate of the mouse
+					let mouseX = e.clientX || e.touches[0].clientX;
+			//mouseY represents the y-coordinate of the mouse.
+					let mouseY = e.clientY || e.touches[0].clientY;
+					//height and width of menu
+			//getBoundingClientRect() method returns the size of an element and its position relative to the viewport
+					let menuHeight = contextMenu.getBoundingClientRect().height;
+					let menuWidth = contextMenu.getBoundingClientRect().width;
+					//width and height of screen
+			//innerWidth returns the interior width of the window in pixels
+					let width = window.innerWidth;
+					let height = window.innerHeight;
+					//If user clicks/touches near right corner
+					if (width - mouseX <= 200) {
+						contextMenu.style.borderRadius = "5px 0 5px 5px";
+						contextMenu.style.left = width - menuWidth + "px";
+						contextMenu.style.top = mouseY + "px";
+						//right bottom
+						if (height - mouseY <= 200) {
+						contextMenu.style.top = mouseY - menuHeight + "px";
+						contextMenu.style.borderRadius = "5px 5px 0 5px";
+						}
+					}
+					//left
+					else {
+						contextMenu.style.borderRadius = "0 5px 5px 5px";
+						contextMenu.style.left = mouseX + "px";
+						contextMenu.style.top = mouseY + "px";
+						//left bottom
+						if (height - mouseY <= 200) {
+						contextMenu.style.top = mouseY - menuHeight + "px";
+						contextMenu.style.borderRadius = "5px 5px 5px 0";
+						}
+					}
+					//display the menu
+					contextMenu.style.visibility = "visible";
+					},
+					{ passive: false }
+				);
+				});
+
+				//for double tap(works on touch devices)
+				document.addEventListener("touchend", function (e) {
+				//current time
+				var currentTime = new Date().getTime();
+				//gap between two gaps
+				var tapLength = currentTime - lastTap;
+				//clear previous timeouts(if any)
+			//The clearTimeout() method clears a timer set with the setTimeout() method.
+				clearTimeout(timeout);
+				//if user taps twice in 500ms
+				if (tapLength < 500 && tapLength > 0) {
+					//hide menu
+					contextMenu.style.visibility = "hidden";
+					e.preventDefault();
+				} else {
+					//timeout if user doesn't tap after 500ms
+					timeout = setTimeout(function () {
+					clearTimeout(timeout);
+					}, 500);
+				}
+				//lastTap set to current time
+				lastTap = currentTime;
+				});
+
+				//click outside the menu to close it (for click devices)
+				document.addEventListener("click", function (e) {
+				if (!contextMenu.contains(e.target)) {
+					contextMenu.style.visibility = "hidden";
+				}
+			});
+		</script>
+	</body>
+</html>

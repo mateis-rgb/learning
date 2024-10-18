@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Dialog</title>
+
+		<link rel="stylesheet" href="https://unpkg.com/7.css">
+    </head>
+    <body>
+        <a href="#dialog-demo">Open Dialog</a>
+
+        <div class="window active is-bright" id="dialog-demo" role="dialog" aria-labelledby="dialog-title">
+            <div class="title-bar">
+                <div class="title-bar-text" id="dialog-title">Problem Diagnostics</div>
+
+                <div class="title-bar-controls">
+                    <button aria-label="Close" onclick="history.back()"></button>
+                </div>
+            </div>
+
+            <div class="window-body has-space">
+                <h2 class="instruction instruction-primary">Identifying your problem...</h2>
+                <div role="progressbar" class="marquee"></div>
+            </div>
+
+            <footer style="text-align: right">
+                <button onclick="history.back()">Cancel</button>
+            </footer>
+        </div>
+    </body>
+</html>
