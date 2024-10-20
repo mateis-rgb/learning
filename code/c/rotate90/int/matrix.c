@@ -33,7 +33,6 @@ void afficherMatrice (int** matrice, int taille);
  */
 int** copieMatrice (int** matrice, int taille);
 
-
 int** initialiserMatrice(int n)
 {
     int** matrice = (int**)malloc(n * sizeof(int*)); // Allouer de la mémoire pour un tableau de pointeurs
