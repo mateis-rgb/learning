@@ -5,7 +5,6 @@ int main (void)
     int taille = 10;
     char** colors = initialiserMatrice(taille);    
     int i = 0;
-    int j = 0;
     int cpt = 41;
 
     for (i = 0; i < taille; i++)
