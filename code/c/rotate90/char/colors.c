@@ -1,29 +1,13 @@
 #include "rotate.c"
 
+/**
+ * @brief Prints good colors, from a matrix
+ * 
+ * @param matriceCouleurs 
+ * @param taille 
+ */
 void afficherCouleurs (char** matriceCouleurs, int taille);
 
-int main (void)
-{
-    int taille = 10;
-    char** colors = initialiserMatrice(taille);    
-    int i = 0;
-
-    colors[2][2] = 41;
-    colors[3][4] = 42;
-    colors[1][7] = 43;
-    colors[4][1] = 44;
-
-    for (i = 0; i < 4; i++)
-    {
-        afficherCouleurs(colors, taille);
-
-        colors = rotation90(colors, taille);
-
-        printf("\n");
-    }
-
-    return 0;
-}
 
 void afficherCouleurs (char** matriceCouleurs, int taille)
 {
