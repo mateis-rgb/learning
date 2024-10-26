@@ -1,1 +1,3 @@
-coucou, comment ca va ? jespere que tu vas bien... tu ne me reponds pas, cest pas sympa... moi en tout cas ça va !
+version https://git-lfs.github.com/spec/v1
+oid sha256:e0e33dc25720c6645483b33fcd7c8f2131249e49cb6a6f83239ae2804c875bce
+size 115
