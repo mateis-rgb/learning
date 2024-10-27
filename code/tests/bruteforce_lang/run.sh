@@ -1,24 +1,24 @@
 #!/bin/bash
 
-file_path="test_file.txt"
+file_path="./rockyou.txt"
 search_string="chercher"
 
-echo "Running Python script..."
+echo "Running python script..."
 start=$(date +%s.%N)
-python3 search_in_file.py "$file_path" "$search_string"
+python3 main.py "$file_path" "$search_string"
 end=$(date +%s.%N)
 python_time=$(echo "$end - $start" | bc)
 echo "Python execution time: $python_time seconds"
 
-echo "Running Node.js script..."
-start=$(date +%s.%N)
-node search_in_file.js "$file_path" "$search_string"
-end=$(date +%s.%N)
-node_time=$(echo "$end - $start" | bc)
-echo "Node.js execution time: $node_time seconds"
+# echo "Running node.ts script..."
+# start=$(date +%s.%N)
+# ts-node main.ts "$file_path" "$search_string"
+# end=$(date +%s.%N)
+# node_time=$(echo "$end - $start" | bc)
+# echo "ndoe.ts execution time: $node_time seconds"
 
 echo "Running C script..."
-gcc -o search_in_file search_in_file.c
+gcc -o search_in_file main.c
 start=$(date +%s.%N)
 ./search_in_file "$file_path" "$search_string"
 end=$(date +%s.%N)
