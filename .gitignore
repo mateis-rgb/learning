@@ -9,3 +9,4 @@ node_modules
 *.xml
 *.exe
 
+~$*.docx
