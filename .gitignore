@@ -11,3 +11,4 @@ node_modules
 
 ~$*.docx
 .DS_Store
+*.tmp
