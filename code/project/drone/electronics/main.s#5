@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE eagle SYSTEM "eagle.dtd">
-<eagle version="9.6.0">
+<eagle version="9.6.2">
 <drawing>
 <settings>
-<setting alwaysvectorfont="no"/>
+<setting alwaysvectorfont="yes"/>
 <setting verticaltext="up"/>
 </settings>
 <grid distance="0.1" unitdist="inch" unit="inch" style="dots" multiple="1" display="yes" altdistance="0.01" altunitdist="inch" altunit="inch"/>
@@ -1382,7 +1382,7 @@ Doc constructeur &lt;a href="http://geii/magasin/pdf/ESP32-EV1.0.pdf" title="Enl
 </deviceset>
 </devicesets>
 </library>
-<library name="librairie_drone">
+<library name="composant_sa_mere(avec_l'intentonation)">
 <packages>
 <package name="D2PACK">
 <description>Empreinte CMS, Type &lt;b&gt;D2PACK&lt;/b&gt;&lt;p&gt;
@@ -1422,62 +1422,40 @@ Doc constructeur &lt;a href="http://geii/magasin/pdf/ESP32-EV1.0.pdf" title="Enl
 <text x="-4.445" y="-6.35" size="1.27" layer="51">1</text>
 <text x="-0.635" y="-3.302" size="1.27" layer="51">2</text>
 <text x="3.81" y="-6.35" size="1.27" layer="51">3</text>
+<smd name="4" x="-2.54" y="-8.89" dx="2.0828" dy="3.81" layer="1"/>
 </package>
 </packages>
 <symbols>
-<symbol name="MFNS">
-<wire x1="-1.1176" y1="2.413" x2="-1.1176" y2="-2.54" width="0.254" layer="94"/>
-<wire x1="-1.1176" y1="-2.54" x2="-2.54" y2="-2.54" width="0.1524" layer="94"/>
-<wire x1="2.54" y1="1.905" x2="0.5334" y2="1.905" width="0.1524" layer="94"/>
-<wire x1="2.54" y1="0" x2="2.54" y2="-1.905" width="0.1524" layer="94"/>
-<wire x1="0.508" y1="-1.905" x2="2.54" y2="-1.905" width="0.1524" layer="94"/>
-<wire x1="2.54" y1="2.54" x2="2.54" y2="1.905" width="0.1524" layer="94"/>
-<wire x1="2.54" y1="1.905" x2="5.08" y2="1.905" width="0.1524" layer="94"/>
-<wire x1="5.08" y1="1.905" x2="5.08" y2="0.762" width="0.1524" layer="94"/>
-<wire x1="5.08" y1="0.762" x2="5.08" y2="-1.905" width="0.1524" layer="94"/>
-<wire x1="5.08" y1="-1.905" x2="2.54" y2="-1.905" width="0.1524" layer="94"/>
-<wire x1="2.54" y1="-1.905" x2="2.54" y2="-2.54" width="0.1524" layer="94"/>
-<wire x1="5.08" y1="0.762" x2="4.445" y2="-0.635" width="0.1524" layer="94"/>
-<wire x1="4.445" y1="-0.635" x2="5.715" y2="-0.635" width="0.1524" layer="94"/>
-<wire x1="5.715" y1="-0.635" x2="5.08" y2="0.762" width="0.1524" layer="94"/>
-<wire x1="4.445" y1="0.762" x2="5.08" y2="0.762" width="0.1524" layer="94"/>
-<wire x1="5.08" y1="0.762" x2="5.715" y2="0.762" width="0.1524" layer="94"/>
-<wire x1="5.715" y1="0.762" x2="5.969" y2="1.016" width="0.1524" layer="94"/>
-<wire x1="4.445" y1="0.762" x2="4.191" y2="0.508" width="0.1524" layer="94"/>
-<wire x1="0.508" y1="0" x2="1.778" y2="-0.508" width="0.1524" layer="94"/>
-<wire x1="1.778" y1="-0.508" x2="1.778" y2="0.508" width="0.1524" layer="94"/>
-<wire x1="1.778" y1="0.508" x2="0.508" y2="0" width="0.1524" layer="94"/>
-<wire x1="1.651" y1="0" x2="2.54" y2="0" width="0.1524" layer="94"/>
-<wire x1="1.651" y1="0.254" x2="0.762" y2="0" width="0.3048" layer="94"/>
-<wire x1="0.762" y1="0" x2="1.651" y2="-0.254" width="0.3048" layer="94"/>
-<wire x1="1.651" y1="-0.254" x2="1.651" y2="0" width="0.3048" layer="94"/>
-<wire x1="1.651" y1="0" x2="1.397" y2="0" width="0.3048" layer="94"/>
-<circle x="2.54" y="-1.905" radius="0.127" width="0.4064" layer="94"/>
-<circle x="2.54" y="1.905" radius="0.127" width="0.4064" layer="94"/>
-<text x="7.62" y="2.54" size="1.778" layer="95">&gt;NAME</text>
-<text x="7.62" y="0" size="1.778" layer="96">&gt;VALUE</text>
-<rectangle x1="-0.254" y1="-2.54" x2="0.508" y2="-1.27" layer="94"/>
-<rectangle x1="-0.254" y1="1.27" x2="0.508" y2="2.54" layer="94"/>
-<rectangle x1="-0.254" y1="-0.889" x2="0.508" y2="0.889" layer="94"/>
-<pin name="G" x="-5.08" y="-2.54" visible="pad" length="short" direction="pas"/>
-<pin name="D" x="2.54" y="5.08" visible="pad" length="short" direction="pas" rot="R270"/>
-<pin name="S" x="2.54" y="-5.08" visible="pad" length="short" direction="pas" rot="R90"/>
-<text x="-4.318" y="-4.064" size="1.27" layer="94">G</text>
-<text x="2.794" y="2.794" size="1.27" layer="94">D</text>
-<text x="2.794" y="-4.064" size="1.27" layer="94">S</text>
+<symbol name="NPN">
+<wire x1="2.54" y1="2.54" x2="0.508" y2="1.524" width="0.1524" layer="94"/>
+<wire x1="1.778" y1="-1.524" x2="2.54" y2="-2.54" width="0.1524" layer="94"/>
+<wire x1="2.54" y1="-2.54" x2="1.27" y2="-2.54" width="0.1524" layer="94"/>
+<wire x1="1.27" y1="-2.54" x2="1.778" y2="-1.524" width="0.1524" layer="94"/>
+<wire x1="1.54" y1="-2.04" x2="0.308" y2="-1.424" width="0.1524" layer="94"/>
+<wire x1="1.524" y1="-2.413" x2="2.286" y2="-2.413" width="0.254" layer="94"/>
+<wire x1="2.286" y1="-2.413" x2="1.778" y2="-1.778" width="0.254" layer="94"/>
+<wire x1="1.778" y1="-1.778" x2="1.524" y2="-2.286" width="0.254" layer="94"/>
+<wire x1="1.524" y1="-2.286" x2="1.905" y2="-2.286" width="0.254" layer="94"/>
+<wire x1="1.905" y1="-2.286" x2="1.778" y2="-2.032" width="0.254" layer="94"/>
+<text x="-10.16" y="7.62" size="1.778" layer="95">&gt;NAME</text>
+<text x="-10.16" y="5.08" size="1.778" layer="96">&gt;VALUE</text>
+<rectangle x1="-0.254" y1="-2.54" x2="0.508" y2="2.54" layer="94"/>
+<pin name="B" x="-2.54" y="0" visible="pad" length="short" direction="pas" swaplevel="1"/>
+<pin name="E" x="2.54" y="-5.08" visible="pad" length="short" direction="pas" swaplevel="3" rot="R90"/>
+<pin name="C" x="2.54" y="5.08" visible="pad" length="short" direction="pas" swaplevel="2" rot="R270"/>
 </symbol>
 </symbols>
 <devicesets>
-<deviceset name="BTIRF3710S" prefix="T">
+<deviceset name="TRANSISTOR_DRONE" prefix="T">
 <gates>
-<gate name="G$1" symbol="MFNS" x="0" y="0"/>
+<gate name="G$1" symbol="NPN" x="0" y="0"/>
 </gates>
 <devices>
 <device name="" package="D2PACK">
 <connects>
-<connect gate="G$1" pin="D" pad="2"/>
-<connect gate="G$1" pin="G" pad="1"/>
-<connect gate="G$1" pin="S" pad="3"/>
+<connect gate="G$1" pin="B" pad="3"/>
+<connect gate="G$1" pin="C" pad="2"/>
+<connect gate="G$1" pin="E" pad="1"/>
 </connects>
 <technologies>
 <technology name=""/>
@@ -1562,18 +1540,21 @@ Doc constructeur &lt;a href="http://geii/magasin/pdf/ESP32-EV1.0.pdf" title="Enl
 <part name="D24" library="0IUT DT" deviceset="1N4007" device=""/>
 <part name="J4" library="0IUT CONNECTEURS" deviceset="BORNIER_3" device="-A3P"/>
 <part name="R20" library="0IUT RLCQ" deviceset="R" device="-CMS1206" value="10k"/>
-<part name="T1" library="librairie_drone" deviceset="BTIRF3710S" device=""/>
-<part name="T2" library="librairie_drone" deviceset="BTIRF3710S" device=""/>
-<part name="T3" library="librairie_drone" deviceset="BTIRF3710S" device=""/>
-<part name="T16" library="librairie_drone" deviceset="BTIRF3710S" device=""/>
-<part name="T17" library="librairie_drone" deviceset="BTIRF3710S" device=""/>
-<part name="T18" library="librairie_drone" deviceset="BTIRF3710S" device=""/>
-<part name="T19" library="librairie_drone" deviceset="BTIRF3710S" device=""/>
-<part name="T20" library="librairie_drone" deviceset="BTIRF3710S" device=""/>
-<part name="T21" library="librairie_drone" deviceset="BTIRF3710S" device=""/>
-<part name="T22" library="librairie_drone" deviceset="BTIRF3710S" device=""/>
-<part name="T23" library="librairie_drone" deviceset="BTIRF3710S" device=""/>
-<part name="T24" library="librairie_drone" deviceset="BTIRF3710S" device=""/>
+<part name="T1" library="composant_sa_mere(avec_l'intentonation)" deviceset="TRANSISTOR_DRONE" device=""/>
+<part name="T2" library="composant_sa_mere(avec_l'intentonation)" deviceset="TRANSISTOR_DRONE" device=""/>
+<part name="T3" library="composant_sa_mere(avec_l'intentonation)" deviceset="TRANSISTOR_DRONE" device=""/>
+<part name="T4" library="composant_sa_mere(avec_l'intentonation)" deviceset="TRANSISTOR_DRONE" device=""/>
+<part name="T5" library="composant_sa_mere(avec_l'intentonation)" deviceset="TRANSISTOR_DRONE" device=""/>
+<part name="T6" library="composant_sa_mere(avec_l'intentonation)" deviceset="TRANSISTOR_DRONE" device=""/>
+<part name="T7" library="composant_sa_mere(avec_l'intentonation)" deviceset="TRANSISTOR_DRONE" device=""/>
+<part name="T8" library="composant_sa_mere(avec_l'intentonation)" deviceset="TRANSISTOR_DRONE" device=""/>
+<part name="T9" library="composant_sa_mere(avec_l'intentonation)" deviceset="TRANSISTOR_DRONE" device=""/>
+<part name="T10" library="composant_sa_mere(avec_l'intentonation)" deviceset="TRANSISTOR_DRONE" device=""/>
+<part name="T11" library="composant_sa_mere(avec_l'intentonation)" deviceset="TRANSISTOR_DRONE" device=""/>
+<part name="T12" library="composant_sa_mere(avec_l'intentonation)" deviceset="TRANSISTOR_DRONE" device=""/>
+<part name="T13" library="composant_sa_mere(avec_l'intentonation)" deviceset="TRANSISTOR_DRONE" device=""/>
+<part name="T14" library="composant_sa_mere(avec_l'intentonation)" deviceset="TRANSISTOR_DRONE" device=""/>
+<part name="T15" library="composant_sa_mere(avec_l'intentonation)" deviceset="TRANSISTOR_DRONE" device=""/>
 </parts>
 <sheets>
 <sheet>
@@ -1792,53 +1773,65 @@ Doc constructeur &lt;a href="http://geii/magasin/pdf/ESP32-EV1.0.pdf" title="Enl
 <attribute name="NAME" x="318.5414" y="52.07" size="1.778" layer="95" rot="R90"/>
 <attribute name="VALUE" x="323.342" y="52.07" size="1.778" layer="96" rot="R90"/>
 </instance>
-<instance part="T1" gate="G$1" x="30.48" y="27.94" smashed="yes">
-<attribute name="NAME" x="38.1" y="30.48" size="1.778" layer="95"/>
-<attribute name="VALUE" x="38.1" y="27.94" size="1.778" layer="96"/>
+<instance part="T1" gate="G$1" x="66.04" y="91.44" smashed="yes">
+<attribute name="NAME" x="55.88" y="99.06" size="1.778" layer="95"/>
+<attribute name="VALUE" x="55.88" y="96.52" size="1.778" layer="96"/>
 </instance>
-<instance part="T2" gate="G$1" x="55.88" y="27.94" smashed="yes">
-<attribute name="NAME" x="63.5" y="30.48" size="1.778" layer="95"/>
-<attribute name="VALUE" x="63.5" y="27.94" size="1.778" layer="96"/>
+<instance part="T2" gate="G$1" x="165.1" y="96.52" smashed="yes">
+<attribute name="NAME" x="154.94" y="104.14" size="1.778" layer="95"/>
+<attribute name="VALUE" x="154.94" y="101.6" size="1.778" layer="96"/>
 </instance>
-<instance part="T3" gate="G$1" x="81.28" y="27.94" smashed="yes">
-<attribute name="NAME" x="88.9" y="30.48" size="1.778" layer="95"/>
-<attribute name="VALUE" x="88.9" y="27.94" size="1.778" layer="96"/>
+<instance part="T3" gate="G$1" x="203.2" y="99.06" smashed="yes">
+<attribute name="NAME" x="193.04" y="106.68" size="1.778" layer="95"/>
+<attribute name="VALUE" x="193.04" y="104.14" size="1.778" layer="96"/>
 </instance>
-<instance part="T16" gate="G$1" x="129.54" y="27.94" smashed="yes">
-<attribute name="NAME" x="137.16" y="30.48" size="1.778" layer="95"/>
-<attribute name="VALUE" x="137.16" y="27.94" size="1.778" layer="96"/>
+<instance part="T4" gate="G$1" x="30.48" y="27.94" smashed="yes">
+<attribute name="NAME" x="20.32" y="35.56" size="1.778" layer="95"/>
+<attribute name="VALUE" x="20.32" y="33.02" size="1.778" layer="96"/>
 </instance>
-<instance part="T17" gate="G$1" x="154.94" y="27.94" smashed="yes">
-<attribute name="NAME" x="162.56" y="30.48" size="1.778" layer="95"/>
-<attribute name="VALUE" x="162.56" y="27.94" size="1.778" layer="96"/>
+<instance part="T5" gate="G$1" x="55.88" y="27.94" smashed="yes">
+<attribute name="NAME" x="45.72" y="35.56" size="1.778" layer="95"/>
+<attribute name="VALUE" x="45.72" y="33.02" size="1.778" layer="96"/>
 </instance>
-<instance part="T18" gate="G$1" x="180.34" y="27.94" smashed="yes">
-<attribute name="NAME" x="187.96" y="30.48" size="1.778" layer="95"/>
-<attribute name="VALUE" x="187.96" y="27.94" size="1.778" layer="96"/>
+<instance part="T6" gate="G$1" x="81.28" y="27.94" smashed="yes">
+<attribute name="NAME" x="71.12" y="35.56" size="1.778" layer="95"/>
+<attribute name="VALUE" x="71.12" y="33.02" size="1.778" layer="96"/>
 </instance>
-<instance part="T19" gate="G$1" x="228.6" y="27.94" smashed="yes">
-<attribute name="NAME" x="236.22" y="30.48" size="1.778" layer="95"/>
-<attribute name="VALUE" x="236.22" y="27.94" size="1.778" layer="96"/>
+<instance part="T7" gate="G$1" x="129.54" y="27.94" smashed="yes">
+<attribute name="NAME" x="119.38" y="35.56" size="1.778" layer="95"/>
+<attribute name="VALUE" x="119.38" y="33.02" size="1.778" layer="96"/>
 </instance>
-<instance part="T20" gate="G$1" x="254" y="27.94" smashed="yes">
-<attribute name="NAME" x="261.62" y="30.48" size="1.778" layer="95"/>
-<attribute name="VALUE" x="261.62" y="27.94" size="1.778" layer="96"/>
+<instance part="T8" gate="G$1" x="154.94" y="27.94" smashed="yes">
+<attribute name="NAME" x="144.78" y="35.56" size="1.778" layer="95"/>
+<attribute name="VALUE" x="144.78" y="33.02" size="1.778" layer="96"/>
 </instance>
-<instance part="T21" gate="G$1" x="279.4" y="27.94" smashed="yes">
-<attribute name="NAME" x="287.02" y="30.48" size="1.778" layer="95"/>
-<attribute name="VALUE" x="287.02" y="27.94" size="1.778" layer="96"/>
+<instance part="T9" gate="G$1" x="180.34" y="27.94" smashed="yes">
+<attribute name="NAME" x="170.18" y="35.56" size="1.778" layer="95"/>
+<attribute name="VALUE" x="170.18" y="33.02" size="1.778" layer="96"/>
 </instance>
-<instance part="T22" gate="G$1" x="327.66" y="27.94" smashed="yes">
-<attribute name="NAME" x="335.28" y="30.48" size="1.778" layer="95"/>
-<attribute name="VALUE" x="335.28" y="27.94" size="1.778" layer="96"/>
+<instance part="T10" gate="G$1" x="228.6" y="27.94" smashed="yes">
+<attribute name="NAME" x="218.44" y="35.56" size="1.778" layer="95"/>
+<attribute name="VALUE" x="218.44" y="33.02" size="1.778" layer="96"/>
 </instance>
-<instance part="T23" gate="G$1" x="353.06" y="27.94" smashed="yes">
-<attribute name="NAME" x="360.68" y="30.48" size="1.778" layer="95"/>
-<attribute name="VALUE" x="360.68" y="27.94" size="1.778" layer="96"/>
+<instance part="T11" gate="G$1" x="254" y="27.94" smashed="yes">
+<attribute name="NAME" x="243.84" y="35.56" size="1.778" layer="95"/>
+<attribute name="VALUE" x="243.84" y="33.02" size="1.778" layer="96"/>
 </instance>
-<instance part="T24" gate="G$1" x="378.46" y="27.94" smashed="yes">
-<attribute name="NAME" x="386.08" y="30.48" size="1.778" layer="95"/>
-<attribute name="VALUE" x="386.08" y="27.94" size="1.778" layer="96"/>
+<instance part="T12" gate="G$1" x="279.4" y="27.94" smashed="yes">
+<attribute name="NAME" x="269.24" y="35.56" size="1.778" layer="95"/>
+<attribute name="VALUE" x="269.24" y="33.02" size="1.778" layer="96"/>
+</instance>
+<instance part="T13" gate="G$1" x="327.66" y="27.94" smashed="yes">
+<attribute name="NAME" x="317.5" y="35.56" size="1.778" layer="95"/>
+<attribute name="VALUE" x="317.5" y="33.02" size="1.778" layer="96"/>
+</instance>
+<instance part="T14" gate="G$1" x="353.06" y="27.94" smashed="yes">
+<attribute name="NAME" x="342.9" y="35.56" size="1.778" layer="95"/>
+<attribute name="VALUE" x="342.9" y="33.02" size="1.778" layer="96"/>
+</instance>
+<instance part="T15" gate="G$1" x="378.46" y="27.94" smashed="yes">
+<attribute name="NAME" x="368.3" y="35.56" size="1.778" layer="95"/>
+<attribute name="VALUE" x="368.3" y="33.02" size="1.778" layer="96"/>
 </instance>
 </instances>
 <busses>
@@ -1893,94 +1886,94 @@ Doc constructeur &lt;a href="http://geii/magasin/pdf/ESP32-EV1.0.pdf" title="Enl
 <net name="N$3" class="0">
 <segment>
 <pinref part="D1" gate="G$1" pin="A"/>
+<wire x1="22.86" y1="15.24" x2="22.86" y2="27.94" width="0.1524" layer="91"/>
 <pinref part="D4" gate="G$1" pin="A"/>
-<wire x1="22.86" y1="15.24" x2="22.86" y2="25.4" width="0.1524" layer="91"/>
-<wire x1="22.86" y1="25.4" x2="22.86" y2="45.72" width="0.1524" layer="91"/>
+<wire x1="22.86" y1="27.94" x2="22.86" y2="45.72" width="0.1524" layer="91"/>
 <wire x1="35.56" y1="45.72" x2="22.86" y2="45.72" width="0.1524" layer="91"/>
 <pinref part="R5" gate="G$1" pin="1"/>
 <wire x1="22.86" y1="50.8" x2="22.86" y2="45.72" width="0.1524" layer="91"/>
 <junction x="22.86" y="45.72"/>
-<pinref part="T1" gate="G$1" pin="G"/>
-<wire x1="25.4" y1="25.4" x2="22.86" y2="25.4" width="0.1524" layer="91"/>
-<junction x="22.86" y="25.4"/>
+<pinref part="T4" gate="G$1" pin="B"/>
+<wire x1="27.94" y1="27.94" x2="22.86" y2="27.94" width="0.1524" layer="91"/>
+<junction x="22.86" y="27.94"/>
 </segment>
 </net>
 <net name="GND" class="0">
 <segment>
 <pinref part="GND1" gate="VR1" pin="GND"/>
 <wire x1="33.02" y1="17.78" x2="33.02" y2="22.86" width="0.1524" layer="91"/>
-<pinref part="T1" gate="G$1" pin="S"/>
+<pinref part="T4" gate="G$1" pin="E"/>
 </segment>
 <segment>
 <pinref part="GND2" gate="VR1" pin="GND"/>
 <wire x1="58.42" y1="17.78" x2="58.42" y2="22.86" width="0.1524" layer="91"/>
-<pinref part="T2" gate="G$1" pin="S"/>
+<pinref part="T5" gate="G$1" pin="E"/>
 </segment>
 <segment>
 <pinref part="GND3" gate="VR1" pin="GND"/>
 <wire x1="83.82" y1="17.78" x2="83.82" y2="22.86" width="0.1524" layer="91"/>
-<pinref part="T3" gate="G$1" pin="S"/>
+<pinref part="T6" gate="G$1" pin="E"/>
 </segment>
 <segment>
 <pinref part="GND4" gate="VR1" pin="GND"/>
 <wire x1="132.08" y1="17.78" x2="132.08" y2="22.86" width="0.1524" layer="91"/>
-<pinref part="T16" gate="G$1" pin="S"/>
+<pinref part="T7" gate="G$1" pin="E"/>
 </segment>
 <segment>
 <pinref part="GND5" gate="VR1" pin="GND"/>
 <wire x1="157.48" y1="17.78" x2="157.48" y2="22.86" width="0.1524" layer="91"/>
-<pinref part="T17" gate="G$1" pin="S"/>
+<pinref part="T8" gate="G$1" pin="E"/>
 </segment>
 <segment>
 <pinref part="GND6" gate="VR1" pin="GND"/>
 <wire x1="182.88" y1="17.78" x2="182.88" y2="22.86" width="0.1524" layer="91"/>
-<pinref part="T18" gate="G$1" pin="S"/>
+<pinref part="T9" gate="G$1" pin="E"/>
 </segment>
 <segment>
 <pinref part="GND7" gate="VR1" pin="GND"/>
 <wire x1="231.14" y1="17.78" x2="231.14" y2="22.86" width="0.1524" layer="91"/>
-<pinref part="T19" gate="G$1" pin="S"/>
+<pinref part="T10" gate="G$1" pin="E"/>
 </segment>
 <segment>
 <pinref part="GND8" gate="VR1" pin="GND"/>
 <wire x1="256.54" y1="17.78" x2="256.54" y2="22.86" width="0.1524" layer="91"/>
-<pinref part="T20" gate="G$1" pin="S"/>
+<pinref part="T11" gate="G$1" pin="E"/>
 </segment>
 <segment>
 <pinref part="GND9" gate="VR1" pin="GND"/>
 <wire x1="281.94" y1="17.78" x2="281.94" y2="22.86" width="0.1524" layer="91"/>
-<pinref part="T21" gate="G$1" pin="S"/>
+<pinref part="T12" gate="G$1" pin="E"/>
 </segment>
 <segment>
 <pinref part="GND10" gate="VR1" pin="GND"/>
 <wire x1="330.2" y1="17.78" x2="330.2" y2="22.86" width="0.1524" layer="91"/>
-<pinref part="T22" gate="G$1" pin="S"/>
+<pinref part="T13" gate="G$1" pin="E"/>
 </segment>
 <segment>
 <pinref part="GND11" gate="VR1" pin="GND"/>
 <wire x1="355.6" y1="17.78" x2="355.6" y2="22.86" width="0.1524" layer="91"/>
-<pinref part="T23" gate="G$1" pin="S"/>
+<pinref part="T14" gate="G$1" pin="E"/>
 </segment>
 <segment>
 <pinref part="GND12" gate="VR1" pin="GND"/>
 <wire x1="381" y1="17.78" x2="381" y2="22.86" width="0.1524" layer="91"/>
-<pinref part="T24" gate="G$1" pin="S"/>
+<pinref part="T15" gate="G$1" pin="E"/>
 </segment>
 </net>
 <net name="N$4" class="0">
 <segment>
 <pinref part="D2" gate="G$1" pin="A"/>
-<wire x1="48.26" y1="15.24" x2="48.26" y2="25.4" width="0.1524" layer="91"/>
-<wire x1="48.26" y1="25.4" x2="48.26" y2="38.1" width="0.1524" layer="91"/>
+<wire x1="48.26" y1="15.24" x2="48.26" y2="27.94" width="0.1524" layer="91"/>
+<wire x1="48.26" y1="27.94" x2="48.26" y2="38.1" width="0.1524" layer="91"/>
 <wire x1="48.26" y1="38.1" x2="48.26" y2="58.42" width="0.1524" layer="91"/>
 <pinref part="R3" gate="G$1" pin="2"/>
 <wire x1="45.72" y1="38.1" x2="48.26" y2="38.1" width="0.1524" layer="91"/>
 <junction x="48.26" y="38.1"/>
 <pinref part="D5" gate="G$1" pin="A"/>
 <wire x1="48.26" y1="58.42" x2="55.88" y2="58.42" width="0.1524" layer="91"/>
-<pinref part="T2" gate="G$1" pin="G"/>
-<wire x1="50.8" y1="25.4" x2="48.26" y2="25.4" width="0.1524" layer="91"/>
-<junction x="48.26" y="25.4"/>
+<pinref part="T5" gate="G$1" pin="B"/>
+<wire x1="53.34" y1="27.94" x2="48.26" y2="27.94" width="0.1524" layer="91"/>
+<junction x="48.26" y="27.94"/>
 </segment>
 </net>
 <net name="N$2" class="0">
@@ -2004,17 +1997,17 @@ Doc constructeur &lt;a href="http://geii/magasin/pdf/ESP32-EV1.0.pdf" title="Enl
 <net name="N$5" class="0">
 <segment>
 <pinref part="D3" gate="G$1" pin="A"/>
-<wire x1="73.66" y1="15.24" x2="73.66" y2="25.4" width="0.1524" layer="91"/>
-<wire x1="73.66" y1="25.4" x2="73.66" y2="45.72" width="0.1524" layer="91"/>
+<wire x1="73.66" y1="15.24" x2="73.66" y2="27.94" width="0.1524" layer="91"/>
+<wire x1="73.66" y1="27.94" x2="73.66" y2="45.72" width="0.1524" layer="91"/>
 <wire x1="73.66" y1="45.72" x2="73.66" y2="53.34" width="0.1524" layer="91"/>
 <pinref part="R4" gate="G$1" pin="2"/>
 <wire x1="71.12" y1="45.72" x2="73.66" y2="45.72" width="0.1524" layer="91"/>
 <junction x="73.66" y="45.72"/>
 <pinref part="D6" gate="G$1" pin="A"/>
 <wire x1="45.72" y1="53.34" x2="73.66" y2="53.34" width="0.1524" layer="91"/>
-<pinref part="T3" gate="G$1" pin="G"/>
-<wire x1="76.2" y1="25.4" x2="73.66" y2="25.4" width="0.1524" layer="91"/>
-<junction x="73.66" y="25.4"/>
+<pinref part="T6" gate="G$1" pin="B"/>
+<wire x1="78.74" y1="27.94" x2="73.66" y2="27.94" width="0.1524" layer="91"/>
+<junction x="73.66" y="27.94"/>
 </segment>
 </net>
 <net name="N$1" class="0">
@@ -2025,7 +2018,7 @@ Doc constructeur &lt;a href="http://geii/magasin/pdf/ESP32-EV1.0.pdf" title="Enl
 <pinref part="D4" gate="G$1" pin="C"/>
 <wire x1="58.42" y1="45.72" x2="45.72" y2="45.72" width="0.1524" layer="91"/>
 <junction x="58.42" y="45.72"/>
-<pinref part="T2" gate="G$1" pin="D"/>
+<pinref part="T5" gate="G$1" pin="C"/>
 </segment>
 </net>
 <net name="N$6" class="0">
@@ -2041,7 +2034,7 @@ Doc constructeur &lt;a href="http://geii/magasin/pdf/ESP32-EV1.0.pdf" title="Enl
 <junction x="33.02" y="53.34"/>
 <pinref part="J1" gate="G$1" pin="3"/>
 <wire x1="35.56" y1="71.12" x2="33.02" y2="71.12" width="0.1524" layer="91"/>
-<pinref part="T1" gate="G$1" pin="D"/>
+<pinref part="T4" gate="G$1" pin="C"/>
 </segment>
 </net>
 <net name="N$7" class="0">
@@ -2068,38 +2061,38 @@ Doc constructeur &lt;a href="http://geii/magasin/pdf/ESP32-EV1.0.pdf" title="Enl
 <junction x="22.86" y="63.5"/>
 <pinref part="J1" gate="G$1" pin="1"/>
 <wire x1="22.86" y1="76.2" x2="35.56" y2="76.2" width="0.1524" layer="91"/>
-<pinref part="T3" gate="G$1" pin="D"/>
+<pinref part="T6" gate="G$1" pin="C"/>
 </segment>
 </net>
 <net name="N$8" class="0">
 <segment>
 <pinref part="D7" gate="G$1" pin="A"/>
+<wire x1="121.92" y1="15.24" x2="121.92" y2="27.94" width="0.1524" layer="91"/>
 <pinref part="D10" gate="G$1" pin="A"/>
-<wire x1="121.92" y1="15.24" x2="121.92" y2="25.4" width="0.1524" layer="91"/>
-<wire x1="121.92" y1="25.4" x2="121.92" y2="45.72" width="0.1524" layer="91"/>
+<wire x1="121.92" y1="27.94" x2="121.92" y2="45.72" width="0.1524" layer="91"/>
 <wire x1="134.62" y1="45.72" x2="121.92" y2="45.72" width="0.1524" layer="91"/>
 <pinref part="R10" gate="G$1" pin="1"/>
 <wire x1="121.92" y1="50.8" x2="121.92" y2="45.72" width="0.1524" layer="91"/>
 <junction x="121.92" y="45.72"/>
-<pinref part="T16" gate="G$1" pin="G"/>
-<wire x1="124.46" y1="25.4" x2="121.92" y2="25.4" width="0.1524" layer="91"/>
-<junction x="121.92" y="25.4"/>
+<pinref part="T7" gate="G$1" pin="B"/>
+<wire x1="127" y1="27.94" x2="121.92" y2="27.94" width="0.1524" layer="91"/>
+<junction x="121.92" y="27.94"/>
 </segment>
 </net>
 <net name="N$10" class="0">
 <segment>
 <pinref part="D8" gate="G$1" pin="A"/>
-<wire x1="147.32" y1="15.24" x2="147.32" y2="25.4" width="0.1524" layer="91"/>
-<wire x1="147.32" y1="25.4" x2="147.32" y2="38.1" width="0.1524" layer="91"/>
+<wire x1="147.32" y1="15.24" x2="147.32" y2="27.94" width="0.1524" layer="91"/>
+<wire x1="147.32" y1="27.94" x2="147.32" y2="38.1" width="0.1524" layer="91"/>
 <wire x1="147.32" y1="38.1" x2="147.32" y2="58.42" width="0.1524" layer="91"/>
 <pinref part="R8" gate="G$1" pin="2"/>
 <wire x1="144.78" y1="38.1" x2="147.32" y2="38.1" width="0.1524" layer="91"/>
 <junction x="147.32" y="38.1"/>
 <pinref part="D11" gate="G$1" pin="A"/>
 <wire x1="147.32" y1="58.42" x2="154.94" y2="58.42" width="0.1524" layer="91"/>
-<pinref part="T17" gate="G$1" pin="G"/>
-<wire x1="149.86" y1="25.4" x2="147.32" y2="25.4" width="0.1524" layer="91"/>
-<junction x="147.32" y="25.4"/>
+<pinref part="T8" gate="G$1" pin="B"/>
+<wire x1="152.4" y1="27.94" x2="147.32" y2="27.94" width="0.1524" layer="91"/>
+<junction x="147.32" y="27.94"/>
 </segment>
 </net>
 <net name="N$11" class="0">
@@ -2123,17 +2116,17 @@ Doc constructeur &lt;a href="http://geii/magasin/pdf/ESP32-EV1.0.pdf" title="Enl
 <net name="N$12" class="0">
 <segment>
 <pinref part="D9" gate="G$1" pin="A"/>
-<wire x1="172.72" y1="15.24" x2="172.72" y2="25.4" width="0.1524" layer="91"/>
-<wire x1="172.72" y1="25.4" x2="172.72" y2="45.72" width="0.1524" layer="91"/>
+<wire x1="172.72" y1="15.24" x2="172.72" y2="27.94" width="0.1524" layer="91"/>
+<wire x1="172.72" y1="27.94" x2="172.72" y2="45.72" width="0.1524" layer="91"/>
 <wire x1="172.72" y1="45.72" x2="172.72" y2="53.34" width="0.1524" layer="91"/>
 <pinref part="R9" gate="G$1" pin="2"/>
 <wire x1="170.18" y1="45.72" x2="172.72" y2="45.72" width="0.1524" layer="91"/>
 <junction x="172.72" y="45.72"/>
 <pinref part="D12" gate="G$1" pin="A"/>
 <wire x1="144.78" y1="53.34" x2="172.72" y2="53.34" width="0.1524" layer="91"/>
-<pinref part="T18" gate="G$1" pin="G"/>
-<wire x1="175.26" y1="25.4" x2="172.72" y2="25.4" width="0.1524" layer="91"/>
-<junction x="172.72" y="25.4"/>
+<pinref part="T9" gate="G$1" pin="B"/>
+<wire x1="177.8" y1="27.94" x2="172.72" y2="27.94" width="0.1524" layer="91"/>
+<junction x="172.72" y="27.94"/>
 </segment>
 </net>
 <net name="N$13" class="0">
@@ -2144,7 +2137,7 @@ Doc constructeur &lt;a href="http://geii/magasin/pdf/ESP32-EV1.0.pdf" title="Enl
 <pinref part="D10" gate="G$1" pin="C"/>
 <wire x1="157.48" y1="45.72" x2="144.78" y2="45.72" width="0.1524" layer="91"/>
 <junction x="157.48" y="45.72"/>
-<pinref part="T17" gate="G$1" pin="D"/>
+<pinref part="T8" gate="G$1" pin="C"/>
 </segment>
 </net>
 <net name="N$14" class="0">
@@ -2160,7 +2153,7 @@ Doc constructeur &lt;a href="http://geii/magasin/pdf/ESP32-EV1.0.pdf" title="Enl
 <junction x="132.08" y="53.34"/>
 <pinref part="J2" gate="G$1" pin="3"/>
 <wire x1="134.62" y1="71.12" x2="132.08" y2="71.12" width="0.1524" layer="91"/>
-<pinref part="T16" gate="G$1" pin="D"/>
+<pinref part="T7" gate="G$1" pin="C"/>
 </segment>
 </net>
 <net name="N$15" class="0">
@@ -2185,38 +2178,38 @@ Doc constructeur &lt;a href="http://geii/magasin/pdf/ESP32-EV1.0.pdf" title="Enl
 <junction x="121.92" y="63.5"/>
 <pinref part="J2" gate="G$1" pin="1"/>
 <wire x1="121.92" y1="76.2" x2="134.62" y2="76.2" width="0.1524" layer="91"/>
-<pinref part="T18" gate="G$1" pin="D"/>
+<pinref part="T9" gate="G$1" pin="C"/>
 </segment>
 </net>
 <net name="N$17" class="0">
 <segment>
 <pinref part="D13" gate="G$1" pin="A"/>
+<wire x1="220.98" y1="15.24" x2="220.98" y2="27.94" width="0.1524" layer="91"/>
 <pinref part="D16" gate="G$1" pin="A"/>
-<wire x1="220.98" y1="15.24" x2="220.98" y2="25.4" width="0.1524" layer="91"/>
-<wire x1="220.98" y1="25.4" x2="220.98" y2="45.72" width="0.1524" layer="91"/>
+<wire x1="220.98" y1="27.94" x2="220.98" y2="45.72" width="0.1524" layer="91"/>
 <wire x1="233.68" y1="45.72" x2="220.98" y2="45.72" width="0.1524" layer="91"/>
 <pinref part="R15" gate="G$1" pin="1"/>
 <wire x1="220.98" y1="50.8" x2="220.98" y2="45.72" width="0.1524" layer="91"/>
 <junction x="220.98" y="45.72"/>
-<pinref part="T19" gate="G$1" pin="G"/>
-<wire x1="223.52" y1="25.4" x2="220.98" y2="25.4" width="0.1524" layer="91"/>
-<junction x="220.98" y="25.4"/>
+<pinref part="T10" gate="G$1" pin="B"/>
+<wire x1="226.06" y1="27.94" x2="220.98" y2="27.94" width="0.1524" layer="91"/>
+<junction x="220.98" y="27.94"/>
 </segment>
 </net>
 <net name="N$18" class="0">
 <segment>
 <pinref part="D14" gate="G$1" pin="A"/>
-<wire x1="246.38" y1="15.24" x2="246.38" y2="25.4" width="0.1524" layer="91"/>
-<wire x1="246.38" y1="25.4" x2="246.38" y2="38.1" width="0.1524" layer="91"/>
+<wire x1="246.38" y1="15.24" x2="246.38" y2="27.94" width="0.1524" layer="91"/>
+<wire x1="246.38" y1="27.94" x2="246.38" y2="38.1" width="0.1524" layer="91"/>
 <wire x1="246.38" y1="38.1" x2="246.38" y2="58.42" width="0.1524" layer="91"/>
 <pinref part="R13" gate="G$1" pin="2"/>
 <wire x1="243.84" y1="38.1" x2="246.38" y2="38.1" width="0.1524" layer="91"/>
 <junction x="246.38" y="38.1"/>
 <pinref part="D17" gate="G$1" pin="A"/>
 <wire x1="246.38" y1="58.42" x2="254" y2="58.42" width="0.1524" layer="91"/>
-<pinref part="T20" gate="G$1" pin="G"/>
-<wire x1="248.92" y1="25.4" x2="246.38" y2="25.4" width="0.1524" layer="91"/>
-<junction x="246.38" y="25.4"/>
+<pinref part="T11" gate="G$1" pin="B"/>
+<wire x1="251.46" y1="27.94" x2="246.38" y2="27.94" width="0.1524" layer="91"/>
+<junction x="246.38" y="27.94"/>
 </segment>
 </net>
 <net name="N$19" class="0">
@@ -2240,17 +2233,17 @@ Doc constructeur &lt;a href="http://geii/magasin/pdf/ESP32-EV1.0.pdf" title="Enl
 <net name="N$20" class="0">
 <segment>
 <pinref part="D15" gate="G$1" pin="A"/>
-<wire x1="271.78" y1="15.24" x2="271.78" y2="25.4" width="0.1524" layer="91"/>
-<wire x1="271.78" y1="25.4" x2="271.78" y2="45.72" width="0.1524" layer="91"/>
+<wire x1="271.78" y1="15.24" x2="271.78" y2="27.94" width="0.1524" layer="91"/>
+<wire x1="271.78" y1="27.94" x2="271.78" y2="45.72" width="0.1524" layer="91"/>
 <wire x1="271.78" y1="45.72" x2="271.78" y2="53.34" width="0.1524" layer="91"/>
 <pinref part="R14" gate="G$1" pin="2"/>
 <wire x1="269.24" y1="45.72" x2="271.78" y2="45.72" width="0.1524" layer="91"/>
 <junction x="271.78" y="45.72"/>
 <pinref part="D18" gate="G$1" pin="A"/>
 <wire x1="243.84" y1="53.34" x2="271.78" y2="53.34" width="0.1524" layer="91"/>
-<pinref part="T21" gate="G$1" pin="G"/>
-<wire x1="274.32" y1="25.4" x2="271.78" y2="25.4" width="0.1524" layer="91"/>
-<junction x="271.78" y="25.4"/>
+<pinref part="T12" gate="G$1" pin="B"/>
+<wire x1="276.86" y1="27.94" x2="271.78" y2="27.94" width="0.1524" layer="91"/>
+<junction x="271.78" y="27.94"/>
 </segment>
 </net>
 <net name="N$21" class="0">
@@ -2261,7 +2254,7 @@ Doc constructeur &lt;a href="http://geii/magasin/pdf/ESP32-EV1.0.pdf" title="Enl
 <pinref part="D16" gate="G$1" pin="C"/>
 <wire x1="256.54" y1="45.72" x2="243.84" y2="45.72" width="0.1524" layer="91"/>
 <junction x="256.54" y="45.72"/>
-<pinref part="T20" gate="G$1" pin="D"/>
+<pinref part="T11" gate="G$1" pin="C"/>
 </segment>
 </net>
 <net name="N$22" class="0">
@@ -2277,15 +2270,13 @@ Doc constructeur &lt;a href="http://geii/magasin/pdf/ESP32-EV1.0.pdf" title="Enl
 <junction x="231.14" y="53.34"/>
 <pinref part="J3" gate="G$1" pin="3"/>
 <wire x1="233.68" y1="71.12" x2="231.14" y2="71.12" width="0.1524" layer="91"/>
-<pinref part="T19" gate="G$1" pin="D"/>
+<pinref part="T10" gate="G$1" pin="C"/>
 </segment>
 </net>
 <net name="N$23" class="0">
 <segment>
 <pinref part="R12" gate="G$1" pin="2"/>
-<wire x1="213.36" y1="22.86" x2="213.36" y2="157.48" width="0.1524" layer="91"/>
-<pinref part="U1" gate="G$1" pin="A2/34"/>
-<wire x1="38.1" y1="157.48" x2="213.36" y2="157.48" width="0.1524" layer="91"/>
+<wire x1="213.36" y1="22.86" x2="213.36" y2="101.6" width="0.1524" layer="91"/>
 </segment>
 </net>
 <net name="N$24" class="0">
@@ -2302,38 +2293,38 @@ Doc constructeur &lt;a href="http://geii/magasin/pdf/ESP32-EV1.0.pdf" title="Enl
 <junction x="220.98" y="63.5"/>
 <pinref part="J3" gate="G$1" pin="1"/>
 <wire x1="220.98" y1="76.2" x2="233.68" y2="76.2" width="0.1524" layer="91"/>
-<pinref part="T21" gate="G$1" pin="D"/>
+<pinref part="T12" gate="G$1" pin="C"/>
 </segment>
 </net>
 <net name="N$25" class="0">
 <segment>
 <pinref part="D19" gate="G$1" pin="A"/>
+<wire x1="320.04" y1="15.24" x2="320.04" y2="27.94" width="0.1524" layer="91"/>
 <pinref part="D22" gate="G$1" pin="A"/>
-<wire x1="320.04" y1="15.24" x2="320.04" y2="25.4" width="0.1524" layer="91"/>
-<wire x1="320.04" y1="25.4" x2="320.04" y2="45.72" width="0.1524" layer="91"/>
+<wire x1="320.04" y1="27.94" x2="320.04" y2="45.72" width="0.1524" layer="91"/>
 <wire x1="332.74" y1="45.72" x2="320.04" y2="45.72" width="0.1524" layer="91"/>
 <pinref part="R20" gate="G$1" pin="1"/>
 <wire x1="320.04" y1="50.8" x2="320.04" y2="45.72" width="0.1524" layer="91"/>
 <junction x="320.04" y="45.72"/>
-<pinref part="T22" gate="G$1" pin="G"/>
-<wire x1="322.58" y1="25.4" x2="320.04" y2="25.4" width="0.1524" layer="91"/>
-<junction x="320.04" y="25.4"/>
+<pinref part="T13" gate="G$1" pin="B"/>
+<wire x1="325.12" y1="27.94" x2="320.04" y2="27.94" width="0.1524" layer="91"/>
+<junction x="320.04" y="27.94"/>
 </segment>
 </net>
 <net name="N$26" class="0">
 <segment>
 <pinref part="D20" gate="G$1" pin="A"/>
-<wire x1="345.44" y1="15.24" x2="345.44" y2="25.4" width="0.1524" layer="91"/>
-<wire x1="345.44" y1="25.4" x2="345.44" y2="38.1" width="0.1524" layer="91"/>
+<wire x1="345.44" y1="15.24" x2="345.44" y2="27.94" width="0.1524" layer="91"/>
+<wire x1="345.44" y1="27.94" x2="345.44" y2="38.1" width="0.1524" layer="91"/>
 <wire x1="345.44" y1="38.1" x2="345.44" y2="58.42" width="0.1524" layer="91"/>
 <pinref part="R18" gate="G$1" pin="2"/>
 <wire x1="342.9" y1="38.1" x2="345.44" y2="38.1" width="0.1524" layer="91"/>
 <junction x="345.44" y="38.1"/>
 <pinref part="D23" gate="G$1" pin="A"/>
 <wire x1="345.44" y1="58.42" x2="353.06" y2="58.42" width="0.1524" layer="91"/>
-<pinref part="T23" gate="G$1" pin="G"/>
-<wire x1="347.98" y1="25.4" x2="345.44" y2="25.4" width="0.1524" layer="91"/>
-<junction x="345.44" y="25.4"/>
+<pinref part="T14" gate="G$1" pin="B"/>
+<wire x1="350.52" y1="27.94" x2="345.44" y2="27.94" width="0.1524" layer="91"/>
+<junction x="345.44" y="27.94"/>
 </segment>
 </net>
 <net name="N$27" class="0">
@@ -2357,17 +2348,17 @@ Doc constructeur &lt;a href="http://geii/magasin/pdf/ESP32-EV1.0.pdf" title="Enl
 <net name="N$28" class="0">
 <segment>
 <pinref part="D21" gate="G$1" pin="A"/>
-<wire x1="370.84" y1="15.24" x2="370.84" y2="25.4" width="0.1524" layer="91"/>
-<wire x1="370.84" y1="25.4" x2="370.84" y2="45.72" width="0.1524" layer="91"/>
+<wire x1="370.84" y1="15.24" x2="370.84" y2="27.94" width="0.1524" layer="91"/>
+<wire x1="370.84" y1="27.94" x2="370.84" y2="45.72" width="0.1524" layer="91"/>
 <wire x1="370.84" y1="45.72" x2="370.84" y2="53.34" width="0.1524" layer="91"/>
 <pinref part="R19" gate="G$1" pin="2"/>
 <wire x1="368.3" y1="45.72" x2="370.84" y2="45.72" width="0.1524" layer="91"/>
 <junction x="370.84" y="45.72"/>
 <pinref part="D24" gate="G$1" pin="A"/>
 <wire x1="342.9" y1="53.34" x2="370.84" y2="53.34" width="0.1524" layer="91"/>
-<pinref part="T24" gate="G$1" pin="G"/>
-<wire x1="373.38" y1="25.4" x2="370.84" y2="25.4" width="0.1524" layer="91"/>
-<junction x="370.84" y="25.4"/>
+<pinref part="T15" gate="G$1" pin="B"/>
+<wire x1="375.92" y1="27.94" x2="370.84" y2="27.94" width="0.1524" layer="91"/>
+<junction x="370.84" y="27.94"/>
 </segment>
 </net>
 <net name="N$29" class="0">
@@ -2378,7 +2369,7 @@ Doc constructeur &lt;a href="http://geii/magasin/pdf/ESP32-EV1.0.pdf" title="Enl
 <pinref part="D22" gate="G$1" pin="C"/>
 <wire x1="355.6" y1="45.72" x2="342.9" y2="45.72" width="0.1524" layer="91"/>
 <junction x="355.6" y="45.72"/>
-<pinref part="T23" gate="G$1" pin="D"/>
+<pinref part="T14" gate="G$1" pin="C"/>
 </segment>
 </net>
 <net name="N$30" class="0">
@@ -2394,15 +2385,13 @@ Doc constructeur &lt;a href="http://geii/magasin/pdf/ESP32-EV1.0.pdf" title="Enl
 <junction x="330.2" y="53.34"/>
 <pinref part="J4" gate="G$1" pin="3"/>
 <wire x1="332.74" y1="71.12" x2="330.2" y2="71.12" width="0.1524" layer="91"/>
-<pinref part="T22" gate="G$1" pin="D"/>
+<pinref part="T13" gate="G$1" pin="C"/>
 </segment>
 </net>
 <net name="N$31" class="0">
 <segment>
 <pinref part="R17" gate="G$1" pin="2"/>
-<wire x1="312.42" y1="22.86" x2="312.42" y2="160.02" width="0.1524" layer="91"/>
-<pinref part="U1" gate="G$1" pin="A3/35"/>
-<wire x1="38.1" y1="160.02" x2="312.42" y2="160.02" width="0.1524" layer="91"/>
+<wire x1="312.42" y1="22.86" x2="312.42" y2="101.6" width="0.1524" layer="91"/>
 </segment>
 </net>
 <net name="N$32" class="0">
@@ -2419,7 +2408,7 @@ Doc constructeur &lt;a href="http://geii/magasin/pdf/ESP32-EV1.0.pdf" title="Enl
 <junction x="320.04" y="63.5"/>
 <pinref part="J4" gate="G$1" pin="1"/>
 <wire x1="320.04" y1="76.2" x2="332.74" y2="76.2" width="0.1524" layer="91"/>
-<pinref part="T24" gate="G$1" pin="D"/>
+<pinref part="T15" gate="G$1" pin="C"/>
 </segment>
 </net>
 </nets>
