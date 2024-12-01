@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="fr">
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>Réservation Studio</title>
+		<script src="https://cdn.tailwindcss.com"></script>
+	</head>
+	<body class="bg-gray-100 min-h-screen flex items-center justify-center">
+		<div class="bg-white shadow-lg rounded-lg p-8 max-w-lg w-full">
+			<h1 class="text-2xl font-bold text-gray-800 mb-6 text-center">Réserver un créneau</h1>
+			
+			<!-- Formulaire -->
+			<form id="reservation-form" class="space-y-6">
+				<!-- Temps de location -->
+				<div>
+					<label for="duration" class="block text-sm font-medium text-gray-700">Durée de location (en heures)</label>
+					<input type="number" id="duration" min="1" max="12" placeholder="Ex: 2"
+						class="mt-1 block w-full p-2 border border-gray-300 rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500">
+				</div>
+
+				<!-- Type de location -->
+				<div>
+					<label for="type" class="block text-sm font-medium text-gray-700">Type de location</label>
+					<select id="type" class="mt-1 block w-full p-2 border border-gray-300 rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500">
+						<option value="repetition">Répétition</option>
+						<option value="enregistrement">Enregistrement</option>
+						<option value="autre">Autre</option>
+					</select>
+				</div>
+
+				<!-- Nom et prénom -->
+				<div>
+					<label for="user" class="block text-sm font-medium text-gray-700">Sélectionner le locataire</label>
+					<select id="user" class="mt-1 block w-full p-2 border border-gray-300 rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500">
+						<!-- Les options seront injectées depuis un fichier JSON -->
+					</select>
+				</div>
+
+				<!-- Date de réservation -->
+				<div>
+					<label for="date" class="block text-sm font-medium text-gray-700">Date</label>
+					<input type="date" id="date"
+						class="mt-1 block w-full p-2 border border-gray-300 rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500">
+				</div>
+
+				<!-- Heure de début -->
+				<div>
+					<label for="time" class="block text-sm font-medium text-gray-700">Heure de début</label>
+					<input type="time" id="time"
+						class="mt-1 block w-full p-2 border border-gray-300 rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500">
+				</div>
+
+				<!-- Bouton de soumission -->
+				<button type="submit"
+					class="w-full bg-blue-500 hover:bg-blue-600 text-white font-bold py-2 px-4 rounded-md">
+					Réserver
+				</button>
+			</form>
+
+			<!-- Message d'erreur -->
+			<p id="error-message" class="text-red-500 mt-4 hidden"></p>
+		</div>
+
+		<script>
+			// Exemple de base de données JSON pour les utilisateurs
+			const users = [
+				{ id: 1, name: 'Jean Dupont' },
+				{ id: 2, name: 'Marie Curie' },
+				{ id: 3, name: 'Albert Einstein' }
+			];
+
+			// Créneaux réservés
+			const reservedSlots = [
+				{ date: '2024-12-01', time: '14:00', duration: 2 },
+				{ date: '2024-12-01', time: '10:00', duration: 1 },
+			];
+
+			// Injection des utilisateurs dans la liste déroulante
+			const userSelect = document.getElementById('user');
+			users.forEach(user => {
+				const option = document.createElement('option');
+				option.value = user.id;
+				option.textContent = user.name;
+				userSelect.appendChild(option);
+			});
+
+			// Vérification des créneaux disponibles
+			function isSlotAvailable(date, time, duration) {
+				const [hours, minutes] = time.split(':').map(Number);
+				const start = new Date(`${date}T${time}`);
+				const end = new Date(start);
+				end.setHours(start.getHours() + Number(duration));
+
+				for (const slot of reservedSlots) {
+					const slotStart = new Date(`${slot.date}T${slot.time}`);
+					const slotEnd = new Date(slotStart);
+					slotEnd.setHours(slotStart.getHours() + slot.duration);
+
+					// Vérifier chevauchement
+					if (start < slotEnd && end > slotStart) {
+						return false;
+					}
+				}
+				return true;
+			}
+
+			// Gestion de la soumission du formulaire
+			document.getElementById('reservation-form').addEventListener('submit', (e) => {
+				e.preventDefault();
+
+				const duration = document.getElementById('duration').value;
+				const type = document.getElementById('type').value;
+				const userId = document.getElementById('user').value;
+				const date = document.getElementById('date').value;
+				const time = document.getElementById('time').value;
+
+				const errorMessage = document.getElementById('error-message');
+
+				// Vérification si le créneau est disponible
+				if (!isSlotAvailable(date, time, duration)) {
+					errorMessage.textContent = "Le créneau est déjà réservé. Veuillez choisir un autre créneau.";
+					errorMessage.classList.remove('hidden');
+					return;
+				}
+
+				// Ajouter le créneau réservé
+				reservedSlots.push({ date, time, duration });
+
+				alert(`Réservation confirmée : ${duration}h, Type : ${type}, Locataire ID : ${userId}`);
+				errorMessage.classList.add('hidden');
+			});
+		</script>
+	</body>
+</html>
