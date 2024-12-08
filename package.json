@@ -1,5 +1,9 @@
 {
   "devDependencies": {
     "@types/node": "^20.12.2"
+  },
+  "dependencies": {
+    "commander": "^12.1.0",
+    "figlet": "^1.8.0"
   }
 }

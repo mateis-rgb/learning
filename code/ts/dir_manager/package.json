@@ -1,0 +1,25 @@
+{
+  "name": "dir_manager",
+  "version": "1.0.0",
+  "main": "dist/main.js",
+  "bin": {
+    "dirmanager": "./dist/main.js"
+  },
+  "scripts": {
+    "build": "npx tsc"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "devDependencies": {
+    "@types/node": "^22.10.1",
+    "nodemon": "^3.1.7",
+    "typescript": "^5.7.2"
+  },
+  "dependencies": {
+    "@types/figlet": "^1.7.0",
+    "commander": "^12.1.0",
+    "figlet": "^1.8.0"
+  }
+}
