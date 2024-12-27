@@ -5,6 +5,7 @@ node_modules
 *.out
 *.log
 *.aux
+*.toc
 *.gz
 *.xml
 *.exe

@@ -1,0 +1,101 @@
+\documentclass[titlepage]{article}
+
+\usepackage[french]{babel}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{markdown}
+
+\title{Station météorologique sur la tour Eiffel \\ [1ex] \large Sujet de rattrapage, gestion de projets}
+\author{Matéis RAGON}
+
+\begin{document}
+	\begin{titlepage}
+		\maketitle
+	\end{titlepage}
+
+	\tableofcontents
+
+	\clearpage
+
+	\section{Rappel du sujet}
+
+	La définition de ce qu’est un projet ayant été rappelée, les différentes phases d’un cycle de projet GEII ayant été posées, vous devenez le chef de projet ”global” de la mise en place d’une station de météorologie connectée à installer sur la tour Eiffel. Cette station devra permettre la capture de la température, de l’humidité et de la force du vent. Elle permettra de transmettre les informations à un serveur distant sécurisé toutes les heures et les données devront être historisées mais aussi affichées sur une carte en temps réel.
+
+	\section{La méthode Deming}
+
+	En réponse à la première question, nous devons trouver une méthode de gestion de projet proposée par William Edwards Deming. Nous devons aussi en rappeler les 4 grandes étapes clés. \\
+
+	Ainsi, Deming propose la roue de Deming (PDCA), pour Plan, Do, Check et Act. Soit en français : Planifier, Faire, Vérifier, Améliorer.
+
+	\section{Les exigences métiers}
+
+	Après la rencontre du client et l’énonciation de ses besoins, quelques exigences métiers en ressortent, telles que :
+
+	\begin{itemize}
+		\item[1.] La précision des données. \\
+		En effet, si le but est d'installer une station météorologique sur la tour Eiffel, il est utile qu'il y ait beaucoup de données, mais aussi que les données récoltées soient très précises pour que les scientifiques qui vont les étudier soient dans le plus grand confort pour travailler sur ces données.
+
+		\item[2.] La sécurité des données. \\
+		Le client nous a parlé d'un serveur distant et sécurisé.
+
+		\item[3.] L'accessibilité et la mise à jour. \\
+		Le client nous a également précisé que les données devaient être transmises toutes les heures et qu’elles devaient être accessibles en temps réel.
+	\end{itemize}
+
+	Après la définition de ces exigences métiers, dans les différentes phases de notre projet, nous en serions juste après l'expression des besoins, sur la définition du cahier des charges, selon le cycle en V.
+
+	\section{Les exigences fonctionnelles}
+
+	L’énonciation des exigences fonctionnelles pourrait s’apparenter à la manière suivante :
+
+	\begin{itemize}
+		\item[1.] Avoir une carte open source et gratuite.
+		\item[2.] Avoir des capteurs de température, d'humidité et de force du vent.
+		\item[3.] Transmettre les données captées au serveur distant.
+	\end{itemize}
+
+	À ce niveau du projet, nous en sommes à la phase des spécifications fonctionnelles, selon le cycle en V.
+
+	\section{Les exigences techniques}
+
+	Les exigences techniques de ce projet peuvent être énoncées de la manière suivante :
+
+	\begin{itemize}
+		\item[1.] Développer une interface cartographique à l'aide d'OpenStreetMap et Leaflet : ReactJS (interface web moderne et facile d'utilisation), Leaflet.JS.
+		\item[2.] Avoir des capteurs de température, d'humidité, un anémomètre et un Raspberry Pi.
+		\item[3.] Avoir un pare-feu (pour la sécurité des données) ainsi qu'un serveur à faible consommation d’énergie (également un Raspberry Pi).
+	\end{itemize}
+
+	Après l'énonciation des exigences techniques, nous sommes rendus à la phase des spécifications techniques, selon le cycle en V.
+	
+	\section{Principales tâches de réalisation}
+
+	Les grandes tâches pour la réalisation de ce projet sont :
+
+	\begin{itemize}
+		\item[1.] Mise en place de la partie électronique avec les capteurs et le Raspberry Pi, ainsi que la transmission des données.
+		\item[2.] Développement du front-end avec Leaflet, ReactJS et l'API d'OpenStreetMap.
+		\item[3.] Développement du back-end avec une base de données (InfluxDB, spécialisée dans la gestion des données en lien avec le temps), le pare-feu pour protéger les données et la mise en place du Raspberry Pi pour tout connecter.
+	\end{itemize}
+
+	Dans le cycle en V, nous nous trouvons entre la phase des spécifications techniques et celle du développement informatique.
+
+	\section{Avant la livraison (ou déploiement)}
+
+	Avant le déploiement de la solution, il faut effectuer une batterie de tests unitaires, tels que :
+
+	\begin{itemize}
+		\item Test de chaque capteur individuellement.
+		\item Test de la transmission entre la partie capteur et les serveurs.
+		\item Test de l'infrastructure réseau.
+		\item Test de la sécurité des données.
+		\item Test de la carte avec de plus en plus de données.
+	\end{itemize}
+
+	\clearpage
+
+	\section{Sources et conception}
+
+	Ce document a été fait en LaTeX, écrit sous Visual Studio Code et compilé avec $pdflatex$.
+
+\end{document}
