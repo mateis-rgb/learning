@@ -1,95 +1,68 @@
 #include <stdio.h>
-#include <stdlib.h>
 
-typedef struct Harmonique
-{
-	int note;
-	float duree;
+void saisie (int notes[], float durees[]);
 
-	struct Harmonique * p;
-} Harmonique;
-
-
-Harmonique initHarmonique (void);
-
-/**
- * @brief Allow user to enter his partition
- * 
- * @return Partition* 
- */
-Harmonique * saisiePartition (void);
-
-/**
- * @brief Display a partition
- * 
- * @param partition 
- */
-void affichagePartition (Harmonique * partition);
+void affichage (int notes[], float durees[]);
 
 
 int main (void)
 {
-	Harmonique * partition = saisiePartition();
-
-	affichagePartition(partition);
+	int * notes;
+	float * durees;
 
 	return 0;
 }
 
 
-Harmonique initHarmonique (void)
+void saisie (int notes[], float durees[])
 {
-	Harmonique temp;
+	int nTemp = 0;
+	float dTemp = 0;
 
-	temp.p = NULL;
+	int len = 0;
 
-	return temp;
-}
-
-
-Harmonique * saisiePartition (void)
-{
-	int noteTemp = 0;
-	float dureeTemp = 0;
-
-	Harmonique * partition = malloc(sizeof (Harmonique));
-	Harmonique temp = initHarmonique();
-
-	printf("Entrez la partition d'un morceau avec ces notes et leurs durees correspondantes:\n");
-	printf("(Entrez un nombre negatif pour arreter la saisie) \n");
+	printf("Saisissez un morceau : \n");
 
 	do
 	{
-		printf("Note (en Hz): ");
-		scanf("%d", &noteTemp);
+		printf("Frequence de la note (en Hz): ");
+		scanf("%d", &nTemp);	
 
-		if (noteTemp > 0)
+		if (nTemp > 0)
 		{
 			printf("Duree de la note (en sec): ");
-			scanf("%f", &dureeTemp);
+			scanf("%f", &dTemp);
 
-			temp.note = noteTemp;
-			temp.duree = dureeTemp;
-
-			partition->p = &temp;
+			if (dTemp > 0)
+			{
+				notes[len] = nTemp;
+				durees[len] = dTemp;
+			}
 		}
-	}
-	while (noteTemp > 0);
 
-	return partition;
-}
-
-
-void affichagePartition (Harmonique * partition)
-{
-	if (partition->p != NULL)
-	{
-		printf("%d(%.2f) ", partition->p->note, partition->p->duree);
-
-		return affichagePartition(partition->p->p);
+		len++;
 	} 
-
-	printf("\n");
+	while (nTemp < 0 || dTemp < 0);
+	
+	notes[len] = -1;
+	durees[len] = -1;
 }
 
 
+void affichage (int notes[], float durees[])
+{
+	int len = 0;
+	int k = 0;
+
+	while (notes[len] != -1)
+	{
+		len++;
+	}
+
+	printf("Morceau: ");
+
+	for(k = 0; k <= len; k++)
+	{
+		printf("%d(%.2f) ", notes[k], durees[k]);
+	}
+}

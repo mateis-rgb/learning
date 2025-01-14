@@ -1,0 +1,121 @@
+{
+	"quantites": [
+	  {
+		"cocktail_id": 1,
+		"ingredients": [
+		  {
+			"alcool_id": 1,
+			"quantite_ml": 50
+		  }
+		]
+	  },
+	  {
+		"cocktail_id": 2,
+		"ingredients": [
+		  {
+			"alcool_id": 1,
+			"quantite_ml": 40
+		  },
+		  {
+			"alcool_id": 6,
+			"quantite_ml": 20
+		  }
+		]
+	  },
+	  {
+		"cocktail_id": 3,
+		"ingredients": [
+		  {
+			"alcool_id": 1,
+			"quantite_ml": 45
+		  }
+		]
+	  },
+	  {
+		"cocktail_id": 4,
+		"ingredients": [
+		  {
+			"alcool_id": 2,
+			"quantite_ml": 50
+		  }
+		]
+	  },
+	  {
+		"cocktail_id": 5,
+		"ingredients": [
+		  {
+			"alcool_id": 2,
+			"quantite_ml": 60
+		  }
+		]
+	  },
+	  {
+		"cocktail_id": 6,
+		"ingredients": [
+		  {
+			"alcool_id": 2,
+			"quantite_ml": 50
+		  }
+		]
+	  },
+	  {
+		"cocktail_id": 7,
+		"ingredients": [
+		  {
+			"alcool_id": 3,
+			"quantite_ml": 60
+		  }
+		]
+	  },
+	  {
+		"cocktail_id": 8,
+		"ingredients": [
+		  {
+			"alcool_id": 3,
+			"quantite_ml": 30
+		  }
+		]
+	  },
+	  {
+		"cocktail_id": 9,
+		"ingredients": [
+		  {
+			"alcool_id": 4,
+			"quantite_ml": 50
+		  },
+		  {
+			"alcool_id": 6,
+			"quantite_ml": 20
+		  }
+		]
+	  },
+	  {
+		"cocktail_id": 10,
+		"ingredients": [
+		  {
+			"alcool_id": 4,
+			"quantite_ml": 45
+		  }
+		]
+	  },
+	  {
+		"cocktail_id": 11,
+		"ingredients": [
+		  {
+			"alcool_id": 5,
+			"quantite_ml": 50
+		  }
+		]
+	  },
+	  {
+		"cocktail_id": 12,
+		"ingredients": [
+		  {
+			"alcool_id": 5,
+			"quantite_ml": 60
+		  }
+		]
+	  }
+	]
+  }
+  

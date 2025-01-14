@@ -1,0 +1,34 @@
+{
+  "Spirits": {
+    "Vodka": ["Bloody Mary", "Moscow Mule", "Cosmopolitan", "Martini"],
+    "Gin": ["Gin Tonic", "Negroni", "Martini", "Tom Collins"],
+    "Rhum": ["Mojito", "Daiquiri", "Piña Colada", "Mai Tai"],
+    "Tequila": ["Margarita", "Tequila Sunrise", "Paloma"],
+    "Whisky_Bourbon": ["Old Fashioned", "Manhattan", "Whisky Sour", "Mint Julep"],
+    "Cognac_Brandy": ["Sidecar", "Brandy Alexander", "Vieux Carré"],
+    "Mezcal": ["Mezcal Margarita", "Naked and Famous"]
+  },
+  "Liqueurs": {
+    "Triple_sec_Cointreau_Grand_Marnier": ["Margarita", "Cosmopolitan", "Sidecar"],
+    "Amaretto": ["Amaretto Sour", "Godfather"],
+    "Baileys": ["White Russian", "B-52", "Irish Coffee"],
+    "Campari": ["Negroni", "Americano", "Boulevardier"],
+    "Aperol": ["Aperol Spritz"],
+    "Chartreuse": ["Last Word", "Green Chaud"],
+    "Kahlua": ["Espresso Martini", "Black Russian", "White Russian"],
+    "Creme_de_cassis": ["Kir", "Kir Royal"],
+    "Sambuca": ["Sambuca con la mosca"],
+    "Limoncello": ["Lemon Drop Martini"]
+  },
+  "Wines_and_Fortified_Spirits": {
+    "Vermouth": ["Martini", "Manhattan", "Negroni"],
+    "Prosecco_Champagne": ["Mimosa", "Bellini", "Kir Royal", "French 75"],
+    "Porto": ["Porto Flip"],
+    "Sherry": ["Adonis", "Bamboo"]
+  },
+  "Bitters": {
+    "Angostura": ["Old Fashioned", "Manhattan"],
+    "Peychaud": ["Sazerac", "Vieux Carré"],
+    "Orange": ["Martini", "Old Fashioned"]
+  }
+}

@@ -1,0 +1,96 @@
+{
+	"alcools": [
+		{
+			"id": 1,
+			"nom": "Vodka",
+			"cocktails": [1, 2, 3]
+		},
+		{
+			"id": 2,
+			"nom": "Rhum",
+			"cocktails": [4, 5, 6]
+		},
+		{
+			"id": 3,
+			"nom": "Gin",
+			"cocktails": [7, 8]
+		},
+		{
+			"id": 4,
+			"nom": "Tequila",
+			"cocktails": [9, 10]
+		},
+		{
+			"id": 5,
+			"nom": "Whisky",
+			"cocktails": [11, 12]
+		},
+		{
+			"id": 6,
+			"nom": "Triple Sec",
+			"cocktails": [2, 9]
+		}
+	],
+	"cocktails": [
+		{
+			"id": 1,
+			"nom": "Moscow Mule",
+			"ingredients": [1]
+		},
+		{
+			"id": 2,
+			"nom": "Cosmopolitan",
+			"ingredients": [1, 6]
+		},
+		{
+			"id": 3,
+			"nom": "Bloody Mary",
+			"ingredients": [1]
+		},
+		{
+			"id": 4,
+			"nom": "Mojito",
+			"ingredients": [2]
+		},
+		{
+			"id": 5,
+			"nom": "Daiquiri",
+			"ingredients": [2]
+		},
+		{
+			"id": 6,
+			"nom": "Pina Colada",
+			"ingredients": [2]
+		},
+		{
+			"id": 7,
+			"nom": "Gin Tonic",
+			"ingredients": [3]
+		},
+		{
+			"id": 8,
+			"nom": "Negroni",
+			"ingredients": [3]
+		},
+		{
+			"id": 9,
+			"nom": "Margarita",
+			"ingredients": [4, 6]
+		},
+		{
+			"id": 10,
+			"nom": "Tequila Sunrise",
+			"ingredients": [4]
+		},
+		{
+			"id": 11,
+			"nom": "Old Fashioned",
+			"ingredients": [5]
+		},
+		{
+			"id": 12,
+			"nom": "Whisky Sour",
+			"ingredients": [5]
+		}
+	]
+}
