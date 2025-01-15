@@ -113,113 +113,113 @@ void loop()
 {
     Serial.println(digitalRead(Capteurs_IR2));
 
-    // switch (state)
-    // {
-    //     case S1: // Etat de defaut
-    //     {
-    //         if (Jack_retire() == HIGH)
-    //         {
-    //             state = S2;
-    //         }
+    switch (state)
+    {
+        case S1: // Etat de defaut
+        {
+            if (Jack_retire() == HIGH)
+            {
+                state = S2;
+            }
 
-    //         break;
-    //     }
+            break;
+        }
 
-    //     case S2: // Etat avance
-    //     {
-    //         if (Detecter_Ligne_Blanche() == HIGH)
-    //         {
-    //             state = S6;
-    //         }
-    //         else if (Detecter_Obstacle() == HIGH)
-    //         {
-    //             state = S3;
-    //         }
-    //         else
-    //         {
-    //             state = S2;
-    //         }
+        case S2: // Etat avance
+        {
+            if (Detecter_Ligne_Blanche() == HIGH)
+            {
+                state = S6;
+            }
+            else if (Detecter_Obstacle() == HIGH)
+            {
+                state = S3;
+            }
+            else
+            {
+                state = S2;
+            }
 
-    //         if (Detecter_Tourner()) {
-    //             state = S4;
-    //         }
+            if (Detecter_Tourner()) {
+                state = S4;
+            }
 
-    //         break;
-    //     }
+            break;
+        }
 
-    //     case S3: // Etat Reculer
-    //     {
-    //         if (Detecter_Obstacle() == LOW)
-    //         {
-    //             state = S2;
-    //         }
-    //         else 
-    //         {
-    //             state = S3;
-    //         }
+        case S3: // Etat Reculer
+        {
+            if (Detecter_Obstacle() == LOW)
+            {
+                state = S2;
+            }
+            else 
+            {
+                state = S3;
+            }
 
-    //         break;
-    //     }
+            break;
+        }
 
-    //     case S4: // Etat tourner
-    //     {
-    //         if (Detecter_Tourner() == HIGH)
-    //         {
-    //             state = S4;
-    //         }
-    //         else
-    //         {
-    //             state = S2;
-    //         }
+        case S4: // Etat tourner
+        {
+            if (Detecter_Tourner() == HIGH)
+            {
+                state = S4;
+            }
+            else
+            {
+                state = S2;
+            }
 
-    //         break;
-    //     } 
+            break;
+        } 
 
-    //     case S6: // Etat arret
-    //     {
-    //         state = S6;
+        case S6: // Etat arret
+        {
+            state = S6;
 
-    //         break;
-    //     }
-    // }
+            break;
+        }
+    }
 
-    // switch (state)
-    // {
-    //     case S1:
-    //     {
-    //         Arret_Moteur();
+    switch (state)
+    {
+        case S1:
+        {
+            Arret_Moteur();
 
-    //         break;
-    //     }
+            break;
+        }
 
-    //     case S2:
-    //     {
-    //         Robot_Avance();
+        case S2:
+        {
+            Robot_Avance();
 
-    //         break;
-    //     }
+            break;
+        }
 
-    //     case S3:
-    //     {
-    //         Robot_Reculer();
+        case S3:
+        {
+            Robot_Reculer();
 
-    //         break;
-    //     }
+            break;
+        }
 
-    //     case S4:
-    //     {
-    //         Effectuer_Tourner();
+        case S4:
+        {
+            Effectuer_Tourner();
          
-    //         break;
-    //     }
+            break;
+        }
 
-    //     case S6:
-    //     {
-    //         Arret_Moteur();
+        case S6:
+        {
+            Arret_Moteur();
 
-    //         break;
-    //     }
-    // }
+            break;
+        }
+    }
 }
 
 
