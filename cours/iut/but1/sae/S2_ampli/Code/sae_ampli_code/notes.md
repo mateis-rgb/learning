@@ -1,12 +1,12 @@
-# Idées : 
+# Idï¿½es : 
 
 procedure bp+:
-	Si bp appuié:
+	Si bp appuiï¿½:
 		tant que le bouton est app
 			Lance tempo
 
 			fin tempo :
-				l'état global (oux)
+				l'ï¿½tat global (oux)
 
 main:
 	si oux = 1
@@ -39,9 +39,9 @@ int main(void)
 ------------------------
 
 ## Etape 2:
-On test l'appui du BP Plus, si le bp est maintenu 3s, on change l'état du state, qui allume ou étein la led PD7 (ON si le state = 1, OFF sinon)
+On test l'appui du BP Plus, si le bp est maintenu 3s, on change l'ï¿½tat du state, qui allume ou ï¿½tein la led PD7 (ON si le state = 1, OFF sinon)
 
-PB : Si le bp est maintenu 6s, ça rechange le state, et ça indéfiniment
+PB : Si le bp est maintenu 6s, ï¿½a rechange le state, et ï¿½a indï¿½finiment
 
 
 ------------------------
@@ -104,3 +104,51 @@ void AppuiBPP (void)
 ------------------------
 
 # Etape 3
+On utilise l'afficheur LCD pour dire si le passe haut est actif
+
+------------------------
+
+Code :
+int main(void)
+{	
+	InitTimer();
+	InitLCD();
+	
+	DDRB = 0x00;
+	DDRC = 1 << RELAIS;
+	DDRD = 1 << LED_TEST;
+	
+	PORTD = 0x00;	
+	PORTB = 0x00;
+	PORTC = 0x00;
+	
+    do 
+    {
+		AppuiBPP();
+		
+		if (state == 1)
+		{
+			PORTC = (1 << RELAIS); // On allume le relais
+			PORTD = (1 << LED_TEST); // On allume la led test
+		
+			placeCursor(0, 0);
+			print("Passe haut actif");
+		}
+		else
+		{
+			PORTD = 0x00; // On eteint le relais
+			PORTC = 0x00; // On eteint la led test
+
+			placeCursor(0, 0);
+			print("Ampli audio");
+
+			placeCursor(0, 1);
+			print("BP + -> passe haut");
+
+			placeCursor(0, 2);
+			print("BP - -> passe bas");
+		}
+	} 
+	while (1);
+}
+------------------------

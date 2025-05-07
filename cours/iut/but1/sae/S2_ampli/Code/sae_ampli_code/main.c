@@ -1,6 +1,5 @@
 #include <avr/io.h>
 #include "include/Afficheur_LCD.h"
-#include "include/CAN.h"
 #include "include/Timer.h"
 
 #include "config.h"
@@ -8,16 +7,23 @@
 
 void AppuiBPP (void);
 
-unsigned char state = 0;
+void AppuiBPM (void);
+
+/**
+ * state[0] => statut du passe haut
+ * state[1] => statut du passe bas
+ */
+unsigned char state[2] = {0, 0};
 
 
 int main(void)
 {	
 	InitTimer();
+	InitLCD();
 	
 	DDRB = 0x00;
-	DDRC = 1 << RELAIS;
-	DDRD = 1 << LED_TEST;
+	DDRC = (1 << RELAIS_PH) | (1 << RELAIS_PB);
+	DDRD = (1 << LED_TEST_BPP) | (1 << LED_TEST_BPM);
 	
 	PORTD = 0x00;	
 	PORTB = 0x00;
@@ -26,16 +32,37 @@ int main(void)
     do 
     {
 		AppuiBPP();
+		AppuiBPM();
 		
-		if (state == 1)
+		if (state[0] == 1)
 		{
-			PORTC = (1 << RELAIS); // On allume le relais
-			PORTD = (1 << LED_TEST); // On allume la led test
+			PORTC = (1 << RELAIS_PH); // On allume le relais du passe haute
+			PORTD = (1 << LED_TEST_BPP); // On allume la led test
+		
+			placeCursor(0, 0);
+			print("Passe haut actif");
+		}
+		else if (state[1] == 1)
+		{
+			PORTC = (1 << RELAIS_PB); // On allume le relais du passe bas
+			PORTD = (1 << LED_TEST_BPM); // On allume la led test
+		
+			placeCursor(0, 0);
+			print("Passe haut bas");
 		}
 		else
 		{
 			PORTD = 0x00; // On eteint le relais
 			PORTC = 0x00; // On eteint la led test
+
+			placeCursor(0, 0);
+			print("Ampli audio");
+
+			placeCursor(0, 1);
+			print("BP+ -> passe haut");
+
+			placeCursor(0, 2);
+			print("BP- -> passe bas");
 		}
 	} 
 	while (1);
@@ -44,25 +71,52 @@ int main(void)
 
 void AppuiBPP (void)
 {
-	unsigned int cpt = 0; // On définit la variable de compteur
+	unsigned int cpt = 0; // On dï¿½finit la variable de compteur
 	
-	if ((PINB & (1 << BTN_PASSE_HAUT)) != 0) // Si le bouton est appuié
+	if ((PINB & (1 << BTN_PASSE_HAUT)) != 0) // Si le bouton est appuiï¿½
 	{				
-		cpt = 0; // On remet le compteur à 0
+		cpt = 0; // On remet le compteur ï¿½ 0
 						
-		while ((PINB & (1 << BTN_PASSE_HAUT)) != 0) // Tant que le bouton est appuié
+		while ((PINB & (1 << BTN_PASSE_HAUT)) != 0) // Tant que le bouton est appuiï¿½
 		{
 			Tempo_1ms(); // On effectue une tempo de 1ms
 				
-			cpt++; // On incrémente le compteur
+			cpt++; // On incrï¿½mente le compteur
 				
-			if (cpt > 3000) // Si le compteur dépasse 3000, ou si le compteur dépasse 3s
+			if (cpt > 3000) // Si le compteur dï¿½passe 3000, ou si le compteur dï¿½passe 3s
 			{				
-				state = !state;	// On inverse l'état du state global
+				state[0] = !state[0];	// On inverse l'ï¿½tat du state global
 					
-				cpt = 0; // On remet le cpt à 0
+				cpt = 0; // On remet le cpt ï¿½ 0
 				
-				break; // En attente de résolution
+				break; // En attente de rï¿½solution
+			}
+		}
+	}
+}
+
+
+void AppuiBPM (void)
+{
+	unsigned int cpt = 0; // On dï¿½finit la variable de compteur
+	
+	if ((PINB & (1 << BTN_PASSE_BAS)) != 0) // Si le bouton est appuiï¿½
+	{				
+		cpt = 0; // On remet le compteur ï¿½ 0
+						
+		while ((PINB & (1 << BTN_PASSE_BAS)) != 0) // Tant que le bouton est appuiï¿½
+		{
+			Tempo_1ms(); // On effectue une tempo de 1ms
+				
+			cpt++; // On incrï¿½mente le compteur
+				
+			if (cpt > 3000) // Si le compteur dï¿½passe 3000, ou si le compteur dï¿½passe 3s
+			{				
+				state[1] = !state[1];	// On inverse l'ï¿½tat du state global
+					
+				cpt = 0; // On remet le cpt ï¿½ 0
+				
+				break; // En attente de rï¿½solution
 			}
 		}
 	}
