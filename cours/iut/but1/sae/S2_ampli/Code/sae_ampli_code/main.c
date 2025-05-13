@@ -40,7 +40,7 @@ int main(void)
 			PORTD = (1 << LED_TEST_BPP); // On allume la led test
 		
 			placeCursor(0, 0);
-			print("Passe haut actif");
+			print("High pass actif ");
 		}
 		else if (state[1] == 1)
 		{
@@ -48,7 +48,7 @@ int main(void)
 			PORTD = (1 << LED_TEST_BPM); // On allume la led test
 		
 			placeCursor(0, 0);
-			print("Passe haut bas");
+			print("Low pass actif  ");
 		}
 		else
 		{
@@ -56,13 +56,16 @@ int main(void)
 			PORTC = 0x00; // On eteint la led test
 
 			placeCursor(0, 0);
-			print("Ampli audio");
+			print("  Ampli audio ");
 
 			placeCursor(0, 1);
-			print("BP+ -> passe haut");
+			print("                ");
 
 			placeCursor(0, 2);
-			print("BP- -> passe bas");
+			print("BP+ -> high pass");
+
+			placeCursor(0, 3);
+			print("BP- -> low pass ");
 		}
 	} 
 	while (1);
