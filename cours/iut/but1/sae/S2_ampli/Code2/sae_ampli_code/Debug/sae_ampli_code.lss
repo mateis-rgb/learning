@@ -1,0 +1,513 @@
+
+sae_ampli_code.elf:     file format elf32-avr
+
+Sections:
+Idx Name          Size      VMA       LMA       File off  Algn
+  0 .text         00000250  00000000  00000000  00000094  2**1
+                  CONTENTS, ALLOC, LOAD, READONLY, CODE
+  1 .data         00000054  00800060  00000250  000002e4  2**0
+                  CONTENTS, ALLOC, LOAD, DATA
+  2 .bss          00000002  008000b4  008000b4  00000338  2**0
+                  ALLOC
+  3 .comment      00000030  00000000  00000000  00000338  2**0
+                  CONTENTS, READONLY
+  4 .note.gnu.avr.deviceinfo 0000003c  00000000  00000000  00000368  2**2
+                  CONTENTS, READONLY
+  5 .debug_aranges 00000098  00000000  00000000  000003a4  2**0
+                  CONTENTS, READONLY, DEBUGGING
+  6 .debug_info   00000ab2  00000000  00000000  0000043c  2**0
+                  CONTENTS, READONLY, DEBUGGING
+  7 .debug_abbrev 00000756  00000000  00000000  00000eee  2**0
+                  CONTENTS, READONLY, DEBUGGING
+  8 .debug_line   000005cb  00000000  00000000  00001644  2**0
+                  CONTENTS, READONLY, DEBUGGING
+  9 .debug_frame  00000110  00000000  00000000  00001c10  2**2
+                  CONTENTS, READONLY, DEBUGGING
+ 10 .debug_str    00000403  00000000  00000000  00001d20  2**0
+                  CONTENTS, READONLY, DEBUGGING
+ 11 .debug_loc    000002ce  00000000  00000000  00002123  2**0
+                  CONTENTS, READONLY, DEBUGGING
+ 12 .debug_ranges 00000068  00000000  00000000  000023f1  2**0
+                  CONTENTS, READONLY, DEBUGGING
+
+Disassembly of section .text:
+
+00000000 <__vectors>:
+   0:	0c 94 2a 00 	jmp	0x54	; 0x54 <__ctors_end>
+   4:	0c 94 47 00 	jmp	0x8e	; 0x8e <__bad_interrupt>
+   8:	0c 94 47 00 	jmp	0x8e	; 0x8e <__bad_interrupt>
+   c:	0c 94 47 00 	jmp	0x8e	; 0x8e <__bad_interrupt>
+  10:	0c 94 47 00 	jmp	0x8e	; 0x8e <__bad_interrupt>
+  14:	0c 94 47 00 	jmp	0x8e	; 0x8e <__bad_interrupt>
+  18:	0c 94 47 00 	jmp	0x8e	; 0x8e <__bad_interrupt>
+  1c:	0c 94 47 00 	jmp	0x8e	; 0x8e <__bad_interrupt>
+  20:	0c 94 47 00 	jmp	0x8e	; 0x8e <__bad_interrupt>
+  24:	0c 94 47 00 	jmp	0x8e	; 0x8e <__bad_interrupt>
+  28:	0c 94 47 00 	jmp	0x8e	; 0x8e <__bad_interrupt>
+  2c:	0c 94 47 00 	jmp	0x8e	; 0x8e <__bad_interrupt>
+  30:	0c 94 47 00 	jmp	0x8e	; 0x8e <__bad_interrupt>
+  34:	0c 94 47 00 	jmp	0x8e	; 0x8e <__bad_interrupt>
+  38:	0c 94 47 00 	jmp	0x8e	; 0x8e <__bad_interrupt>
+  3c:	0c 94 47 00 	jmp	0x8e	; 0x8e <__bad_interrupt>
+  40:	0c 94 47 00 	jmp	0x8e	; 0x8e <__bad_interrupt>
+  44:	0c 94 47 00 	jmp	0x8e	; 0x8e <__bad_interrupt>
+  48:	0c 94 47 00 	jmp	0x8e	; 0x8e <__bad_interrupt>
+  4c:	0c 94 47 00 	jmp	0x8e	; 0x8e <__bad_interrupt>
+  50:	0c 94 47 00 	jmp	0x8e	; 0x8e <__bad_interrupt>
+
+00000054 <__ctors_end>:
+  54:	11 24       	eor	r1, r1
+  56:	1f be       	out	0x3f, r1	; 63
+  58:	cf e5       	ldi	r28, 0x5F	; 95
+  5a:	d8 e0       	ldi	r29, 0x08	; 8
+  5c:	de bf       	out	0x3e, r29	; 62
+  5e:	cd bf       	out	0x3d, r28	; 61
+
+00000060 <__do_copy_data>:
+  60:	10 e0       	ldi	r17, 0x00	; 0
+  62:	a0 e6       	ldi	r26, 0x60	; 96
+  64:	b0 e0       	ldi	r27, 0x00	; 0
+  66:	e0 e5       	ldi	r30, 0x50	; 80
+  68:	f2 e0       	ldi	r31, 0x02	; 2
+  6a:	02 c0       	rjmp	.+4      	; 0x70 <__do_copy_data+0x10>
+  6c:	05 90       	lpm	r0, Z+
+  6e:	0d 92       	st	X+, r0
+  70:	a4 3b       	cpi	r26, 0xB4	; 180
+  72:	b1 07       	cpc	r27, r17
+  74:	d9 f7       	brne	.-10     	; 0x6c <__do_copy_data+0xc>
+
+00000076 <__do_clear_bss>:
+  76:	20 e0       	ldi	r18, 0x00	; 0
+  78:	a4 eb       	ldi	r26, 0xB4	; 180
+  7a:	b0 e0       	ldi	r27, 0x00	; 0
+  7c:	01 c0       	rjmp	.+2      	; 0x80 <.do_clear_bss_start>
+
+0000007e <.do_clear_bss_loop>:
+  7e:	1d 92       	st	X+, r1
+
+00000080 <.do_clear_bss_start>:
+  80:	a6 3b       	cpi	r26, 0xB6	; 182
+  82:	b2 07       	cpc	r27, r18
+  84:	e1 f7       	brne	.-8      	; 0x7e <.do_clear_bss_loop>
+  86:	0e 94 da 00 	call	0x1b4	; 0x1b4 <main>
+  8a:	0c 94 26 01 	jmp	0x24c	; 0x24c <_exit>
+
+0000008e <__bad_interrupt>:
+  8e:	0c 94 00 00 	jmp	0	; 0x0 <__vectors>
+
+00000092 <InitUSART>:
+
+#include "../include/Afficheur_LCD.h"
+
+void InitUSART(void)
+{	
+	UBRRH = 0x00; UBRRL = 25; // vitesse de transmission 19200 bits/sec
+  92:	10 bc       	out	0x20, r1	; 32
+  94:	89 e1       	ldi	r24, 0x19	; 25
+  96:	89 b9       	out	0x09, r24	; 9
+	UCSRB = 1 << TXEN;        // autorise transmission
+  98:	88 e0       	ldi	r24, 0x08	; 8
+  9a:	8a b9       	out	0x0a, r24	; 10
+	UCSRC = 0x86;             // 8 bits, un stop bit, pas de bit de parité
+  9c:	86 e8       	ldi	r24, 0x86	; 134
+  9e:	80 bd       	out	0x20, r24	; 32
+  a0:	08 95       	ret
+
+000000a2 <putCharToLCD>:
+}
+
+char putCharToLCD(char codeASCII)
+{ 
+	while (!(UCSRA &(1<<UDRE))); // attente transmission précédente terminéee
+  a2:	5d 9b       	sbis	0x0b, 5	; 11
+  a4:	fe cf       	rjmp	.-4      	; 0xa2 <putCharToLCD>
+  
+	  UDR = codeASCII;			   // envoi du code ASCII à l’USART
+  a6:	8c b9       	out	0x0c, r24	; 12
+ 
+	  return(codeASCII);		   // retourne le caractère envoyé si besoin
+}
+  a8:	08 95       	ret
+
+000000aa <InitLCD>:
+
+void InitLCD(void)
+{	
+	InitUSART();				//Initialisation du port série de l’ATMEGA32
+  aa:	0e 94 49 00 	call	0x92	; 0x92 <InitUSART>
+	
+	putCharToLCD(0xA0);
+  ae:	80 ea       	ldi	r24, 0xA0	; 160
+  b0:	0e 94 51 00 	call	0xa2	; 0xa2 <putCharToLCD>
+	#else
+		//round up by default
+		__ticks_dc = (uint32_t)(ceil(fabs(__tmp)));
+	#endif
+
+	__builtin_avr_delay_cycles(__ticks_dc);
+  b4:	2f e7       	ldi	r18, 0x7F	; 127
+  b6:	88 e3       	ldi	r24, 0x38	; 56
+  b8:	91 e0       	ldi	r25, 0x01	; 1
+  ba:	21 50       	subi	r18, 0x01	; 1
+  bc:	80 40       	sbci	r24, 0x00	; 0
+  be:	90 40       	sbci	r25, 0x00	; 0
+  c0:	e1 f7       	brne	.-8      	; 0xba <InitLCD+0x10>
+  c2:	00 c0       	rjmp	.+0      	; 0xc4 <InitLCD+0x1a>
+  c4:	00 00       	nop
+  c6:	08 95       	ret
+
+000000c8 <placeCursor>:
+	_delay_ms(50);
+}
+
+
+void placeCursor (char x, char y)
+{
+  c8:	cf 93       	push	r28
+  ca:	df 93       	push	r29
+  cc:	d8 2f       	mov	r29, r24
+  ce:	c6 2f       	mov	r28, r22
+	putCharToLCD(0xA1); // Mode placement du curseur
+  d0:	81 ea       	ldi	r24, 0xA1	; 161
+  d2:	0e 94 51 00 	call	0xa2	; 0xa2 <putCharToLCD>
+	
+	putCharToLCD(x); // Position X
+  d6:	8d 2f       	mov	r24, r29
+  d8:	0e 94 51 00 	call	0xa2	; 0xa2 <putCharToLCD>
+	putCharToLCD(y); // Position Y
+  dc:	8c 2f       	mov	r24, r28
+  de:	0e 94 51 00 	call	0xa2	; 0xa2 <putCharToLCD>
+  e2:	8f e3       	ldi	r24, 0x3F	; 63
+  e4:	9c e9       	ldi	r25, 0x9C	; 156
+  e6:	01 97       	sbiw	r24, 0x01	; 1
+  e8:	f1 f7       	brne	.-4      	; 0xe6 <placeCursor+0x1e>
+  ea:	00 c0       	rjmp	.+0      	; 0xec <placeCursor+0x24>
+  ec:	00 00       	nop
+	
+	_delay_ms(20);
+}
+  ee:	df 91       	pop	r29
+  f0:	cf 91       	pop	r28
+  f2:	08 95       	ret
+
+000000f4 <print>:
+
+void print (unsigned char message[])
+{
+  f4:	0f 93       	push	r16
+  f6:	1f 93       	push	r17
+  f8:	cf 93       	push	r28
+  fa:	8c 01       	movw	r16, r24
+	unsigned char length = 0;
+	
+	putCharToLCD(0xA2);
+  fc:	82 ea       	ldi	r24, 0xA2	; 162
+  fe:	0e 94 51 00 	call	0xa2	; 0xa2 <putCharToLCD>
+	_delay_ms(20);
+}
+
+void print (unsigned char message[])
+{
+	unsigned char length = 0;
+ 102:	c0 e0       	ldi	r28, 0x00	; 0
+	
+	putCharToLCD(0xA2);
+	
+	while (message[length] != '\0')
+ 104:	03 c0       	rjmp	.+6      	; 0x10c <print+0x18>
+	{
+		putCharToLCD(message[length]);
+ 106:	0e 94 51 00 	call	0xa2	; 0xa2 <putCharToLCD>
+
+		length++;
+ 10a:	cf 5f       	subi	r28, 0xFF	; 255
+{
+	unsigned char length = 0;
+	
+	putCharToLCD(0xA2);
+	
+	while (message[length] != '\0')
+ 10c:	f8 01       	movw	r30, r16
+ 10e:	ec 0f       	add	r30, r28
+ 110:	f1 1d       	adc	r31, r1
+ 112:	80 81       	ld	r24, Z
+ 114:	81 11       	cpse	r24, r1
+ 116:	f7 cf       	rjmp	.-18     	; 0x106 <print+0x12>
+		putCharToLCD(message[length]);
+
+		length++;
+	}
+	
+	putCharToLCD(0x00);
+ 118:	0e 94 51 00 	call	0xa2	; 0xa2 <putCharToLCD>
+ 11c:	8f e3       	ldi	r24, 0x3F	; 63
+ 11e:	9c e9       	ldi	r25, 0x9C	; 156
+ 120:	01 97       	sbiw	r24, 0x01	; 1
+ 122:	f1 f7       	brne	.-4      	; 0x120 <print+0x2c>
+ 124:	00 c0       	rjmp	.+0      	; 0x126 <print+0x32>
+ 126:	00 00       	nop
+	
+	_delay_ms(20);
+ 128:	cf 91       	pop	r28
+ 12a:	1f 91       	pop	r17
+ 12c:	0f 91       	pop	r16
+ 12e:	08 95       	ret
+
+00000130 <InitTimer>:
+ 130:	8b e0       	ldi	r24, 0x0B	; 11
+ 132:	83 bf       	out	0x33, r24	; 51
+ 134:	12 be       	out	0x32, r1	; 50
+ 136:	8c e7       	ldi	r24, 0x7C	; 124
+ 138:	8c bf       	out	0x3c, r24	; 60
+ 13a:	08 95       	ret
+
+0000013c <Tempo_1ms>:
+ 13c:	82 e0       	ldi	r24, 0x02	; 2
+ 13e:	88 bf       	out	0x38, r24	; 56
+ 140:	08 b6       	in	r0, 0x38	; 56
+ 142:	01 fe       	sbrs	r0, 1
+ 144:	fd cf       	rjmp	.-6      	; 0x140 <Tempo_1ms+0x4>
+ 146:	08 95       	ret
+
+00000148 <AppuiBPP>:
+	while (1);
+}
+
+
+void AppuiBPP (void)
+{
+ 148:	cf 93       	push	r28
+ 14a:	df 93       	push	r29
+	unsigned int cpt = 0; // On dï¿½finit la variable de compteur
+	
+	if ((PINB & (1 << BTN_PASSE_HAUT)) != 0) // Si le bouton est appuiï¿½
+ 14c:	b6 99       	sbic	0x16, 6	; 22
+ 14e:	10 c0       	rjmp	.+32     	; 0x170 <AppuiBPP+0x28>
+ 150:	13 c0       	rjmp	.+38     	; 0x178 <AppuiBPP+0x30>
+	{				
+		cpt = 0; // On remet le compteur ï¿½ 0
+						
+		while ((PINB & (1 << BTN_PASSE_HAUT)) != 0) // Tant que le bouton est appuiï¿½
+		{
+			Tempo_1ms(); // On effectue une tempo de 1ms
+ 152:	0e 94 9e 00 	call	0x13c	; 0x13c <Tempo_1ms>
+				
+			cpt++; // On incrï¿½mente le compteur
+ 156:	21 96       	adiw	r28, 0x01	; 1
+				
+			if (cpt > 3000) // Si le compteur dï¿½passe 3000, ou si le compteur dï¿½passe 3s
+ 158:	c9 3b       	cpi	r28, 0xB9	; 185
+ 15a:	8b e0       	ldi	r24, 0x0B	; 11
+ 15c:	d8 07       	cpc	r29, r24
+ 15e:	50 f0       	brcs	.+20     	; 0x174 <AppuiBPP+0x2c>
+			{				
+				state[0] = !state[0];	// On inverse l'ï¿½tat du state global
+ 160:	90 91 b4 00 	lds	r25, 0x00B4	; 0x8000b4 <__data_end>
+ 164:	81 e0       	ldi	r24, 0x01	; 1
+ 166:	91 11       	cpse	r25, r1
+ 168:	80 e0       	ldi	r24, 0x00	; 0
+ 16a:	80 93 b4 00 	sts	0x00B4, r24	; 0x8000b4 <__data_end>
+					
+				cpt = 0; // On remet le cpt ï¿½ 0
+				
+				break; // En attente de rï¿½solution
+ 16e:	04 c0       	rjmp	.+8      	; 0x178 <AppuiBPP+0x30>
+ 170:	c0 e0       	ldi	r28, 0x00	; 0
+ 172:	d0 e0       	ldi	r29, 0x00	; 0
+	
+	if ((PINB & (1 << BTN_PASSE_HAUT)) != 0) // Si le bouton est appuiï¿½
+	{				
+		cpt = 0; // On remet le compteur ï¿½ 0
+						
+		while ((PINB & (1 << BTN_PASSE_HAUT)) != 0) // Tant que le bouton est appuiï¿½
+ 174:	b6 99       	sbic	0x16, 6	; 22
+ 176:	ed cf       	rjmp	.-38     	; 0x152 <AppuiBPP+0xa>
+				
+				break; // En attente de rï¿½solution
+			}
+		}
+	}
+}
+ 178:	df 91       	pop	r29
+ 17a:	cf 91       	pop	r28
+ 17c:	08 95       	ret
+
+0000017e <AppuiBPM>:
+
+
+void AppuiBPM (void)
+{
+ 17e:	cf 93       	push	r28
+ 180:	df 93       	push	r29
+	unsigned int cpt = 0; // On dï¿½finit la variable de compteur
+	
+	if ((PINB & (1 << BTN_PASSE_BAS)) != 0) // Si le bouton est appuiï¿½
+ 182:	b5 99       	sbic	0x16, 5	; 22
+ 184:	10 c0       	rjmp	.+32     	; 0x1a6 <AppuiBPM+0x28>
+ 186:	13 c0       	rjmp	.+38     	; 0x1ae <AppuiBPM+0x30>
+	{				
+		cpt = 0; // On remet le compteur ï¿½ 0
+						
+		while ((PINB & (1 << BTN_PASSE_BAS)) != 0) // Tant que le bouton est appuiï¿½
+		{
+			Tempo_1ms(); // On effectue une tempo de 1ms
+ 188:	0e 94 9e 00 	call	0x13c	; 0x13c <Tempo_1ms>
+				
+			cpt++; // On incrï¿½mente le compteur
+ 18c:	21 96       	adiw	r28, 0x01	; 1
+				
+			if (cpt > 3000) // Si le compteur dï¿½passe 3000, ou si le compteur dï¿½passe 3s
+ 18e:	c9 3b       	cpi	r28, 0xB9	; 185
+ 190:	8b e0       	ldi	r24, 0x0B	; 11
+ 192:	d8 07       	cpc	r29, r24
+ 194:	50 f0       	brcs	.+20     	; 0x1aa <AppuiBPM+0x2c>
+			{				
+				state[1] = !state[1];	// On inverse l'ï¿½tat du state global
+ 196:	90 91 b5 00 	lds	r25, 0x00B5	; 0x8000b5 <__data_end+0x1>
+ 19a:	81 e0       	ldi	r24, 0x01	; 1
+ 19c:	91 11       	cpse	r25, r1
+ 19e:	80 e0       	ldi	r24, 0x00	; 0
+ 1a0:	80 93 b5 00 	sts	0x00B5, r24	; 0x8000b5 <__data_end+0x1>
+					
+				cpt = 0; // On remet le cpt ï¿½ 0
+				
+				break; // En attente de rï¿½solution
+ 1a4:	04 c0       	rjmp	.+8      	; 0x1ae <AppuiBPM+0x30>
+ 1a6:	c0 e0       	ldi	r28, 0x00	; 0
+ 1a8:	d0 e0       	ldi	r29, 0x00	; 0
+	
+	if ((PINB & (1 << BTN_PASSE_BAS)) != 0) // Si le bouton est appuiï¿½
+	{				
+		cpt = 0; // On remet le compteur ï¿½ 0
+						
+		while ((PINB & (1 << BTN_PASSE_BAS)) != 0) // Tant que le bouton est appuiï¿½
+ 1aa:	b5 99       	sbic	0x16, 5	; 22
+ 1ac:	ed cf       	rjmp	.-38     	; 0x188 <AppuiBPM+0xa>
+				
+				break; // En attente de rï¿½solution
+			}
+		}
+	}
+}
+ 1ae:	df 91       	pop	r29
+ 1b0:	cf 91       	pop	r28
+ 1b2:	08 95       	ret
+
+000001b4 <main>:
+unsigned char state[2] = {0, 0};
+
+
+int main(void)
+{	
+	InitTimer();
+ 1b4:	0e 94 98 00 	call	0x130	; 0x130 <InitTimer>
+	InitLCD();
+ 1b8:	0e 94 55 00 	call	0xaa	; 0xaa <InitLCD>
+	
+	DDRB = 0x00;
+ 1bc:	17 ba       	out	0x17, r1	; 23
+	DDRC = (1 << RELAIS_PH) | (1 << RELAIS_PB);
+ 1be:	80 ec       	ldi	r24, 0xC0	; 192
+ 1c0:	84 bb       	out	0x14, r24	; 20
+	DDRD = (1 << LED_TEST_BPP) | (1 << LED_TEST_BPM);
+ 1c2:	80 e6       	ldi	r24, 0x60	; 96
+ 1c4:	81 bb       	out	0x11, r24	; 17
+	
+	PORTD = 0x00;	
+ 1c6:	12 ba       	out	0x12, r1	; 18
+	PORTB = 0x00;
+ 1c8:	18 ba       	out	0x18, r1	; 24
+	PORTC = 0x00;
+ 1ca:	15 ba       	out	0x15, r1	; 21
+	
+    do 
+    {
+		AppuiBPP();
+ 1cc:	0e 94 a4 00 	call	0x148	; 0x148 <AppuiBPP>
+		AppuiBPM();
+ 1d0:	0e 94 bf 00 	call	0x17e	; 0x17e <AppuiBPM>
+		
+		if (state[0] == 1)
+ 1d4:	80 91 b4 00 	lds	r24, 0x00B4	; 0x8000b4 <__data_end>
+ 1d8:	81 30       	cpi	r24, 0x01	; 1
+ 1da:	69 f4       	brne	.+26     	; 0x1f6 <main+0x42>
+		{
+			PORTC = (1 << RELAIS_PH); // On allume le relais du passe haute
+ 1dc:	80 e8       	ldi	r24, 0x80	; 128
+ 1de:	85 bb       	out	0x15, r24	; 21
+			PORTD = (1 << LED_TEST_BPP); // On allume la led test
+ 1e0:	80 e2       	ldi	r24, 0x20	; 32
+ 1e2:	82 bb       	out	0x12, r24	; 18
+		
+			placeCursor(0, 0);
+ 1e4:	60 e0       	ldi	r22, 0x00	; 0
+ 1e6:	80 e0       	ldi	r24, 0x00	; 0
+ 1e8:	0e 94 64 00 	call	0xc8	; 0xc8 <placeCursor>
+			print("High pass actif ");
+ 1ec:	80 e6       	ldi	r24, 0x60	; 96
+ 1ee:	90 e0       	ldi	r25, 0x00	; 0
+ 1f0:	0e 94 7a 00 	call	0xf4	; 0xf4 <print>
+ 1f4:	eb cf       	rjmp	.-42     	; 0x1cc <main+0x18>
+		}
+		else if (state[1] == 1)
+ 1f6:	80 91 b5 00 	lds	r24, 0x00B5	; 0x8000b5 <__data_end+0x1>
+ 1fa:	81 30       	cpi	r24, 0x01	; 1
+ 1fc:	61 f4       	brne	.+24     	; 0x216 <main+0x62>
+		{
+			PORTC = (1 << RELAIS_PB); // On allume le relais du passe bas
+ 1fe:	80 e4       	ldi	r24, 0x40	; 64
+ 200:	85 bb       	out	0x15, r24	; 21
+			PORTD = (1 << LED_TEST_BPM); // On allume la led test
+ 202:	82 bb       	out	0x12, r24	; 18
+		
+			placeCursor(0, 0);
+ 204:	60 e0       	ldi	r22, 0x00	; 0
+ 206:	80 e0       	ldi	r24, 0x00	; 0
+ 208:	0e 94 64 00 	call	0xc8	; 0xc8 <placeCursor>
+			print("Low pass actif  ");
+ 20c:	81 e7       	ldi	r24, 0x71	; 113
+ 20e:	90 e0       	ldi	r25, 0x00	; 0
+ 210:	0e 94 7a 00 	call	0xf4	; 0xf4 <print>
+ 214:	db cf       	rjmp	.-74     	; 0x1cc <main+0x18>
+		}
+		else
+		{
+			PORTD = 0x00; // On eteint le relais
+ 216:	12 ba       	out	0x12, r1	; 18
+			PORTC = 0x00; // On eteint la led test
+ 218:	15 ba       	out	0x15, r1	; 21
+
+			placeCursor(0, 0);
+ 21a:	60 e0       	ldi	r22, 0x00	; 0
+ 21c:	80 e0       	ldi	r24, 0x00	; 0
+ 21e:	0e 94 64 00 	call	0xc8	; 0xc8 <placeCursor>
+			print("  Ampli audio ");
+ 222:	82 e8       	ldi	r24, 0x82	; 130
+ 224:	90 e0       	ldi	r25, 0x00	; 0
+ 226:	0e 94 7a 00 	call	0xf4	; 0xf4 <print>
+			
+
+			placeCursor(0, 2);
+ 22a:	62 e0       	ldi	r22, 0x02	; 2
+ 22c:	80 e0       	ldi	r24, 0x00	; 0
+ 22e:	0e 94 64 00 	call	0xc8	; 0xc8 <placeCursor>
+			print("BP+ -> high pass");
+ 232:	81 e9       	ldi	r24, 0x91	; 145
+ 234:	90 e0       	ldi	r25, 0x00	; 0
+ 236:	0e 94 7a 00 	call	0xf4	; 0xf4 <print>
+
+			placeCursor(0, 3);
+ 23a:	63 e0       	ldi	r22, 0x03	; 3
+ 23c:	80 e0       	ldi	r24, 0x00	; 0
+ 23e:	0e 94 64 00 	call	0xc8	; 0xc8 <placeCursor>
+			print("BP- -> low pass ");
+ 242:	82 ea       	ldi	r24, 0xA2	; 162
+ 244:	90 e0       	ldi	r25, 0x00	; 0
+ 246:	0e 94 7a 00 	call	0xf4	; 0xf4 <print>
+ 24a:	c0 cf       	rjmp	.-128    	; 0x1cc <main+0x18>
+
+0000024c <_exit>:
+ 24c:	f8 94       	cli
+
+0000024e <__stop_program>:
+ 24e:	ff cf       	rjmp	.-2      	; 0x24e <__stop_program>

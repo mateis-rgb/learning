@@ -1,0 +1,10 @@
+#define F_CPU 8000000UL
+
+#define BTN_PASSE_HAUT PB6
+#define BTN_PASSE_BAS PB5
+
+#define LED_TEST_BPP PD5
+#define LED_TEST_BPM PD6
+
+#define RELAIS_PH PC7
+#define RELAIS_PB PC6
