@@ -181,9 +181,19 @@ Code complet :
 #include "config.h"
 
 
+/**
+ * @brief Change l'état du state s'il y a un appui sur bpp
+ * 
+ */
 void AppuiBPP (void);
 
+
+/**
+ * @brief Change l'état du state s'il y a un appui sur bpm
+ * 
+ */
 void AppuiBPM (void);
+
 
 /**
  * state[0] => statut du passe haut
