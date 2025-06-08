@@ -1,0 +1,20 @@
+# prompt:
+
+éteille ce petit paragraphe :
+
+le ppp fut une chance pour moi, même si je ne l'ai pas vu au premier abord. cette matière m'a permise de me poser des questions sur mon futur professionnel. que ce soit en visitant des entreprises (Laita et Lacroix electronics) ou même en rencontrant les alumnis et même en me faisant faire une interview avec un industriel du secteur GEII. cette reflexion m'a emmener au point ou je suis aujourd'hui, à savoir que je vais bel et bien terminer mon but geii, mais avant d'enseigner dans le domaine du geii, que ce soit au lycée ou en fac. je vais rentrer à l'armée, et même peut etre monter ma société d'electronique et d'informatique. l'armée est selon moi la meilleure façon ou tout simplement la façon la plus noble de rendre à notre pays ce qu'il nous donne au quotidien. et je continurais dans cette dynamique en enseignant et en transmettant ma passion auprès des générations futures.
+
+## reponse :
+Le Projet Personnel et Professionnel (PPP) a été une véritable opportunité pour moi, même si je n'en ai pas immédiatement saisi toute la portée. Cette matière m'a permis de réfléchir profondément sur mon avenir professionnel. Que ce soit à travers les visites d'entreprises, comme Laita et Lacroix Electronics, ou les rencontres avec les anciens élèves, et même lors de l'entretien que j'ai eu avec un industriel du secteur Génie Électrique et Informatique Industrielle (GEII), chaque expérience a été enrichissante. Ces interactions m'ont offert une perspective unique sur les différentes carrières possibles et m'ont aidé à mieux comprendre mes propres aspirations.
+
+Cette réflexion m'a conduit au point où je me trouve aujourd'hui : je vais bel et bien terminer mon BUT GEII. Cependant, avant de me lancer dans l'enseignement dans ce domaine, que ce soit au lycée ou à l'université, j'ai décidé de m'engager dans l'armée. Je envisage également de créer ma propre société dans le domaine de l'électronique et de l'informatique. Pour moi, l'armée représente la manière la plus noble de rendre à notre pays tout ce qu'il nous offre au quotidien. Je continuerai dans cette dynamique en enseignant et en transmettant ma passion aux générations futures.
+
+En enseignant, je souhaite inspirer les étudiants comme mes professeurs m'ont inspiré. Je veux leur montrer l'importance de l'innovation et de la persévérance dans le domaine de l'électronique et de l'informatique. De plus, en créant ma propre entreprise, je pourrai mettre en pratique mes connaissances et contribuer au développement technologique de notre pays.
+
+# texte final :
+
+Le Projet Personnel et Professionnel (PPP) a été une expérience enrichissante, même si je n’en ai pas immédiatement saisi toute la portée. Cette matière m’a permis de réfléchir profondément à mon avenir professionnel. Les visites d’entreprises, comme Laita et Lacroix Electronics, les rencontres avec les anciens élèves, et même l’entretien que j’ai eu avec un industriel du secteur Génie Électrique et Informatique Industrielle (GEII), ont toutes été des expériences précieuses. Ces échanges m'ont ouvert les yeux sur une multitude de possibilités de carrière et m'ont vraiment aidé à mieux cerner ce que je souhaite faire de ma vie.
+
+Cette réflexion m’a conduit à une décision importante : je vais terminer mon BUT GEII. Cependant, avant de me lancer dans l’enseignement dans ce domaine, que ce soit au lycée ou à l’université, je vais décider de m’engager dans l’armée. Je souhaite également créer ma propre société dans le domaine de l’électronique et de l’informatique. Pour moi, l’armée représente la manière la plus noble de rendre à notre pays tout ce qu’il nous offre au quotidien. Je continuerai dans cette dynamique en enseignant et en transmettant ma passion aux générations futures.
+
+En tant qu’enseignant, je souhaite inspirer les étudiants comme mes professeurs m’ont inspiré. Je veux leur montrer l’importance de l’innovation et de la persévérance dans le domaine de l’électronique et de l’informatique. De plus, en créant ma propre entreprise, je pourrai mettre en pratique mes connaissances et contribuer au développement technologique de notre pays.
